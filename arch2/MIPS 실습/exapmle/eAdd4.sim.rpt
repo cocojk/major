@@ -1,0 +1,375 @@
+Simulator report for eAdd4
+Thu Nov 27 09:27:35 2014
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 93 nodes     ;
+; Simulation Coverage         ;      22.31 % ;
+; Total Number of Transitions ; 1290         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Stratix II   ;
+; Device                      ; EP2S15F484C3 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      22.31 % ;
+; Total nodes checked                                 ; 93           ;
+; Total output ports checked                          ; 121          ;
+; Total output ports with complete 1/0-value coverage ; 27           ;
+; Total output ports with no 1/0-value coverage       ; 93           ;
+; Total output ports with no 1-value coverage         ; 93           ;
+; Total output ports with no 0-value coverage         ; 94           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------+
+; Complete 1/0-Value Coverage                              ;
++----------------+----------------------+------------------+
+; Node Name      ; Output Port Name     ; Output Port Type ;
++----------------+----------------------+------------------+
+; |eAdd4|Add0~1  ; |eAdd4|Add0~1        ; sumout           ;
+; |eAdd4|Add0~1  ; |eAdd4|Add0~2        ; cout             ;
+; |eAdd4|Add0~5  ; |eAdd4|Add0~5        ; sumout           ;
+; |eAdd4|Add0~5  ; |eAdd4|Add0~6        ; cout             ;
+; |eAdd4|Add0~9  ; |eAdd4|Add0~9        ; sumout           ;
+; |eAdd4|Add0~9  ; |eAdd4|Add0~10       ; cout             ;
+; |eAdd4|Add0~13 ; |eAdd4|Add0~13       ; sumout           ;
+; |eAdd4|Add0~13 ; |eAdd4|Add0~14       ; cout             ;
+; |eAdd4|Add0~17 ; |eAdd4|Add0~17       ; sumout           ;
+; |eAdd4|Add0~17 ; |eAdd4|Add0~18       ; cout             ;
+; |eAdd4|Add0~21 ; |eAdd4|Add0~21       ; sumout           ;
+; |eAdd4|Add0~21 ; |eAdd4|Add0~22       ; cout             ;
+; |eAdd4|Add0~25 ; |eAdd4|Add0~25       ; sumout           ;
+; |eAdd4|pOut[2] ; |eAdd4|pOut[2]       ; padio            ;
+; |eAdd4|pOut[3] ; |eAdd4|pOut[3]       ; padio            ;
+; |eAdd4|pOut[4] ; |eAdd4|pOut[4]       ; padio            ;
+; |eAdd4|pOut[5] ; |eAdd4|pOut[5]       ; padio            ;
+; |eAdd4|pOut[6] ; |eAdd4|pOut[6]       ; padio            ;
+; |eAdd4|pOut[7] ; |eAdd4|pOut[7]       ; padio            ;
+; |eAdd4|pOut[8] ; |eAdd4|pOut[8]       ; padio            ;
+; |eAdd4|pOut[9] ; |eAdd4|pOut[9]       ; padio            ;
+; |eAdd4|pIn[2]  ; |eAdd4|pIn[2]~corein ; combout          ;
+; |eAdd4|pIn[3]  ; |eAdd4|pIn[3]~corein ; combout          ;
+; |eAdd4|pIn[4]  ; |eAdd4|pIn[4]~corein ; combout          ;
+; |eAdd4|pIn[5]  ; |eAdd4|pIn[5]~corein ; combout          ;
+; |eAdd4|pIn[6]  ; |eAdd4|pIn[6]~corein ; combout          ;
+; |eAdd4|pIn[7]  ; |eAdd4|pIn[7]~corein ; combout          ;
++----------------+----------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------+
+; Missing 1-Value Coverage                                   ;
++-----------------+-----------------------+------------------+
+; Node Name       ; Output Port Name      ; Output Port Type ;
++-----------------+-----------------------+------------------+
+; |eAdd4|Add0~25  ; |eAdd4|Add0~26        ; cout             ;
+; |eAdd4|Add0~29  ; |eAdd4|Add0~29        ; sumout           ;
+; |eAdd4|Add0~29  ; |eAdd4|Add0~30        ; cout             ;
+; |eAdd4|Add0~33  ; |eAdd4|Add0~33        ; sumout           ;
+; |eAdd4|Add0~33  ; |eAdd4|Add0~34        ; cout             ;
+; |eAdd4|Add0~37  ; |eAdd4|Add0~37        ; sumout           ;
+; |eAdd4|Add0~37  ; |eAdd4|Add0~38        ; cout             ;
+; |eAdd4|Add0~41  ; |eAdd4|Add0~41        ; sumout           ;
+; |eAdd4|Add0~41  ; |eAdd4|Add0~42        ; cout             ;
+; |eAdd4|Add0~45  ; |eAdd4|Add0~45        ; sumout           ;
+; |eAdd4|Add0~45  ; |eAdd4|Add0~46        ; cout             ;
+; |eAdd4|Add0~49  ; |eAdd4|Add0~49        ; sumout           ;
+; |eAdd4|Add0~49  ; |eAdd4|Add0~50        ; cout             ;
+; |eAdd4|Add0~53  ; |eAdd4|Add0~53        ; sumout           ;
+; |eAdd4|Add0~53  ; |eAdd4|Add0~54        ; cout             ;
+; |eAdd4|Add0~57  ; |eAdd4|Add0~57        ; sumout           ;
+; |eAdd4|Add0~57  ; |eAdd4|Add0~58        ; cout             ;
+; |eAdd4|Add0~61  ; |eAdd4|Add0~61        ; sumout           ;
+; |eAdd4|Add0~61  ; |eAdd4|Add0~62        ; cout             ;
+; |eAdd4|Add0~65  ; |eAdd4|Add0~65        ; sumout           ;
+; |eAdd4|Add0~65  ; |eAdd4|Add0~66        ; cout             ;
+; |eAdd4|Add0~69  ; |eAdd4|Add0~69        ; sumout           ;
+; |eAdd4|Add0~69  ; |eAdd4|Add0~70        ; cout             ;
+; |eAdd4|Add0~73  ; |eAdd4|Add0~73        ; sumout           ;
+; |eAdd4|Add0~73  ; |eAdd4|Add0~74        ; cout             ;
+; |eAdd4|Add0~77  ; |eAdd4|Add0~77        ; sumout           ;
+; |eAdd4|Add0~77  ; |eAdd4|Add0~78        ; cout             ;
+; |eAdd4|Add0~81  ; |eAdd4|Add0~81        ; sumout           ;
+; |eAdd4|Add0~81  ; |eAdd4|Add0~82        ; cout             ;
+; |eAdd4|Add0~85  ; |eAdd4|Add0~85        ; sumout           ;
+; |eAdd4|Add0~85  ; |eAdd4|Add0~86        ; cout             ;
+; |eAdd4|Add0~89  ; |eAdd4|Add0~89        ; sumout           ;
+; |eAdd4|Add0~89  ; |eAdd4|Add0~90        ; cout             ;
+; |eAdd4|Add0~93  ; |eAdd4|Add0~93        ; sumout           ;
+; |eAdd4|Add0~93  ; |eAdd4|Add0~94        ; cout             ;
+; |eAdd4|Add0~97  ; |eAdd4|Add0~97        ; sumout           ;
+; |eAdd4|Add0~97  ; |eAdd4|Add0~98        ; cout             ;
+; |eAdd4|Add0~101 ; |eAdd4|Add0~101       ; sumout           ;
+; |eAdd4|Add0~101 ; |eAdd4|Add0~102       ; cout             ;
+; |eAdd4|Add0~105 ; |eAdd4|Add0~105       ; sumout           ;
+; |eAdd4|Add0~105 ; |eAdd4|Add0~106       ; cout             ;
+; |eAdd4|Add0~109 ; |eAdd4|Add0~109       ; sumout           ;
+; |eAdd4|Add0~109 ; |eAdd4|Add0~110       ; cout             ;
+; |eAdd4|Add0~113 ; |eAdd4|Add0~113       ; sumout           ;
+; |eAdd4|pOut[0]  ; |eAdd4|pOut[0]        ; padio            ;
+; |eAdd4|pOut[1]  ; |eAdd4|pOut[1]        ; padio            ;
+; |eAdd4|pOut[10] ; |eAdd4|pOut[10]       ; padio            ;
+; |eAdd4|pOut[11] ; |eAdd4|pOut[11]       ; padio            ;
+; |eAdd4|pOut[12] ; |eAdd4|pOut[12]       ; padio            ;
+; |eAdd4|pOut[13] ; |eAdd4|pOut[13]       ; padio            ;
+; |eAdd4|pOut[14] ; |eAdd4|pOut[14]       ; padio            ;
+; |eAdd4|pOut[15] ; |eAdd4|pOut[15]       ; padio            ;
+; |eAdd4|pOut[16] ; |eAdd4|pOut[16]       ; padio            ;
+; |eAdd4|pOut[17] ; |eAdd4|pOut[17]       ; padio            ;
+; |eAdd4|pOut[18] ; |eAdd4|pOut[18]       ; padio            ;
+; |eAdd4|pOut[19] ; |eAdd4|pOut[19]       ; padio            ;
+; |eAdd4|pOut[20] ; |eAdd4|pOut[20]       ; padio            ;
+; |eAdd4|pOut[21] ; |eAdd4|pOut[21]       ; padio            ;
+; |eAdd4|pOut[22] ; |eAdd4|pOut[22]       ; padio            ;
+; |eAdd4|pOut[23] ; |eAdd4|pOut[23]       ; padio            ;
+; |eAdd4|pOut[24] ; |eAdd4|pOut[24]       ; padio            ;
+; |eAdd4|pOut[25] ; |eAdd4|pOut[25]       ; padio            ;
+; |eAdd4|pOut[26] ; |eAdd4|pOut[26]       ; padio            ;
+; |eAdd4|pOut[27] ; |eAdd4|pOut[27]       ; padio            ;
+; |eAdd4|pOut[28] ; |eAdd4|pOut[28]       ; padio            ;
+; |eAdd4|pOut[29] ; |eAdd4|pOut[29]       ; padio            ;
+; |eAdd4|pOut[30] ; |eAdd4|pOut[30]       ; padio            ;
+; |eAdd4|pOut[31] ; |eAdd4|pOut[31]       ; padio            ;
+; |eAdd4|pIn[0]   ; |eAdd4|pIn[0]~corein  ; combout          ;
+; |eAdd4|pIn[1]   ; |eAdd4|pIn[1]~corein  ; combout          ;
+; |eAdd4|pIn[9]   ; |eAdd4|pIn[9]~corein  ; combout          ;
+; |eAdd4|pIn[10]  ; |eAdd4|pIn[10]~corein ; combout          ;
+; |eAdd4|pIn[11]  ; |eAdd4|pIn[11]~corein ; combout          ;
+; |eAdd4|pIn[12]  ; |eAdd4|pIn[12]~corein ; combout          ;
+; |eAdd4|pIn[13]  ; |eAdd4|pIn[13]~corein ; combout          ;
+; |eAdd4|pIn[14]  ; |eAdd4|pIn[14]~corein ; combout          ;
+; |eAdd4|pIn[15]  ; |eAdd4|pIn[15]~corein ; combout          ;
+; |eAdd4|pIn[16]  ; |eAdd4|pIn[16]~corein ; combout          ;
+; |eAdd4|pIn[17]  ; |eAdd4|pIn[17]~corein ; combout          ;
+; |eAdd4|pIn[18]  ; |eAdd4|pIn[18]~corein ; combout          ;
+; |eAdd4|pIn[19]  ; |eAdd4|pIn[19]~corein ; combout          ;
+; |eAdd4|pIn[20]  ; |eAdd4|pIn[20]~corein ; combout          ;
+; |eAdd4|pIn[21]  ; |eAdd4|pIn[21]~corein ; combout          ;
+; |eAdd4|pIn[22]  ; |eAdd4|pIn[22]~corein ; combout          ;
+; |eAdd4|pIn[23]  ; |eAdd4|pIn[23]~corein ; combout          ;
+; |eAdd4|pIn[24]  ; |eAdd4|pIn[24]~corein ; combout          ;
+; |eAdd4|pIn[25]  ; |eAdd4|pIn[25]~corein ; combout          ;
+; |eAdd4|pIn[26]  ; |eAdd4|pIn[26]~corein ; combout          ;
+; |eAdd4|pIn[27]  ; |eAdd4|pIn[27]~corein ; combout          ;
+; |eAdd4|pIn[28]  ; |eAdd4|pIn[28]~corein ; combout          ;
+; |eAdd4|pIn[29]  ; |eAdd4|pIn[29]~corein ; combout          ;
+; |eAdd4|pIn[30]  ; |eAdd4|pIn[30]~corein ; combout          ;
+; |eAdd4|pIn[31]  ; |eAdd4|pIn[31]~corein ; combout          ;
++-----------------+-----------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------+
+; Missing 0-Value Coverage                                   ;
++-----------------+-----------------------+------------------+
+; Node Name       ; Output Port Name      ; Output Port Type ;
++-----------------+-----------------------+------------------+
+; |eAdd4|Add0~25  ; |eAdd4|Add0~26        ; cout             ;
+; |eAdd4|Add0~29  ; |eAdd4|Add0~29        ; sumout           ;
+; |eAdd4|Add0~29  ; |eAdd4|Add0~30        ; cout             ;
+; |eAdd4|Add0~33  ; |eAdd4|Add0~33        ; sumout           ;
+; |eAdd4|Add0~33  ; |eAdd4|Add0~34        ; cout             ;
+; |eAdd4|Add0~37  ; |eAdd4|Add0~37        ; sumout           ;
+; |eAdd4|Add0~37  ; |eAdd4|Add0~38        ; cout             ;
+; |eAdd4|Add0~41  ; |eAdd4|Add0~41        ; sumout           ;
+; |eAdd4|Add0~41  ; |eAdd4|Add0~42        ; cout             ;
+; |eAdd4|Add0~45  ; |eAdd4|Add0~45        ; sumout           ;
+; |eAdd4|Add0~45  ; |eAdd4|Add0~46        ; cout             ;
+; |eAdd4|Add0~49  ; |eAdd4|Add0~49        ; sumout           ;
+; |eAdd4|Add0~49  ; |eAdd4|Add0~50        ; cout             ;
+; |eAdd4|Add0~53  ; |eAdd4|Add0~53        ; sumout           ;
+; |eAdd4|Add0~53  ; |eAdd4|Add0~54        ; cout             ;
+; |eAdd4|Add0~57  ; |eAdd4|Add0~57        ; sumout           ;
+; |eAdd4|Add0~57  ; |eAdd4|Add0~58        ; cout             ;
+; |eAdd4|Add0~61  ; |eAdd4|Add0~61        ; sumout           ;
+; |eAdd4|Add0~61  ; |eAdd4|Add0~62        ; cout             ;
+; |eAdd4|Add0~65  ; |eAdd4|Add0~65        ; sumout           ;
+; |eAdd4|Add0~65  ; |eAdd4|Add0~66        ; cout             ;
+; |eAdd4|Add0~69  ; |eAdd4|Add0~69        ; sumout           ;
+; |eAdd4|Add0~69  ; |eAdd4|Add0~70        ; cout             ;
+; |eAdd4|Add0~73  ; |eAdd4|Add0~73        ; sumout           ;
+; |eAdd4|Add0~73  ; |eAdd4|Add0~74        ; cout             ;
+; |eAdd4|Add0~77  ; |eAdd4|Add0~77        ; sumout           ;
+; |eAdd4|Add0~77  ; |eAdd4|Add0~78        ; cout             ;
+; |eAdd4|Add0~81  ; |eAdd4|Add0~81        ; sumout           ;
+; |eAdd4|Add0~81  ; |eAdd4|Add0~82        ; cout             ;
+; |eAdd4|Add0~85  ; |eAdd4|Add0~85        ; sumout           ;
+; |eAdd4|Add0~85  ; |eAdd4|Add0~86        ; cout             ;
+; |eAdd4|Add0~89  ; |eAdd4|Add0~89        ; sumout           ;
+; |eAdd4|Add0~89  ; |eAdd4|Add0~90        ; cout             ;
+; |eAdd4|Add0~93  ; |eAdd4|Add0~93        ; sumout           ;
+; |eAdd4|Add0~93  ; |eAdd4|Add0~94        ; cout             ;
+; |eAdd4|Add0~97  ; |eAdd4|Add0~97        ; sumout           ;
+; |eAdd4|Add0~97  ; |eAdd4|Add0~98        ; cout             ;
+; |eAdd4|Add0~101 ; |eAdd4|Add0~101       ; sumout           ;
+; |eAdd4|Add0~101 ; |eAdd4|Add0~102       ; cout             ;
+; |eAdd4|Add0~105 ; |eAdd4|Add0~105       ; sumout           ;
+; |eAdd4|Add0~105 ; |eAdd4|Add0~106       ; cout             ;
+; |eAdd4|Add0~109 ; |eAdd4|Add0~109       ; sumout           ;
+; |eAdd4|Add0~109 ; |eAdd4|Add0~110       ; cout             ;
+; |eAdd4|Add0~113 ; |eAdd4|Add0~113       ; sumout           ;
+; |eAdd4|pOut[0]  ; |eAdd4|pOut[0]        ; padio            ;
+; |eAdd4|pOut[1]  ; |eAdd4|pOut[1]        ; padio            ;
+; |eAdd4|pOut[10] ; |eAdd4|pOut[10]       ; padio            ;
+; |eAdd4|pOut[11] ; |eAdd4|pOut[11]       ; padio            ;
+; |eAdd4|pOut[12] ; |eAdd4|pOut[12]       ; padio            ;
+; |eAdd4|pOut[13] ; |eAdd4|pOut[13]       ; padio            ;
+; |eAdd4|pOut[14] ; |eAdd4|pOut[14]       ; padio            ;
+; |eAdd4|pOut[15] ; |eAdd4|pOut[15]       ; padio            ;
+; |eAdd4|pOut[16] ; |eAdd4|pOut[16]       ; padio            ;
+; |eAdd4|pOut[17] ; |eAdd4|pOut[17]       ; padio            ;
+; |eAdd4|pOut[18] ; |eAdd4|pOut[18]       ; padio            ;
+; |eAdd4|pOut[19] ; |eAdd4|pOut[19]       ; padio            ;
+; |eAdd4|pOut[20] ; |eAdd4|pOut[20]       ; padio            ;
+; |eAdd4|pOut[21] ; |eAdd4|pOut[21]       ; padio            ;
+; |eAdd4|pOut[22] ; |eAdd4|pOut[22]       ; padio            ;
+; |eAdd4|pOut[23] ; |eAdd4|pOut[23]       ; padio            ;
+; |eAdd4|pOut[24] ; |eAdd4|pOut[24]       ; padio            ;
+; |eAdd4|pOut[25] ; |eAdd4|pOut[25]       ; padio            ;
+; |eAdd4|pOut[26] ; |eAdd4|pOut[26]       ; padio            ;
+; |eAdd4|pOut[27] ; |eAdd4|pOut[27]       ; padio            ;
+; |eAdd4|pOut[28] ; |eAdd4|pOut[28]       ; padio            ;
+; |eAdd4|pOut[29] ; |eAdd4|pOut[29]       ; padio            ;
+; |eAdd4|pOut[30] ; |eAdd4|pOut[30]       ; padio            ;
+; |eAdd4|pOut[31] ; |eAdd4|pOut[31]       ; padio            ;
+; |eAdd4|pIn[0]   ; |eAdd4|pIn[0]~corein  ; combout          ;
+; |eAdd4|pIn[1]   ; |eAdd4|pIn[1]~corein  ; combout          ;
+; |eAdd4|pIn[8]   ; |eAdd4|pIn[8]~corein  ; combout          ;
+; |eAdd4|pIn[9]   ; |eAdd4|pIn[9]~corein  ; combout          ;
+; |eAdd4|pIn[10]  ; |eAdd4|pIn[10]~corein ; combout          ;
+; |eAdd4|pIn[11]  ; |eAdd4|pIn[11]~corein ; combout          ;
+; |eAdd4|pIn[12]  ; |eAdd4|pIn[12]~corein ; combout          ;
+; |eAdd4|pIn[13]  ; |eAdd4|pIn[13]~corein ; combout          ;
+; |eAdd4|pIn[14]  ; |eAdd4|pIn[14]~corein ; combout          ;
+; |eAdd4|pIn[15]  ; |eAdd4|pIn[15]~corein ; combout          ;
+; |eAdd4|pIn[16]  ; |eAdd4|pIn[16]~corein ; combout          ;
+; |eAdd4|pIn[17]  ; |eAdd4|pIn[17]~corein ; combout          ;
+; |eAdd4|pIn[18]  ; |eAdd4|pIn[18]~corein ; combout          ;
+; |eAdd4|pIn[19]  ; |eAdd4|pIn[19]~corein ; combout          ;
+; |eAdd4|pIn[20]  ; |eAdd4|pIn[20]~corein ; combout          ;
+; |eAdd4|pIn[21]  ; |eAdd4|pIn[21]~corein ; combout          ;
+; |eAdd4|pIn[22]  ; |eAdd4|pIn[22]~corein ; combout          ;
+; |eAdd4|pIn[23]  ; |eAdd4|pIn[23]~corein ; combout          ;
+; |eAdd4|pIn[24]  ; |eAdd4|pIn[24]~corein ; combout          ;
+; |eAdd4|pIn[25]  ; |eAdd4|pIn[25]~corein ; combout          ;
+; |eAdd4|pIn[26]  ; |eAdd4|pIn[26]~corein ; combout          ;
+; |eAdd4|pIn[27]  ; |eAdd4|pIn[27]~corein ; combout          ;
+; |eAdd4|pIn[28]  ; |eAdd4|pIn[28]~corein ; combout          ;
+; |eAdd4|pIn[29]  ; |eAdd4|pIn[29]~corein ; combout          ;
+; |eAdd4|pIn[30]  ; |eAdd4|pIn[30]~corein ; combout          ;
+; |eAdd4|pIn[31]  ; |eAdd4|pIn[31]~corein ; combout          ;
++-----------------+-----------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Nov 27 09:27:34 2014
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off Add4 -c eAdd4
+Info: Using vector source file "C:/Users/내문서/Desktop/전공 자료/컴퓨터구조2/MIPS 실습/exapmle/eAdd4.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      22.31 %
+Info: Number of transitions in simulation is 1290
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 161 megabytes
+    Info: Processing ended: Thu Nov 27 09:27:35 2014
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

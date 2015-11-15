@@ -1,0 +1,271 @@
+library ieee; -- includes
+
+use ieee.std_logic_1164.all;
+
+use ieee.std_logic_arith.all;
+
+use ieee.std_logic_signed.all;
+
+use ieee.numeric_std.all;
+
+
+entity single is -- top entry ports
+
+     port (
+
+          pReset     :     in     std_logic;
+          
+          pClock     :     in     std_logic;
+
+          pPC     :     out     std_logic_vector(31 downto 0);
+          
+          pMR     :     out     std_logic;
+
+          pIM     :     out std_logic_vector(31 downto 0);
+
+          pBranch     :     out     std_logic
+
+     );
+
+end single;
+pControl		:out std_logic_vector(7 downto 0);
+		//pRegWrite	:out std_logic;
+		pMem2Reg	:out std_logic;
+		pMemWrite	:out std_logic;
+		pMemRead	:out std_logic;
+		pBranch		:out std_logic;
+		pALUSrc		:out std_logic;
+		pALUop		:out std_logic;
+		pRegDst		:out std_logic;
+		
+		pJump		:out std_logic;
+		
+
+
+entity eIF is
+	port(
+		pNextpc			:in std_logic_vector(31 downto 0);
+		pIncpc			:out std_logic_vector(31 downto 0); pIncpc_in		:in std_logic_vector(31 downto 0);
+	
+		pInstruction	:out std_logic_vector(31 downto 0); pInstruction	:in std_logic_vector(31 downto 0);
+		
+		pJPC			:in std_logic_vector(25 downto 0); pIncpc_out		:out std_logic_vector(31 downto 0);
+		
+		pJSelect		:in std_logic;
+		pSelect			:in std_logic;
+		pReset			:in std_logic;
+		pClock			:in std_logic
+	);
+end eIF;
+
+entity eID is
+	port(
+		pWriteData		:in std_logic_vector(31 downto 0);
+		pWriteReg		:in std_logic_vector(4 downto 0);
+		
+		
+		
+		pData1			:out std_logic_vector(31 downto 0);
+		pData2			:out std_logic_vector(31 downto 0);
+		pImm			:out std_logic_vector(31 downto 0);
+		pRT				:out std_logic_vector(4 downto 0);
+		pRD				:out std_logic_vector(4 downto 0);
+
+		pJump			:out std_logic;
+		pRegWE			:in std_logic;
+		pReset			:in std_logic;
+		pClock			:in std_logic
+	);
+end eID;
+
+entity eEX is
+	port(
+		pControl_in		:in std_logic_vector(7 downto 0);
+		pData1			:in std_logic_vector(31 downto 0);
+		pData2			:in std_logic_vector(31 downto 0);
+		pImm			:in std_logic_vector(31 downto 0);
+		pRT				:in std_logic_vector(4 downto 0);
+		pRD				:in std_logic_vector(4 downto 0);
+		
+		pControl_out	:out std_logic_vector(3 downto 0);
+		pBranch			:out std_logic;
+		pResult			:out std_logic_vector(31 downto 0);
+		pWriteData		:out std_logic_vector(31 downto 0);
+		pWriteReg		:out std_logic_vector(4 downto 0)
+	);
+end eEX;
+
+entity eMEM is
+	port(
+		pControl_in		:in std_logic_vector(3 downto 0);
+		pAddress		:in std_logic_vector(31 downto 0);
+		pWriteData		:in std_logic_vector(31 downto 0);
+		pWriteReg_in	:in std_logic_vector(4 downto 0);
+
+		pControl_out	:out std_logic_vector(1 downto 0);
+		pReadData		:out std_logic_vector(31 downto 0);
+		pResult			:out std_logic_vector(31 downto 0);
+		pWriteReg_out	:out std_logic_vector(4 downto 0);
+
+		pClock			:in std_logic
+	);
+end eMEM;
+
+
+architecture behavior of single is -- behavior for top entry
+
+------------------------------------- define components
+
+component eAdd4 
+
+     port (
+
+          pIn     :     in     std_logic_vector(31 downto 0);
+
+          pOut     :     out     std_logic_vector(31 downto 0)
+
+     );
+
+end component;
+
+
+component eALU 
+
+     port(
+
+          pOperator     :in std_logic_vector(5 downto 0);
+
+          pOperation     :in std_logic;
+
+          pBranch     :in std_logic;
+
+          pIn1     :in std_logic_vector(31 downto 0);
+
+          pIn2     :in std_logic_vector(31 downto 0);
+
+          pBranch_out     :out std_logic;
+
+          pOut     :out std_logic_vector(31 downto 0)
+
+     );
+
+end component;
+
+...
+
+component eSignExtend 
+
+     port(
+
+          pIn     :in std_logic_vector(15 downto 0);
+
+          pOut     :out std_logic_vector(31 downto 0)
+
+     );
+
+end component;
+
+-------------------------------- define signals
+
+signal sCPC          :     std_logic_vector(31 downto 0);
+
+signal sR          :     std_logic;
+
+...
+
+signal sMEM          :     std_logic_vector(31 downto 0);
+
+signal sWB : std_logic_vector(31 downto 0);
+
+-------------------------------- begin behavior
+
+begin
+
+-------------------------------- output port 
+
+          pIM < =sIM;
+
+          pPC < =sCPC;
+
+          pNextPC < =sNPC;
+
+...
+
+          pMW<=sMW;
+
+          pMR<=sMR;
+
+          pBranch<=sB;
+
+------------------------------- component connect
+
+     cPC     :     ePC
+
+          port map(
+
+               pIn=>sNPC,
+
+               pOut=>sCPC,
+
+               pReset=>pReset,
+
+               pClock=>not pClock
+
+          );
+
+     cMUX_PC : eMUX32
+
+          port map(
+
+               sAPC,
+
+               sBPC,
+
+               sBO,
+
+               sNPC
+
+          );
+
+     cMUX_S2orI: eMUX32
+
+          port map(
+
+               sRD2,
+
+               sIM,
+
+               sAS,
+
+               sALU_In2
+
+          );
+
+...
+
+     cMUX_DST: eMUX5
+
+          port map(
+
+               sINS(20 downto 16),
+
+               sINS(15 downto 11),
+
+               sR,
+
+               sW
+
+          );
+
+     cSignExtend: eSignExtend
+
+          port map(
+
+               sINS(15 downto 0),
+
+               sIM
+
+           );
+
+
+  end behavior;

@@ -1,0 +1,14 @@
+Fitter Status : Successful - Thu Nov 27 09:37:49 2014
+Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
+Revision Name : eSignExtend
+Top-level Entity Name : eSignExtend
+Family : Stratix
+Device : EP1S10F484C5
+Timing Models : Final
+Total logic elements : 0 / 10,570 ( 0 % )
+Total pins : 48 / 336 ( 14 % )
+Total virtual pins : 0
+Total memory bits : 0 / 920,448 ( 0 % )
+DSP block 9-bit elements : 0 / 48 ( 0 % )
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 2 ( 0 % )

@@ -1,0 +1,244 @@
+Quartus II
+Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+48
+3700
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+eID
+# storage
+db|eID.(0).cnf
+db|eID.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+eid.vhd
+c28fea0d3e9fb9c2b2e9242b749bf
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+|
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+eControl
+# storage
+db|eID.(1).cnf
+db|eID.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+econtrol.vhd
+ab531933b65f7094175472931a378fec
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(popcode)
+5 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+eControl:cControl
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+eShiftAdder
+# storage
+db|eID.(2).cnf
+db|eID.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+eshiftadder.vhd
+103f22545f5c57dc3418f2d507af125
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(pin1)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(pin2)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(pout)
+31 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+eShiftAdder:cShiftAdder
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+eRegFile
+# storage
+db|eID.(3).cnf
+db|eID.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+eregfile.vhd
+cf7ee730d5fabca369d0834b7ca9aba9
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(preadregister1)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(preadregister2)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(pwriteregister)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(pwritedata)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(preaddata1)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(preaddata2)
+31 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+eRegFile:cRegFile
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+eSignExtend
+# storage
+db|eID.(4).cnf
+db|eID.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+esignextend.vhd
+cc437e55eda2c2442e77b05784822abd
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(pin)
+25 downto 0
+PARAMETER_STRING
+USR
+ constraint(pout)
+31 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+eSignExtend:cSignExtend
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# complete
+

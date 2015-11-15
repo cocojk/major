@@ -1,0 +1,489 @@
+Simulator report for eShiftAdder
+Thu Nov 27 22:35:57 2014
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 156 nodes    ;
+; Simulation Coverage         ;      50.77 % ;
+; Total Number of Transitions ; 508          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Stratix      ;
+; Device                      ; EP1S10F484C5 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      50.77 % ;
+; Total nodes checked                                 ; 156          ;
+; Total output ports checked                          ; 260          ;
+; Total output ports with complete 1/0-value coverage ; 132          ;
+; Total output ports with no 1/0-value coverage       ; 68           ;
+; Total output ports with no 1-value coverage         ; 89           ;
+; Total output ports with no 0-value coverage         ; 107          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++---------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                               ;
++-----------------------+--------------------------------+------------------+
+; Node Name             ; Output Port Name               ; Output Port Type ;
++-----------------------+--------------------------------+------------------+
+; |eShiftAdder|Add1~0   ; |eShiftAdder|Add1~0            ; combout          ;
+; |eShiftAdder|Add1~0   ; |eShiftAdder|Add1~2            ; cout0            ;
+; |eShiftAdder|Add1~0   ; |eShiftAdder|Add1~2COUT1_176   ; cout1            ;
+; |eShiftAdder|Add1~5   ; |eShiftAdder|Add1~5            ; combout          ;
+; |eShiftAdder|Add1~5   ; |eShiftAdder|Add1~7            ; cout0            ;
+; |eShiftAdder|Add1~5   ; |eShiftAdder|Add1~7COUT1_178   ; cout1            ;
+; |eShiftAdder|Add1~10  ; |eShiftAdder|Add1~10           ; combout          ;
+; |eShiftAdder|Add1~10  ; |eShiftAdder|Add1~12           ; cout0            ;
+; |eShiftAdder|Add1~10  ; |eShiftAdder|Add1~12COUT1_180  ; cout1            ;
+; |eShiftAdder|Add1~15  ; |eShiftAdder|Add1~15           ; combout          ;
+; |eShiftAdder|Add1~15  ; |eShiftAdder|Add1~17           ; cout0            ;
+; |eShiftAdder|Add1~15  ; |eShiftAdder|Add1~17COUT1_182  ; cout1            ;
+; |eShiftAdder|Add1~20  ; |eShiftAdder|Add1~20           ; combout          ;
+; |eShiftAdder|Add1~30  ; |eShiftAdder|Add1~30           ; combout          ;
+; |eShiftAdder|Add1~30  ; |eShiftAdder|Add1~32           ; cout0            ;
+; |eShiftAdder|Add1~35  ; |eShiftAdder|Add1~35           ; combout          ;
+; |eShiftAdder|Add1~35  ; |eShiftAdder|Add1~37           ; cout0            ;
+; |eShiftAdder|Add1~40  ; |eShiftAdder|Add1~40           ; combout          ;
+; |eShiftAdder|Add1~40  ; |eShiftAdder|Add1~42           ; cout0            ;
+; |eShiftAdder|Add1~45  ; |eShiftAdder|Add1~45           ; combout          ;
+; |eShiftAdder|Add1~50  ; |eShiftAdder|Add1~50           ; combout          ;
+; |eShiftAdder|Add1~50  ; |eShiftAdder|Add1~52COUT1_192  ; cout1            ;
+; |eShiftAdder|Add1~55  ; |eShiftAdder|Add1~55           ; combout          ;
+; |eShiftAdder|Add1~55  ; |eShiftAdder|Add1~57COUT1_194  ; cout1            ;
+; |eShiftAdder|Add1~60  ; |eShiftAdder|Add1~60           ; combout          ;
+; |eShiftAdder|Add1~60  ; |eShiftAdder|Add1~62COUT1_196  ; cout1            ;
+; |eShiftAdder|Add1~65  ; |eShiftAdder|Add1~65           ; combout          ;
+; |eShiftAdder|Add1~65  ; |eShiftAdder|Add1~67COUT1_198  ; cout1            ;
+; |eShiftAdder|Add1~70  ; |eShiftAdder|Add1~70           ; combout          ;
+; |eShiftAdder|Add1~75  ; |eShiftAdder|Add1~75           ; combout          ;
+; |eShiftAdder|Add1~75  ; |eShiftAdder|Add1~77           ; cout0            ;
+; |eShiftAdder|Add1~80  ; |eShiftAdder|Add1~80           ; combout          ;
+; |eShiftAdder|Add1~80  ; |eShiftAdder|Add1~82           ; cout0            ;
+; |eShiftAdder|Add1~85  ; |eShiftAdder|Add1~85           ; combout          ;
+; |eShiftAdder|Add1~85  ; |eShiftAdder|Add1~87           ; cout0            ;
+; |eShiftAdder|Add1~90  ; |eShiftAdder|Add1~90           ; combout          ;
+; |eShiftAdder|Add1~90  ; |eShiftAdder|Add1~92           ; cout0            ;
+; |eShiftAdder|Add1~95  ; |eShiftAdder|Add1~95           ; combout          ;
+; |eShiftAdder|Add1~100 ; |eShiftAdder|Add1~100          ; combout          ;
+; |eShiftAdder|Add1~100 ; |eShiftAdder|Add1~102COUT1_208 ; cout1            ;
+; |eShiftAdder|Add1~105 ; |eShiftAdder|Add1~105          ; combout          ;
+; |eShiftAdder|Add1~105 ; |eShiftAdder|Add1~107COUT1_210 ; cout1            ;
+; |eShiftAdder|Add1~110 ; |eShiftAdder|Add1~110          ; combout          ;
+; |eShiftAdder|Add1~110 ; |eShiftAdder|Add1~112COUT1_212 ; cout1            ;
+; |eShiftAdder|Add1~115 ; |eShiftAdder|Add1~115          ; combout          ;
+; |eShiftAdder|Add1~115 ; |eShiftAdder|Add1~117COUT1_214 ; cout1            ;
+; |eShiftAdder|Add1~120 ; |eShiftAdder|Add1~120          ; combout          ;
+; |eShiftAdder|Add1~125 ; |eShiftAdder|Add1~125          ; combout          ;
+; |eShiftAdder|Add1~125 ; |eShiftAdder|Add1~127          ; cout0            ;
+; |eShiftAdder|Add1~130 ; |eShiftAdder|Add1~130          ; combout          ;
+; |eShiftAdder|Add1~130 ; |eShiftAdder|Add1~132          ; cout0            ;
+; |eShiftAdder|Add1~135 ; |eShiftAdder|Add1~135          ; combout          ;
+; |eShiftAdder|Add1~135 ; |eShiftAdder|Add1~137          ; cout0            ;
+; |eShiftAdder|Add1~140 ; |eShiftAdder|Add1~140          ; combout          ;
+; |eShiftAdder|Add1~140 ; |eShiftAdder|Add1~142          ; cout0            ;
+; |eShiftAdder|Add1~145 ; |eShiftAdder|Add1~145          ; combout          ;
+; |eShiftAdder|Add0~0   ; |eShiftAdder|Add0~0            ; combout          ;
+; |eShiftAdder|Add0~0   ; |eShiftAdder|Add0~2            ; cout0            ;
+; |eShiftAdder|Add0~0   ; |eShiftAdder|Add0~2COUT1_176   ; cout1            ;
+; |eShiftAdder|Add0~5   ; |eShiftAdder|Add0~5            ; combout          ;
+; |eShiftAdder|Add0~5   ; |eShiftAdder|Add0~7            ; cout0            ;
+; |eShiftAdder|Add0~5   ; |eShiftAdder|Add0~7COUT1_178   ; cout1            ;
+; |eShiftAdder|Add0~10  ; |eShiftAdder|Add0~10           ; combout          ;
+; |eShiftAdder|Add0~10  ; |eShiftAdder|Add0~12           ; cout0            ;
+; |eShiftAdder|Add0~10  ; |eShiftAdder|Add0~12COUT1_180  ; cout1            ;
+; |eShiftAdder|Add0~15  ; |eShiftAdder|Add0~15           ; combout          ;
+; |eShiftAdder|Add0~20  ; |eShiftAdder|Add0~20           ; combout          ;
+; |eShiftAdder|Add0~30  ; |eShiftAdder|Add0~30           ; combout          ;
+; |eShiftAdder|Add0~35  ; |eShiftAdder|Add0~35           ; combout          ;
+; |eShiftAdder|Add0~40  ; |eShiftAdder|Add0~40           ; combout          ;
+; |eShiftAdder|Add0~45  ; |eShiftAdder|Add0~45           ; combout          ;
+; |eShiftAdder|Add0~50  ; |eShiftAdder|Add0~50           ; combout          ;
+; |eShiftAdder|Add0~50  ; |eShiftAdder|Add0~52           ; cout0            ;
+; |eShiftAdder|Add0~55  ; |eShiftAdder|Add0~55           ; combout          ;
+; |eShiftAdder|Add0~60  ; |eShiftAdder|Add0~60           ; combout          ;
+; |eShiftAdder|Add0~65  ; |eShiftAdder|Add0~65           ; combout          ;
+; |eShiftAdder|Add0~70  ; |eShiftAdder|Add0~70           ; combout          ;
+; |eShiftAdder|Add0~75  ; |eShiftAdder|Add0~75           ; combout          ;
+; |eShiftAdder|Add0~80  ; |eShiftAdder|Add0~80           ; combout          ;
+; |eShiftAdder|Add0~85  ; |eShiftAdder|Add0~85           ; combout          ;
+; |eShiftAdder|Add0~90  ; |eShiftAdder|Add0~90           ; combout          ;
+; |eShiftAdder|Add0~95  ; |eShiftAdder|Add0~95           ; combout          ;
+; |eShiftAdder|Add0~100 ; |eShiftAdder|Add0~100          ; combout          ;
+; |eShiftAdder|Add0~105 ; |eShiftAdder|Add0~105          ; combout          ;
+; |eShiftAdder|Add0~110 ; |eShiftAdder|Add0~110          ; combout          ;
+; |eShiftAdder|Add0~115 ; |eShiftAdder|Add0~115          ; combout          ;
+; |eShiftAdder|Add0~120 ; |eShiftAdder|Add0~120          ; combout          ;
+; |eShiftAdder|Add0~125 ; |eShiftAdder|Add0~125          ; combout          ;
+; |eShiftAdder|Add0~130 ; |eShiftAdder|Add0~130          ; combout          ;
+; |eShiftAdder|Add0~135 ; |eShiftAdder|Add0~135          ; combout          ;
+; |eShiftAdder|Add0~140 ; |eShiftAdder|Add0~140          ; combout          ;
+; |eShiftAdder|Add0~145 ; |eShiftAdder|Add0~145          ; combout          ;
+; |eShiftAdder|pIn1[0]  ; |eShiftAdder|pIn1[0]~corein    ; combout          ;
+; |eShiftAdder|pIn1[1]  ; |eShiftAdder|pIn1[1]~corein    ; combout          ;
+; |eShiftAdder|pIn2[0]  ; |eShiftAdder|pIn2[0]~corein    ; combout          ;
+; |eShiftAdder|pIn1[2]  ; |eShiftAdder|pIn1[2]~corein    ; combout          ;
+; |eShiftAdder|pIn2[1]  ; |eShiftAdder|pIn2[1]~corein    ; combout          ;
+; |eShiftAdder|pIn1[3]  ; |eShiftAdder|pIn1[3]~corein    ; combout          ;
+; |eShiftAdder|pIn2[2]  ; |eShiftAdder|pIn2[2]~corein    ; combout          ;
+; |eShiftAdder|pIn2[3]  ; |eShiftAdder|pIn2[3]~corein    ; combout          ;
+; |eShiftAdder|pIn2[4]  ; |eShiftAdder|pIn2[4]~corein    ; combout          ;
+; |eShiftAdder|pOut[0]  ; |eShiftAdder|pOut[0]           ; padio            ;
+; |eShiftAdder|pOut[1]  ; |eShiftAdder|pOut[1]           ; padio            ;
+; |eShiftAdder|pOut[2]  ; |eShiftAdder|pOut[2]           ; padio            ;
+; |eShiftAdder|pOut[3]  ; |eShiftAdder|pOut[3]           ; padio            ;
+; |eShiftAdder|pOut[4]  ; |eShiftAdder|pOut[4]           ; padio            ;
+; |eShiftAdder|pOut[5]  ; |eShiftAdder|pOut[5]           ; padio            ;
+; |eShiftAdder|pOut[6]  ; |eShiftAdder|pOut[6]           ; padio            ;
+; |eShiftAdder|pOut[8]  ; |eShiftAdder|pOut[8]           ; padio            ;
+; |eShiftAdder|pOut[9]  ; |eShiftAdder|pOut[9]           ; padio            ;
+; |eShiftAdder|pOut[10] ; |eShiftAdder|pOut[10]          ; padio            ;
+; |eShiftAdder|pOut[11] ; |eShiftAdder|pOut[11]          ; padio            ;
+; |eShiftAdder|pOut[12] ; |eShiftAdder|pOut[12]          ; padio            ;
+; |eShiftAdder|pOut[13] ; |eShiftAdder|pOut[13]          ; padio            ;
+; |eShiftAdder|pOut[14] ; |eShiftAdder|pOut[14]          ; padio            ;
+; |eShiftAdder|pOut[15] ; |eShiftAdder|pOut[15]          ; padio            ;
+; |eShiftAdder|pOut[16] ; |eShiftAdder|pOut[16]          ; padio            ;
+; |eShiftAdder|pOut[17] ; |eShiftAdder|pOut[17]          ; padio            ;
+; |eShiftAdder|pOut[18] ; |eShiftAdder|pOut[18]          ; padio            ;
+; |eShiftAdder|pOut[19] ; |eShiftAdder|pOut[19]          ; padio            ;
+; |eShiftAdder|pOut[20] ; |eShiftAdder|pOut[20]          ; padio            ;
+; |eShiftAdder|pOut[21] ; |eShiftAdder|pOut[21]          ; padio            ;
+; |eShiftAdder|pOut[22] ; |eShiftAdder|pOut[22]          ; padio            ;
+; |eShiftAdder|pOut[23] ; |eShiftAdder|pOut[23]          ; padio            ;
+; |eShiftAdder|pOut[24] ; |eShiftAdder|pOut[24]          ; padio            ;
+; |eShiftAdder|pOut[25] ; |eShiftAdder|pOut[25]          ; padio            ;
+; |eShiftAdder|pOut[26] ; |eShiftAdder|pOut[26]          ; padio            ;
+; |eShiftAdder|pOut[27] ; |eShiftAdder|pOut[27]          ; padio            ;
+; |eShiftAdder|pOut[28] ; |eShiftAdder|pOut[28]          ; padio            ;
+; |eShiftAdder|pOut[29] ; |eShiftAdder|pOut[29]          ; padio            ;
+; |eShiftAdder|pOut[30] ; |eShiftAdder|pOut[30]          ; padio            ;
+; |eShiftAdder|pOut[31] ; |eShiftAdder|pOut[31]          ; padio            ;
++-----------------------+--------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++---------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                  ;
++-----------------------+--------------------------------+------------------+
+; Node Name             ; Output Port Name               ; Output Port Type ;
++-----------------------+--------------------------------+------------------+
+; |eShiftAdder|Add1~20  ; |eShiftAdder|Add1~22           ; cout             ;
+; |eShiftAdder|Add1~25  ; |eShiftAdder|Add1~25           ; combout          ;
+; |eShiftAdder|Add1~25  ; |eShiftAdder|Add1~27           ; cout0            ;
+; |eShiftAdder|Add1~25  ; |eShiftAdder|Add1~27COUT1_184  ; cout1            ;
+; |eShiftAdder|Add1~30  ; |eShiftAdder|Add1~32COUT1_186  ; cout1            ;
+; |eShiftAdder|Add1~35  ; |eShiftAdder|Add1~37COUT1_188  ; cout1            ;
+; |eShiftAdder|Add1~40  ; |eShiftAdder|Add1~42COUT1_190  ; cout1            ;
+; |eShiftAdder|Add1~45  ; |eShiftAdder|Add1~47           ; cout             ;
+; |eShiftAdder|Add1~50  ; |eShiftAdder|Add1~52           ; cout0            ;
+; |eShiftAdder|Add1~55  ; |eShiftAdder|Add1~57           ; cout0            ;
+; |eShiftAdder|Add1~60  ; |eShiftAdder|Add1~62           ; cout0            ;
+; |eShiftAdder|Add1~65  ; |eShiftAdder|Add1~67           ; cout0            ;
+; |eShiftAdder|Add1~70  ; |eShiftAdder|Add1~72           ; cout             ;
+; |eShiftAdder|Add1~75  ; |eShiftAdder|Add1~77COUT1_200  ; cout1            ;
+; |eShiftAdder|Add1~80  ; |eShiftAdder|Add1~82COUT1_202  ; cout1            ;
+; |eShiftAdder|Add1~85  ; |eShiftAdder|Add1~87COUT1_204  ; cout1            ;
+; |eShiftAdder|Add1~90  ; |eShiftAdder|Add1~92COUT1_206  ; cout1            ;
+; |eShiftAdder|Add1~95  ; |eShiftAdder|Add1~97           ; cout             ;
+; |eShiftAdder|Add1~100 ; |eShiftAdder|Add1~102          ; cout0            ;
+; |eShiftAdder|Add1~105 ; |eShiftAdder|Add1~107          ; cout0            ;
+; |eShiftAdder|Add1~110 ; |eShiftAdder|Add1~112          ; cout0            ;
+; |eShiftAdder|Add1~115 ; |eShiftAdder|Add1~117          ; cout0            ;
+; |eShiftAdder|Add1~120 ; |eShiftAdder|Add1~122          ; cout             ;
+; |eShiftAdder|Add1~125 ; |eShiftAdder|Add1~127COUT1_216 ; cout1            ;
+; |eShiftAdder|Add1~130 ; |eShiftAdder|Add1~132COUT1_218 ; cout1            ;
+; |eShiftAdder|Add1~135 ; |eShiftAdder|Add1~137COUT1_220 ; cout1            ;
+; |eShiftAdder|Add1~140 ; |eShiftAdder|Add1~142COUT1_222 ; cout1            ;
+; |eShiftAdder|Add0~15  ; |eShiftAdder|Add0~17           ; cout0            ;
+; |eShiftAdder|Add0~15  ; |eShiftAdder|Add0~17COUT1_182  ; cout1            ;
+; |eShiftAdder|Add0~20  ; |eShiftAdder|Add0~22           ; cout             ;
+; |eShiftAdder|Add0~25  ; |eShiftAdder|Add0~25           ; combout          ;
+; |eShiftAdder|Add0~25  ; |eShiftAdder|Add0~27           ; cout0            ;
+; |eShiftAdder|Add0~25  ; |eShiftAdder|Add0~27COUT1_184  ; cout1            ;
+; |eShiftAdder|Add0~35  ; |eShiftAdder|Add0~37           ; cout0            ;
+; |eShiftAdder|Add0~35  ; |eShiftAdder|Add0~37COUT1_188  ; cout1            ;
+; |eShiftAdder|Add0~45  ; |eShiftAdder|Add0~47           ; cout             ;
+; |eShiftAdder|Add0~50  ; |eShiftAdder|Add0~52COUT1_192  ; cout1            ;
+; |eShiftAdder|Add0~55  ; |eShiftAdder|Add0~57           ; cout0            ;
+; |eShiftAdder|Add0~55  ; |eShiftAdder|Add0~57COUT1_194  ; cout1            ;
+; |eShiftAdder|Add0~60  ; |eShiftAdder|Add0~62COUT1_196  ; cout1            ;
+; |eShiftAdder|Add0~65  ; |eShiftAdder|Add0~67           ; cout0            ;
+; |eShiftAdder|Add0~65  ; |eShiftAdder|Add0~67COUT1_198  ; cout1            ;
+; |eShiftAdder|Add0~75  ; |eShiftAdder|Add0~77           ; cout0            ;
+; |eShiftAdder|Add0~75  ; |eShiftAdder|Add0~77COUT1_200  ; cout1            ;
+; |eShiftAdder|Add0~80  ; |eShiftAdder|Add0~82           ; cout0            ;
+; |eShiftAdder|Add0~85  ; |eShiftAdder|Add0~87           ; cout0            ;
+; |eShiftAdder|Add0~85  ; |eShiftAdder|Add0~87COUT1_204  ; cout1            ;
+; |eShiftAdder|Add0~90  ; |eShiftAdder|Add0~92           ; cout0            ;
+; |eShiftAdder|Add0~95  ; |eShiftAdder|Add0~97           ; cout             ;
+; |eShiftAdder|Add0~100 ; |eShiftAdder|Add0~102COUT1_208 ; cout1            ;
+; |eShiftAdder|Add0~105 ; |eShiftAdder|Add0~107          ; cout0            ;
+; |eShiftAdder|Add0~105 ; |eShiftAdder|Add0~107COUT1_210 ; cout1            ;
+; |eShiftAdder|Add0~110 ; |eShiftAdder|Add0~112COUT1_212 ; cout1            ;
+; |eShiftAdder|Add0~115 ; |eShiftAdder|Add0~117          ; cout0            ;
+; |eShiftAdder|Add0~115 ; |eShiftAdder|Add0~117COUT1_214 ; cout1            ;
+; |eShiftAdder|Add0~125 ; |eShiftAdder|Add0~127          ; cout0            ;
+; |eShiftAdder|Add0~125 ; |eShiftAdder|Add0~127COUT1_216 ; cout1            ;
+; |eShiftAdder|Add0~130 ; |eShiftAdder|Add0~132          ; cout0            ;
+; |eShiftAdder|Add0~135 ; |eShiftAdder|Add0~137          ; cout0            ;
+; |eShiftAdder|Add0~135 ; |eShiftAdder|Add0~137COUT1_220 ; cout1            ;
+; |eShiftAdder|Add0~140 ; |eShiftAdder|Add0~142          ; cout0            ;
+; |eShiftAdder|pIn1[4]  ; |eShiftAdder|pIn1[4]~corein    ; combout          ;
+; |eShiftAdder|pIn1[5]  ; |eShiftAdder|pIn1[5]~corein    ; combout          ;
+; |eShiftAdder|pIn1[6]  ; |eShiftAdder|pIn1[6]~corein    ; combout          ;
+; |eShiftAdder|pIn1[8]  ; |eShiftAdder|pIn1[8]~corein    ; combout          ;
+; |eShiftAdder|pIn1[9]  ; |eShiftAdder|pIn1[9]~corein    ; combout          ;
+; |eShiftAdder|pIn1[10] ; |eShiftAdder|pIn1[10]~corein   ; combout          ;
+; |eShiftAdder|pIn1[11] ; |eShiftAdder|pIn1[11]~corein   ; combout          ;
+; |eShiftAdder|pIn1[12] ; |eShiftAdder|pIn1[12]~corein   ; combout          ;
+; |eShiftAdder|pIn1[13] ; |eShiftAdder|pIn1[13]~corein   ; combout          ;
+; |eShiftAdder|pIn1[14] ; |eShiftAdder|pIn1[14]~corein   ; combout          ;
+; |eShiftAdder|pIn1[15] ; |eShiftAdder|pIn1[15]~corein   ; combout          ;
+; |eShiftAdder|pIn1[16] ; |eShiftAdder|pIn1[16]~corein   ; combout          ;
+; |eShiftAdder|pIn1[17] ; |eShiftAdder|pIn1[17]~corein   ; combout          ;
+; |eShiftAdder|pIn1[18] ; |eShiftAdder|pIn1[18]~corein   ; combout          ;
+; |eShiftAdder|pIn1[19] ; |eShiftAdder|pIn1[19]~corein   ; combout          ;
+; |eShiftAdder|pIn1[20] ; |eShiftAdder|pIn1[20]~corein   ; combout          ;
+; |eShiftAdder|pIn1[21] ; |eShiftAdder|pIn1[21]~corein   ; combout          ;
+; |eShiftAdder|pIn1[22] ; |eShiftAdder|pIn1[22]~corein   ; combout          ;
+; |eShiftAdder|pIn1[23] ; |eShiftAdder|pIn1[23]~corein   ; combout          ;
+; |eShiftAdder|pIn1[24] ; |eShiftAdder|pIn1[24]~corein   ; combout          ;
+; |eShiftAdder|pIn1[25] ; |eShiftAdder|pIn1[25]~corein   ; combout          ;
+; |eShiftAdder|pIn1[26] ; |eShiftAdder|pIn1[26]~corein   ; combout          ;
+; |eShiftAdder|pIn1[27] ; |eShiftAdder|pIn1[27]~corein   ; combout          ;
+; |eShiftAdder|pIn1[28] ; |eShiftAdder|pIn1[28]~corein   ; combout          ;
+; |eShiftAdder|pIn1[29] ; |eShiftAdder|pIn1[29]~corein   ; combout          ;
+; |eShiftAdder|pIn1[30] ; |eShiftAdder|pIn1[30]~corein   ; combout          ;
+; |eShiftAdder|pIn1[31] ; |eShiftAdder|pIn1[31]~corein   ; combout          ;
+; |eShiftAdder|pOut[7]  ; |eShiftAdder|pOut[7]           ; padio            ;
++-----------------------+--------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++---------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                  ;
++-----------------------+--------------------------------+------------------+
+; Node Name             ; Output Port Name               ; Output Port Type ;
++-----------------------+--------------------------------+------------------+
+; |eShiftAdder|Add1~20  ; |eShiftAdder|Add1~22           ; cout             ;
+; |eShiftAdder|Add1~25  ; |eShiftAdder|Add1~25           ; combout          ;
+; |eShiftAdder|Add1~25  ; |eShiftAdder|Add1~27           ; cout0            ;
+; |eShiftAdder|Add1~25  ; |eShiftAdder|Add1~27COUT1_184  ; cout1            ;
+; |eShiftAdder|Add1~30  ; |eShiftAdder|Add1~32COUT1_186  ; cout1            ;
+; |eShiftAdder|Add1~35  ; |eShiftAdder|Add1~37COUT1_188  ; cout1            ;
+; |eShiftAdder|Add1~40  ; |eShiftAdder|Add1~42COUT1_190  ; cout1            ;
+; |eShiftAdder|Add1~45  ; |eShiftAdder|Add1~47           ; cout             ;
+; |eShiftAdder|Add1~50  ; |eShiftAdder|Add1~52           ; cout0            ;
+; |eShiftAdder|Add1~55  ; |eShiftAdder|Add1~57           ; cout0            ;
+; |eShiftAdder|Add1~60  ; |eShiftAdder|Add1~62           ; cout0            ;
+; |eShiftAdder|Add1~65  ; |eShiftAdder|Add1~67           ; cout0            ;
+; |eShiftAdder|Add1~70  ; |eShiftAdder|Add1~72           ; cout             ;
+; |eShiftAdder|Add1~75  ; |eShiftAdder|Add1~77COUT1_200  ; cout1            ;
+; |eShiftAdder|Add1~80  ; |eShiftAdder|Add1~82COUT1_202  ; cout1            ;
+; |eShiftAdder|Add1~85  ; |eShiftAdder|Add1~87COUT1_204  ; cout1            ;
+; |eShiftAdder|Add1~90  ; |eShiftAdder|Add1~92COUT1_206  ; cout1            ;
+; |eShiftAdder|Add1~95  ; |eShiftAdder|Add1~97           ; cout             ;
+; |eShiftAdder|Add1~100 ; |eShiftAdder|Add1~102          ; cout0            ;
+; |eShiftAdder|Add1~105 ; |eShiftAdder|Add1~107          ; cout0            ;
+; |eShiftAdder|Add1~110 ; |eShiftAdder|Add1~112          ; cout0            ;
+; |eShiftAdder|Add1~115 ; |eShiftAdder|Add1~117          ; cout0            ;
+; |eShiftAdder|Add1~120 ; |eShiftAdder|Add1~122          ; cout             ;
+; |eShiftAdder|Add1~125 ; |eShiftAdder|Add1~127COUT1_216 ; cout1            ;
+; |eShiftAdder|Add1~130 ; |eShiftAdder|Add1~132COUT1_218 ; cout1            ;
+; |eShiftAdder|Add1~135 ; |eShiftAdder|Add1~137COUT1_220 ; cout1            ;
+; |eShiftAdder|Add1~140 ; |eShiftAdder|Add1~142COUT1_222 ; cout1            ;
+; |eShiftAdder|Add0~15  ; |eShiftAdder|Add0~17           ; cout0            ;
+; |eShiftAdder|Add0~15  ; |eShiftAdder|Add0~17COUT1_182  ; cout1            ;
+; |eShiftAdder|Add0~20  ; |eShiftAdder|Add0~22           ; cout             ;
+; |eShiftAdder|Add0~25  ; |eShiftAdder|Add0~25           ; combout          ;
+; |eShiftAdder|Add0~30  ; |eShiftAdder|Add0~32           ; cout0            ;
+; |eShiftAdder|Add0~30  ; |eShiftAdder|Add0~32COUT1_186  ; cout1            ;
+; |eShiftAdder|Add0~40  ; |eShiftAdder|Add0~42           ; cout0            ;
+; |eShiftAdder|Add0~40  ; |eShiftAdder|Add0~42COUT1_190  ; cout1            ;
+; |eShiftAdder|Add0~50  ; |eShiftAdder|Add0~52COUT1_192  ; cout1            ;
+; |eShiftAdder|Add0~55  ; |eShiftAdder|Add0~57COUT1_194  ; cout1            ;
+; |eShiftAdder|Add0~60  ; |eShiftAdder|Add0~62           ; cout0            ;
+; |eShiftAdder|Add0~60  ; |eShiftAdder|Add0~62COUT1_196  ; cout1            ;
+; |eShiftAdder|Add0~65  ; |eShiftAdder|Add0~67COUT1_198  ; cout1            ;
+; |eShiftAdder|Add0~70  ; |eShiftAdder|Add0~72           ; cout             ;
+; |eShiftAdder|Add0~75  ; |eShiftAdder|Add0~77           ; cout0            ;
+; |eShiftAdder|Add0~80  ; |eShiftAdder|Add0~82           ; cout0            ;
+; |eShiftAdder|Add0~80  ; |eShiftAdder|Add0~82COUT1_202  ; cout1            ;
+; |eShiftAdder|Add0~85  ; |eShiftAdder|Add0~87           ; cout0            ;
+; |eShiftAdder|Add0~90  ; |eShiftAdder|Add0~92           ; cout0            ;
+; |eShiftAdder|Add0~90  ; |eShiftAdder|Add0~92COUT1_206  ; cout1            ;
+; |eShiftAdder|Add0~100 ; |eShiftAdder|Add0~102          ; cout0            ;
+; |eShiftAdder|Add0~100 ; |eShiftAdder|Add0~102COUT1_208 ; cout1            ;
+; |eShiftAdder|Add0~105 ; |eShiftAdder|Add0~107COUT1_210 ; cout1            ;
+; |eShiftAdder|Add0~110 ; |eShiftAdder|Add0~112          ; cout0            ;
+; |eShiftAdder|Add0~110 ; |eShiftAdder|Add0~112COUT1_212 ; cout1            ;
+; |eShiftAdder|Add0~115 ; |eShiftAdder|Add0~117COUT1_214 ; cout1            ;
+; |eShiftAdder|Add0~120 ; |eShiftAdder|Add0~122          ; cout             ;
+; |eShiftAdder|Add0~125 ; |eShiftAdder|Add0~127          ; cout0            ;
+; |eShiftAdder|Add0~130 ; |eShiftAdder|Add0~132          ; cout0            ;
+; |eShiftAdder|Add0~130 ; |eShiftAdder|Add0~132COUT1_218 ; cout1            ;
+; |eShiftAdder|Add0~135 ; |eShiftAdder|Add0~137          ; cout0            ;
+; |eShiftAdder|Add0~140 ; |eShiftAdder|Add0~142          ; cout0            ;
+; |eShiftAdder|Add0~140 ; |eShiftAdder|Add0~142COUT1_222 ; cout1            ;
+; |eShiftAdder|pIn1[5]  ; |eShiftAdder|pIn1[5]~corein    ; combout          ;
+; |eShiftAdder|pIn1[6]  ; |eShiftAdder|pIn1[6]~corein    ; combout          ;
+; |eShiftAdder|pIn2[5]  ; |eShiftAdder|pIn2[5]~corein    ; combout          ;
+; |eShiftAdder|pIn1[7]  ; |eShiftAdder|pIn1[7]~corein    ; combout          ;
+; |eShiftAdder|pIn2[6]  ; |eShiftAdder|pIn2[6]~corein    ; combout          ;
+; |eShiftAdder|pIn2[7]  ; |eShiftAdder|pIn2[7]~corein    ; combout          ;
+; |eShiftAdder|pIn1[9]  ; |eShiftAdder|pIn1[9]~corein    ; combout          ;
+; |eShiftAdder|pIn2[8]  ; |eShiftAdder|pIn2[8]~corein    ; combout          ;
+; |eShiftAdder|pIn1[10] ; |eShiftAdder|pIn1[10]~corein   ; combout          ;
+; |eShiftAdder|pIn2[9]  ; |eShiftAdder|pIn2[9]~corein    ; combout          ;
+; |eShiftAdder|pIn1[11] ; |eShiftAdder|pIn1[11]~corein   ; combout          ;
+; |eShiftAdder|pIn2[10] ; |eShiftAdder|pIn2[10]~corein   ; combout          ;
+; |eShiftAdder|pIn2[11] ; |eShiftAdder|pIn2[11]~corein   ; combout          ;
+; |eShiftAdder|pIn1[13] ; |eShiftAdder|pIn1[13]~corein   ; combout          ;
+; |eShiftAdder|pIn2[12] ; |eShiftAdder|pIn2[12]~corein   ; combout          ;
+; |eShiftAdder|pIn1[14] ; |eShiftAdder|pIn1[14]~corein   ; combout          ;
+; |eShiftAdder|pIn2[13] ; |eShiftAdder|pIn2[13]~corein   ; combout          ;
+; |eShiftAdder|pIn1[15] ; |eShiftAdder|pIn1[15]~corein   ; combout          ;
+; |eShiftAdder|pIn2[14] ; |eShiftAdder|pIn2[14]~corein   ; combout          ;
+; |eShiftAdder|pIn2[15] ; |eShiftAdder|pIn2[15]~corein   ; combout          ;
+; |eShiftAdder|pIn1[17] ; |eShiftAdder|pIn1[17]~corein   ; combout          ;
+; |eShiftAdder|pIn2[16] ; |eShiftAdder|pIn2[16]~corein   ; combout          ;
+; |eShiftAdder|pIn1[18] ; |eShiftAdder|pIn1[18]~corein   ; combout          ;
+; |eShiftAdder|pIn2[17] ; |eShiftAdder|pIn2[17]~corein   ; combout          ;
+; |eShiftAdder|pIn1[19] ; |eShiftAdder|pIn1[19]~corein   ; combout          ;
+; |eShiftAdder|pIn2[18] ; |eShiftAdder|pIn2[18]~corein   ; combout          ;
+; |eShiftAdder|pIn2[19] ; |eShiftAdder|pIn2[19]~corein   ; combout          ;
+; |eShiftAdder|pIn1[21] ; |eShiftAdder|pIn1[21]~corein   ; combout          ;
+; |eShiftAdder|pIn2[20] ; |eShiftAdder|pIn2[20]~corein   ; combout          ;
+; |eShiftAdder|pIn1[22] ; |eShiftAdder|pIn1[22]~corein   ; combout          ;
+; |eShiftAdder|pIn2[21] ; |eShiftAdder|pIn2[21]~corein   ; combout          ;
+; |eShiftAdder|pIn1[23] ; |eShiftAdder|pIn1[23]~corein   ; combout          ;
+; |eShiftAdder|pIn2[22] ; |eShiftAdder|pIn2[22]~corein   ; combout          ;
+; |eShiftAdder|pIn2[23] ; |eShiftAdder|pIn2[23]~corein   ; combout          ;
+; |eShiftAdder|pIn1[25] ; |eShiftAdder|pIn1[25]~corein   ; combout          ;
+; |eShiftAdder|pIn2[24] ; |eShiftAdder|pIn2[24]~corein   ; combout          ;
+; |eShiftAdder|pIn1[26] ; |eShiftAdder|pIn1[26]~corein   ; combout          ;
+; |eShiftAdder|pIn2[25] ; |eShiftAdder|pIn2[25]~corein   ; combout          ;
+; |eShiftAdder|pIn1[27] ; |eShiftAdder|pIn1[27]~corein   ; combout          ;
+; |eShiftAdder|pIn2[26] ; |eShiftAdder|pIn2[26]~corein   ; combout          ;
+; |eShiftAdder|pIn2[27] ; |eShiftAdder|pIn2[27]~corein   ; combout          ;
+; |eShiftAdder|pIn1[29] ; |eShiftAdder|pIn1[29]~corein   ; combout          ;
+; |eShiftAdder|pIn2[28] ; |eShiftAdder|pIn2[28]~corein   ; combout          ;
+; |eShiftAdder|pIn1[30] ; |eShiftAdder|pIn1[30]~corein   ; combout          ;
+; |eShiftAdder|pIn2[29] ; |eShiftAdder|pIn2[29]~corein   ; combout          ;
+; |eShiftAdder|pIn1[31] ; |eShiftAdder|pIn1[31]~corein   ; combout          ;
+; |eShiftAdder|pOut[7]  ; |eShiftAdder|pOut[7]           ; padio            ;
++-----------------------+--------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Nov 27 22:35:56 2014
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off ShiftAdder -c eShiftAdder
+Info: Using vector source file "C:/Users/내문서/Desktop/전공 자료/컴퓨터구조2/MIPS 실습/shiftadder/ShiftAdder/eShiftAdder.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      50.77 %
+Info: Number of transitions in simulation is 508
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 160 megabytes
+    Info: Processing ended: Thu Nov 27 22:35:57 2014
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

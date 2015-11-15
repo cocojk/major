@@ -1,0 +1,68 @@
+matlab에서 점을 받아서 spline그릴때 아래 코드를 옮겨서 쓰세여
+
+<Quad>
+
+ clear all
+>> clf
+>> v = [0 50 0 50];
+>> axis(v);
+>> hold on;
+>> x = [];
+>> y = [];
+>> n=0;
+>> button =1;
+>> title('Drawing Quadratic Spline');
+>> xlabel('x');
+>> ylabel('y');
+>> MakeQuad( n,x,y,button );
+
+
+<Linear>
+
+ clear all
+>> clf
+>> v = [0 50 0 50];
+>> axis(v);
+>> hold on;
+>> x = [];
+>> y = [];
+>> n=0;
+>> button =1;
+>> title('Drawing Linear spline');
+>> xlabel('x');
+>> ylabel('y');
+>> MakeLinear( n,x,y,button );
+
+
+<Natural>
+
+ clear all
+>> clf
+>> v = [0 50 0 50];
+>> axis(v);
+>> hold on;
+>> x = [];
+>> y = [];
+>> n=0;
+>> button =1;
+>> title('Drawing NaturalCubic spline');
+>> xlabel('x');
+>> ylabel('y');
+>> MakeNatural( n,x,y,button );
+
+
+<subbotin>
+
+ clear all
+clf
+v = [0 50 0 50];
+axis(v);
+hold on;
+x = [];
+y = [];
+n=0;
+button =1;
+title('Drawing Subbotin spline');
+xlabel('x');
+ylabel('y');
+MakeSubbotin( n,x,y,button );

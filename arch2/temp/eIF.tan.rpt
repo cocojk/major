@@ -1,0 +1,978 @@
+Classic Timing Analyzer report for eIF
+Thu Dec 04 10:14:13 2014
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'pClock'
+  7. tsu
+  8. tco
+  9. tpd
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                                                            ;
++------------------------------+-------+---------------+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                                                                                                           ; To               ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 4.263 ns                         ; pJSelect                                                                                                                       ; ePC:cPC|pOut[1]  ; --         ; pClock   ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 12.386 ns                        ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7 ; pInstruction[17] ; pClock     ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 10.362 ns                        ; pReset                                                                                                                         ; pInstruction[13] ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -2.159 ns                        ; pNextpc[15]                                                                                                                    ; ePC:cPC|pOut[15] ; --         ; pClock   ; 0            ;
+; Clock Setup: 'pClock'        ; N/A   ; None          ; 248.45 MHz ( period = 4.025 ns ) ; ePC:cPC|pOut[7]                                                                                                                ; ePC:cPC|pOut[25] ; pClock     ; pClock   ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                                                                                                                ;                  ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP1S10F484C5       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; Off                ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; pClock          ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'pClock'                                                                                                                                                                                                                                                                                                                                          ;
++-----------------------------------------+-----------------------------------------------------+------------------+---------------------------------------------------------------------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From             ; To                                                                                                                              ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+------------------+---------------------------------------------------------------------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 248.45 MHz ( period = 4.025 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[25]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.859 ns                ;
+; N/A                                     ; 248.63 MHz ( period = 4.022 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[25]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.856 ns                ;
+; N/A                                     ; 249.00 MHz ( period = 4.016 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[26]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.841 ns                ;
+; N/A                                     ; 249.19 MHz ( period = 4.013 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[26]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.838 ns                ;
+; N/A                                     ; 249.19 MHz ( period = 4.013 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.847 ns                ;
+; N/A                                     ; 249.38 MHz ( period = 4.010 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.844 ns                ;
+; N/A                                     ; 249.94 MHz ( period = 4.001 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[25]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.826 ns                ;
+; N/A                                     ; 250.00 MHz ( period = 4.000 ns )                    ; ePC:cPC|pOut[8]  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pClock     ; pClock   ; None                        ; None                      ; 1.692 ns                ;
+; N/A                                     ; 250.50 MHz ( period = 3.992 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[26]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.808 ns                ;
+; N/A                                     ; 250.69 MHz ( period = 3.989 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.814 ns                ;
+; N/A                                     ; 251.26 MHz ( period = 3.980 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[21]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.823 ns                ;
+; N/A                                     ; 251.45 MHz ( period = 3.977 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[21]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.820 ns                ;
+; N/A                                     ; 251.95 MHz ( period = 3.969 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[14]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.794 ns                ;
+; N/A                                     ; 252.14 MHz ( period = 3.966 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[14]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.791 ns                ;
+; N/A                                     ; 252.33 MHz ( period = 3.963 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[25]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.797 ns                ;
+; N/A                                     ; 252.78 MHz ( period = 3.956 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[21]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.790 ns                ;
+; N/A                                     ; 252.91 MHz ( period = 3.954 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[26]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.779 ns                ;
+; N/A                                     ; 253.10 MHz ( period = 3.951 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.785 ns                ;
+; N/A                                     ; 253.36 MHz ( period = 3.947 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[25]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.781 ns                ;
+; N/A                                     ; 253.49 MHz ( period = 3.945 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[14]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.761 ns                ;
+; N/A                                     ; 253.94 MHz ( period = 3.938 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[26]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.763 ns                ;
+; N/A                                     ; 254.13 MHz ( period = 3.935 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.769 ns                ;
+; N/A                                     ; 254.71 MHz ( period = 3.926 ns )                    ; ePC:cPC|pOut[7]  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pClock     ; pClock   ; None                        ; None                      ; 1.655 ns                ;
+; N/A                                     ; 255.23 MHz ( period = 3.918 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[21]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.761 ns                ;
+; N/A                                     ; 255.62 MHz ( period = 3.912 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[25]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.737 ns                ;
+; N/A                                     ; 255.95 MHz ( period = 3.907 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[14]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.732 ns                ;
+; N/A                                     ; 256.21 MHz ( period = 3.903 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[26]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.719 ns                ;
+; N/A                                     ; 256.28 MHz ( period = 3.902 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[21]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.745 ns                ;
+; N/A                                     ; 256.41 MHz ( period = 3.900 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.725 ns                ;
+; N/A                                     ; 257.00 MHz ( period = 3.891 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[14]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.716 ns                ;
+; N/A                                     ; 258.26 MHz ( period = 3.872 ns )                    ; ePC:cPC|pOut[9]  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pClock     ; pClock   ; None                        ; None                      ; 1.628 ns                ;
+; N/A                                     ; 258.46 MHz ( period = 3.869 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[20]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.712 ns                ;
+; N/A                                     ; 258.60 MHz ( period = 3.867 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[21]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.701 ns                ;
+; N/A                                     ; 258.67 MHz ( period = 3.866 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[20]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.709 ns                ;
+; N/A                                     ; 258.67 MHz ( period = 3.866 ns )                    ; ePC:cPC|pOut[3]  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg1 ; pClock     ; pClock   ; None                        ; None                      ; 1.607 ns                ;
+; N/A                                     ; 259.34 MHz ( period = 3.856 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[14]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.672 ns                ;
+; N/A                                     ; 259.88 MHz ( period = 3.848 ns )                    ; ePC:cPC|pOut[6]  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pClock     ; pClock   ; None                        ; None                      ; 1.616 ns                ;
+; N/A                                     ; 260.08 MHz ( period = 3.845 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[20]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.679 ns                ;
+; N/A                                     ; 261.30 MHz ( period = 3.827 ns )                    ; ePC:cPC|pOut[4]  ; ePC:cPC|pOut[25]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.652 ns                ;
+; N/A                                     ; 261.44 MHz ( period = 3.825 ns )                    ; ePC:cPC|pOut[9]  ; ePC:cPC|pOut[25]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.659 ns                ;
+; N/A                                     ; 261.92 MHz ( period = 3.818 ns )                    ; ePC:cPC|pOut[12] ; ePC:cPC|pOut[25]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.661 ns                ;
+; N/A                                     ; 261.92 MHz ( period = 3.818 ns )                    ; ePC:cPC|pOut[4]  ; ePC:cPC|pOut[26]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.634 ns                ;
+; N/A                                     ; 261.92 MHz ( period = 3.818 ns )                    ; ePC:cPC|pOut[2]  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg0 ; pClock     ; pClock   ; None                        ; None                      ; 1.583 ns                ;
+; N/A                                     ; 262.05 MHz ( period = 3.816 ns )                    ; ePC:cPC|pOut[9]  ; ePC:cPC|pOut[26]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.641 ns                ;
+; N/A                                     ; 262.12 MHz ( period = 3.815 ns )                    ; ePC:cPC|pOut[4]  ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.640 ns                ;
+; N/A                                     ; 262.26 MHz ( period = 3.813 ns )                    ; ePC:cPC|pOut[9]  ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.647 ns                ;
+; N/A                                     ; 262.33 MHz ( period = 3.812 ns )                    ; ePC:cPC|pOut[4]  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg2 ; pClock     ; pClock   ; None                        ; None                      ; 1.580 ns                ;
+; N/A                                     ; 262.54 MHz ( period = 3.809 ns )                    ; ePC:cPC|pOut[12] ; ePC:cPC|pOut[26]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.643 ns                ;
+; N/A                                     ; 262.67 MHz ( period = 3.807 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[20]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.650 ns                ;
+; N/A                                     ; 262.74 MHz ( period = 3.806 ns )                    ; ePC:cPC|pOut[12] ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.649 ns                ;
+; N/A                                     ; 263.78 MHz ( period = 3.791 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[20]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.634 ns                ;
+; N/A                                     ; 264.41 MHz ( period = 3.782 ns )                    ; ePC:cPC|pOut[4]  ; ePC:cPC|pOut[21]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.616 ns                ;
+; N/A                                     ; 264.41 MHz ( period = 3.782 ns )                    ; ePC:cPC|pOut[5]  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pClock     ; pClock   ; None                        ; None                      ; 1.583 ns                ;
+; N/A                                     ; 264.41 MHz ( period = 3.782 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[31]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.625 ns                ;
+; N/A                                     ; 264.55 MHz ( period = 3.780 ns )                    ; ePC:cPC|pOut[9]  ; ePC:cPC|pOut[21]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.623 ns                ;
+; N/A                                     ; 264.62 MHz ( period = 3.779 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[31]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.622 ns                ;
+; N/A                                     ; 265.04 MHz ( period = 3.773 ns )                    ; ePC:cPC|pOut[12] ; ePC:cPC|pOut[21]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.625 ns                ;
+; N/A                                     ; 265.18 MHz ( period = 3.771 ns )                    ; ePC:cPC|pOut[4]  ; ePC:cPC|pOut[14]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.587 ns                ;
+; N/A                                     ; 265.32 MHz ( period = 3.769 ns )                    ; ePC:cPC|pOut[9]  ; ePC:cPC|pOut[14]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.594 ns                ;
+; N/A                                     ; 266.10 MHz ( period = 3.758 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[31]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.592 ns                ;
+; N/A                                     ; 266.24 MHz ( period = 3.756 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[20]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.590 ns                ;
+; N/A                                     ; 267.31 MHz ( period = 3.741 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[8]                                                                                                                 ; pClock     ; pClock   ; None                        ; None                      ; 3.566 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[13]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.563 ns                ;
+; N/A                                     ; 267.74 MHz ( period = 3.735 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[13]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.560 ns                ;
+; N/A                                     ; 268.82 MHz ( period = 3.720 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[31]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.563 ns                ;
+; N/A                                     ; 268.96 MHz ( period = 3.718 ns )                    ; ePC:cPC|pOut[20] ; ePC:cPC|pOut[25]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.543 ns                ;
+; N/A                                     ; 269.25 MHz ( period = 3.714 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[13]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.530 ns                ;
+; N/A                                     ; 269.61 MHz ( period = 3.709 ns )                    ; ePC:cPC|pOut[20] ; ePC:cPC|pOut[26]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.525 ns                ;
+; N/A                                     ; 269.83 MHz ( period = 3.706 ns )                    ; ePC:cPC|pOut[20] ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.531 ns                ;
+; N/A                                     ; 269.98 MHz ( period = 3.704 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[12]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.529 ns                ;
+; N/A                                     ; 269.98 MHz ( period = 3.704 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[31]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.547 ns                ;
+; N/A                                     ; 270.05 MHz ( period = 3.703 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[8]                                                                                                                 ; pClock     ; pClock   ; None                        ; None                      ; 3.537 ns                ;
+; N/A                                     ; 270.20 MHz ( period = 3.701 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[12]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.526 ns                ;
+; N/A                                     ; 270.86 MHz ( period = 3.692 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[22]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.535 ns                ;
+; N/A                                     ; 271.08 MHz ( period = 3.689 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[22]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.532 ns                ;
+; N/A                                     ; 271.15 MHz ( period = 3.688 ns )                    ; ePC:cPC|pOut[21] ; ePC:cPC|pOut[25]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.513 ns                ;
+; N/A                                     ; 271.22 MHz ( period = 3.687 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[8]                                                                                                                 ; pClock     ; pClock   ; None                        ; None                      ; 3.521 ns                ;
+; N/A                                     ; 271.74 MHz ( period = 3.680 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[12]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.496 ns                ;
+; N/A                                     ; 271.81 MHz ( period = 3.679 ns )                    ; ePC:cPC|pOut[21] ; ePC:cPC|pOut[26]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.495 ns                ;
+; N/A                                     ; 271.96 MHz ( period = 3.677 ns )                    ; ePC:cPC|pOut[14] ; ePC:cPC|pOut[25]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.520 ns                ;
+; N/A                                     ; 272.03 MHz ( period = 3.676 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[13]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.501 ns                ;
+; N/A                                     ; 272.03 MHz ( period = 3.676 ns )                    ; ePC:cPC|pOut[21] ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.501 ns                ;
+; N/A                                     ; 272.18 MHz ( period = 3.674 ns )                    ; ePC:cPC|pOut[10] ; ePC:cPC|pOut[25]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.517 ns                ;
+; N/A                                     ; 272.41 MHz ( period = 3.671 ns )                    ; ePC:cPC|pOut[4]  ; ePC:cPC|pOut[20]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.505 ns                ;
+; N/A                                     ; 272.55 MHz ( period = 3.669 ns )                    ; ePC:cPC|pOut[9]  ; ePC:cPC|pOut[20]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.512 ns                ;
+; N/A                                     ; 272.55 MHz ( period = 3.669 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[31]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.503 ns                ;
+; N/A                                     ; 272.63 MHz ( period = 3.668 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[22]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.502 ns                ;
+; N/A                                     ; 272.63 MHz ( period = 3.668 ns )                    ; ePC:cPC|pOut[14] ; ePC:cPC|pOut[26]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.502 ns                ;
+; N/A                                     ; 272.85 MHz ( period = 3.665 ns )                    ; ePC:cPC|pOut[10] ; ePC:cPC|pOut[26]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.499 ns                ;
+; N/A                                     ; 272.85 MHz ( period = 3.665 ns )                    ; ePC:cPC|pOut[14] ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.508 ns                ;
+; N/A                                     ; 273.07 MHz ( period = 3.662 ns )                    ; ePC:cPC|pOut[12] ; ePC:cPC|pOut[20]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.514 ns                ;
+; N/A                                     ; 273.07 MHz ( period = 3.662 ns )                    ; ePC:cPC|pOut[10] ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.505 ns                ;
+; N/A                                     ; 273.22 MHz ( period = 3.660 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[13]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.485 ns                ;
+; N/A                                     ; 273.82 MHz ( period = 3.652 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[8]                                                                                                                 ; pClock     ; pClock   ; None                        ; None                      ; 3.477 ns                ;
+; N/A                                     ; 274.57 MHz ( period = 3.642 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[12]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.467 ns                ;
+; N/A                                     ; 274.65 MHz ( period = 3.641 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[19]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.475 ns                ;
+; N/A                                     ; 274.88 MHz ( period = 3.638 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[19]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.472 ns                ;
+; N/A                                     ; 275.33 MHz ( period = 3.632 ns )                    ; ePC:cPC|pOut[14] ; ePC:cPC|pOut[21]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.484 ns                ;
+; N/A                                     ; 275.33 MHz ( period = 3.632 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[29]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.475 ns                ;
+; N/A                                     ; 275.48 MHz ( period = 3.630 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[22]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.473 ns                ;
+; N/A                                     ; 275.48 MHz ( period = 3.630 ns )                    ; ePC:cPC|pOut[13] ; ePC:cPC|pOut[25]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.473 ns                ;
+; N/A                                     ; 275.56 MHz ( period = 3.629 ns )                    ; ePC:cPC|pOut[10] ; ePC:cPC|pOut[21]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.481 ns                ;
+; N/A                                     ; 275.56 MHz ( period = 3.629 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[29]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.472 ns                ;
+; N/A                                     ; 275.79 MHz ( period = 3.626 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[12]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.451 ns                ;
+; N/A                                     ; 275.86 MHz ( period = 3.625 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[13]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.441 ns                ;
+; N/A                                     ; 276.17 MHz ( period = 3.621 ns )                    ; ePC:cPC|pOut[13] ; ePC:cPC|pOut[26]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.455 ns                ;
+; N/A                                     ; 276.40 MHz ( period = 3.618 ns )                    ; ePC:cPC|pOut[10] ; ePC:cPC|pOut[14]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.452 ns                ;
+; N/A                                     ; 276.40 MHz ( period = 3.618 ns )                    ; ePC:cPC|pOut[13] ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.461 ns                ;
+; N/A                                     ; 276.47 MHz ( period = 3.617 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[19]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.442 ns                ;
+; N/A                                     ; 276.70 MHz ( period = 3.614 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[22]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.457 ns                ;
+; N/A                                     ; 277.16 MHz ( period = 3.608 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[29]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.442 ns                ;
+; N/A                                     ; 278.47 MHz ( period = 3.591 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[12]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.407 ns                ;
+; N/A                                     ; 278.94 MHz ( period = 3.585 ns )                    ; ePC:cPC|pOut[13] ; ePC:cPC|pOut[21]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.437 ns                ;
+; N/A                                     ; 279.02 MHz ( period = 3.584 ns )                    ; ePC:cPC|pOut[4]  ; ePC:cPC|pOut[31]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.418 ns                ;
+; N/A                                     ; 279.17 MHz ( period = 3.582 ns )                    ; ePC:cPC|pOut[9]  ; ePC:cPC|pOut[31]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.425 ns                ;
+; N/A                                     ; 279.41 MHz ( period = 3.579 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[19]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.413 ns                ;
+; N/A                                     ; 279.41 MHz ( period = 3.579 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[22]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.413 ns                ;
+; N/A                                     ; 279.49 MHz ( period = 3.578 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[18]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.412 ns                ;
+; N/A                                     ; 279.72 MHz ( period = 3.575 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[18]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.409 ns                ;
+; N/A                                     ; 279.72 MHz ( period = 3.575 ns )                    ; ePC:cPC|pOut[12] ; ePC:cPC|pOut[31]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.427 ns                ;
+; N/A                                     ; 279.80 MHz ( period = 3.574 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[16]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.408 ns                ;
+; N/A                                     ; 280.03 MHz ( period = 3.571 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[16]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.405 ns                ;
+; N/A                                     ; 280.11 MHz ( period = 3.570 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[29]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.413 ns                ;
+; N/A                                     ; 280.19 MHz ( period = 3.569 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[28]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.412 ns                ;
+; N/A                                     ; 280.35 MHz ( period = 3.567 ns )                    ; ePC:cPC|pOut[4]  ; ePC:cPC|pOut[8]                                                                                                                 ; pClock     ; pClock   ; None                        ; None                      ; 3.392 ns                ;
+; N/A                                     ; 280.43 MHz ( period = 3.566 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[28]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.409 ns                ;
+; N/A                                     ; 280.66 MHz ( period = 3.563 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[19]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.397 ns                ;
+; N/A                                     ; 281.37 MHz ( period = 3.554 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[18]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.379 ns                ;
+; N/A                                     ; 281.37 MHz ( period = 3.554 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[29]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.397 ns                ;
+; N/A                                     ; 281.53 MHz ( period = 3.552 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[30]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.395 ns                ;
+; N/A                                     ; 281.69 MHz ( period = 3.550 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[16]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.375 ns                ;
+; N/A                                     ; 281.77 MHz ( period = 3.549 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[30]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.392 ns                ;
+; N/A                                     ; 282.09 MHz ( period = 3.545 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[28]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.379 ns                ;
+; N/A                                     ; 282.49 MHz ( period = 3.540 ns )                    ; ePC:cPC|pOut[4]  ; ePC:cPC|pOut[13]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 282.65 MHz ( period = 3.538 ns )                    ; ePC:cPC|pOut[9]  ; ePC:cPC|pOut[13]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.363 ns                ;
+; N/A                                     ; 283.29 MHz ( period = 3.530 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[9]                                                                                                                 ; pClock     ; pClock   ; None                        ; None                      ; 3.355 ns                ;
+; N/A                                     ; 283.45 MHz ( period = 3.528 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[19]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.353 ns                ;
+; N/A                                     ; 283.45 MHz ( period = 3.528 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[30]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.362 ns                ;
+; N/A                                     ; 283.69 MHz ( period = 3.525 ns )                    ; ePC:cPC|pOut[20] ; ePC:cPC|pOut[21]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.359 ns                ;
+; N/A                                     ; 284.01 MHz ( period = 3.521 ns )                    ; ePC:cPC|pOut[14] ; ePC:cPC|pOut[20]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.373 ns                ;
+; N/A                                     ; 284.17 MHz ( period = 3.519 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[29]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.353 ns                ;
+; N/A                                     ; 284.25 MHz ( period = 3.518 ns )                    ; ePC:cPC|pOut[12] ; ePC:cPC|pOut[14]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 284.25 MHz ( period = 3.518 ns )                    ; ePC:cPC|pOut[10] ; ePC:cPC|pOut[20]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.370 ns                ;
+; N/A                                     ; 284.41 MHz ( period = 3.516 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[18]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 284.74 MHz ( period = 3.512 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[16]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 285.06 MHz ( period = 3.508 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[3]                                                                                                                 ; pClock     ; pClock   ; None                        ; None                      ; 3.342 ns                ;
+; N/A                                     ; 285.14 MHz ( period = 3.507 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[28]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 285.23 MHz ( period = 3.506 ns )                    ; ePC:cPC|pOut[4]  ; ePC:cPC|pOut[12]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.322 ns                ;
+; N/A                                     ; 285.39 MHz ( period = 3.504 ns )                    ; ePC:cPC|pOut[9]  ; ePC:cPC|pOut[12]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.329 ns                ;
+; N/A                                     ; 285.71 MHz ( period = 3.500 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[18]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 286.04 MHz ( period = 3.496 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[7]                                                                                                                 ; pClock     ; pClock   ; None                        ; None                      ; 3.321 ns                ;
+; N/A                                     ; 286.04 MHz ( period = 3.496 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[16]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.330 ns                ;
+; N/A                                     ; 286.20 MHz ( period = 3.494 ns )                    ; ePC:cPC|pOut[4]  ; ePC:cPC|pOut[22]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.328 ns                ;
+; N/A                                     ; 286.37 MHz ( period = 3.492 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[9]                                                                                                                 ; pClock     ; pClock   ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 286.37 MHz ( period = 3.492 ns )                    ; ePC:cPC|pOut[9]  ; ePC:cPC|pOut[22]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.335 ns                ;
+; N/A                                     ; 286.45 MHz ( period = 3.491 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[28]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 286.53 MHz ( period = 3.490 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[30]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 286.94 MHz ( period = 3.485 ns )                    ; ePC:cPC|pOut[12] ; ePC:cPC|pOut[22]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.337 ns                ;
+; N/A                                     ; 287.69 MHz ( period = 3.476 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[9]                                                                                                                 ; pClock     ; pClock   ; None                        ; None                      ; 3.310 ns                ;
+; N/A                                     ; 287.77 MHz ( period = 3.475 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[23]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.318 ns                ;
+; N/A                                     ; 287.77 MHz ( period = 3.475 ns )                    ; ePC:cPC|pOut[20] ; ePC:cPC|pOut[31]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.309 ns                ;
+; N/A                                     ; 287.85 MHz ( period = 3.474 ns )                    ; ePC:cPC|pOut[13] ; ePC:cPC|pOut[20]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 287.85 MHz ( period = 3.474 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[30]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.317 ns                ;
+; N/A                                     ; 288.02 MHz ( period = 3.472 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[23]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.315 ns                ;
+; N/A                                     ; 288.27 MHz ( period = 3.469 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[24]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.312 ns                ;
+; N/A                                     ; 288.52 MHz ( period = 3.466 ns )                    ; ePC:cPC|pOut[8]  ; ePC:cPC|pOut[24]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.309 ns                ;
+; N/A                                     ; 288.60 MHz ( period = 3.465 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[18]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.290 ns                ;
+; N/A                                     ; 288.93 MHz ( period = 3.461 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[16]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.286 ns                ;
+; N/A                                     ; 289.18 MHz ( period = 3.458 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[7]                                                                                                                 ; pClock     ; pClock   ; None                        ; None                      ; 3.292 ns                ;
+; N/A                                     ; 289.35 MHz ( period = 3.456 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[28]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.290 ns                ;
+; N/A                                     ; 289.77 MHz ( period = 3.451 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[23]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.285 ns                ;
+; N/A                                     ; 290.28 MHz ( period = 3.445 ns )                    ; ePC:cPC|pOut[2]  ; ePC:cPC|pOut[24]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.279 ns                ;
+; N/A                                     ; 290.28 MHz ( period = 3.445 ns )                    ; ePC:cPC|pOut[21] ; ePC:cPC|pOut[31]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.279 ns                ;
+; N/A                                     ; 290.44 MHz ( period = 3.443 ns )                    ; ePC:cPC|pOut[7]  ; ePC:cPC|pOut[8]                                                                                                                 ; pClock     ; pClock   ; None                        ; None                      ; 3.277 ns                ;
+; N/A                                     ; 290.44 MHz ( period = 3.443 ns )                    ; ePC:cPC|pOut[4]  ; ePC:cPC|pOut[19]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.268 ns                ;
+; N/A                                     ; 290.53 MHz ( period = 3.442 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[7]                                                                                                                 ; pClock     ; pClock   ; None                        ; None                      ; 3.276 ns                ;
+; N/A                                     ; 290.61 MHz ( period = 3.441 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[9]                                                                                                                 ; pClock     ; pClock   ; None                        ; None                      ; 3.266 ns                ;
+; N/A                                     ; 290.61 MHz ( period = 3.441 ns )                    ; ePC:cPC|pOut[9]  ; ePC:cPC|pOut[19]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.275 ns                ;
+; N/A                                     ; 290.78 MHz ( period = 3.439 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[30]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.273 ns                ;
+; N/A                                     ; 291.21 MHz ( period = 3.434 ns )                    ; ePC:cPC|pOut[12] ; ePC:cPC|pOut[19]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.277 ns                ;
+; N/A                                     ; 291.21 MHz ( period = 3.434 ns )                    ; ePC:cPC|pOut[4]  ; ePC:cPC|pOut[29]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.268 ns                ;
+; N/A                                     ; 291.21 MHz ( period = 3.434 ns )                    ; ePC:cPC|pOut[14] ; ePC:cPC|pOut[31]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.286 ns                ;
+; N/A                                     ; 291.38 MHz ( period = 3.432 ns )                    ; ePC:cPC|pOut[9]  ; ePC:cPC|pOut[29]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.275 ns                ;
+; N/A                                     ; 291.46 MHz ( period = 3.431 ns )                    ; ePC:cPC|pOut[10] ; ePC:cPC|pOut[31]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.283 ns                ;
+; N/A                                     ; 291.97 MHz ( period = 3.425 ns )                    ; ePC:cPC|pOut[12] ; ePC:cPC|pOut[29]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.277 ns                ;
+; N/A                                     ; 293.00 MHz ( period = 3.413 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[23]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.256 ns                ;
+; N/A                                     ; 293.51 MHz ( period = 3.407 ns )                    ; ePC:cPC|pOut[3]  ; ePC:cPC|pOut[7]                                                                                                                 ; pClock     ; pClock   ; None                        ; None                      ; 3.232 ns                ;
+; N/A                                     ; 293.51 MHz ( period = 3.407 ns )                    ; ePC:cPC|pOut[6]  ; ePC:cPC|pOut[24]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.250 ns                ;
+; N/A                                     ; 294.38 MHz ( period = 3.397 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[23]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.240 ns                ;
+; N/A                                     ; 294.90 MHz ( period = 3.391 ns )                    ; ePC:cPC|pOut[5]  ; ePC:cPC|pOut[24]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.234 ns                ;
+; N/A                                     ; 295.25 MHz ( period = 3.387 ns )                    ; ePC:cPC|pOut[10] ; ePC:cPC|pOut[13]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.221 ns                ;
+; N/A                                     ; 295.25 MHz ( period = 3.387 ns )                    ; ePC:cPC|pOut[13] ; ePC:cPC|pOut[31]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.239 ns                ;
+; N/A                                     ; 295.33 MHz ( period = 3.386 ns )                    ; ePC:cPC|pOut[26] ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.229 ns                ;
+; N/A                                     ; 295.42 MHz ( period = 3.385 ns )                    ; ePC:cPC|pOut[20] ; ePC:cPC|pOut[22]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.219 ns                ;
+; N/A                                     ; 295.86 MHz ( period = 3.380 ns )                    ; ePC:cPC|pOut[4]  ; ePC:cPC|pOut[18]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.205 ns                ;
+; N/A                                     ; 296.03 MHz ( period = 3.378 ns )                    ; ePC:cPC|pOut[9]  ; ePC:cPC|pOut[18]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.212 ns                ;
+; N/A                                     ; 296.21 MHz ( period = 3.376 ns )                    ; ePC:cPC|pOut[4]  ; ePC:cPC|pOut[16]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.201 ns                ;
+; N/A                                     ; 296.38 MHz ( period = 3.374 ns )                    ; ePC:cPC|pOut[9]  ; ePC:cPC|pOut[16]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.208 ns                ;
+; N/A                                     ; 296.47 MHz ( period = 3.373 ns )                    ; ePC:cPC|pOut[25] ; ePC:cPC|pOut[27]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.207 ns                ;
+; N/A                                     ; 296.65 MHz ( period = 3.371 ns )                    ; ePC:cPC|pOut[12] ; ePC:cPC|pOut[18]                                                                                                                ; pClock     ; pClock   ; None                        ; None                      ; 3.214 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                  ;                                                                                                                                 ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+------------------+---------------------------------------------------------------------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------+
+; tsu                                                                           ;
++-------+--------------+------------+-------------+------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From        ; To               ; To Clock ;
++-------+--------------+------------+-------------+------------------+----------+
+; N/A   ; None         ; 4.263 ns   ; pJSelect    ; ePC:cPC|pOut[1]  ; pClock   ;
+; N/A   ; None         ; 4.115 ns   ; pReset      ; ePC:cPC|pOut[1]  ; pClock   ;
+; N/A   ; None         ; 3.903 ns   ; pSelect     ; ePC:cPC|pOut[1]  ; pClock   ;
+; N/A   ; None         ; 3.804 ns   ; pJSelect    ; ePC:cPC|pOut[0]  ; pClock   ;
+; N/A   ; None         ; 3.656 ns   ; pReset      ; ePC:cPC|pOut[0]  ; pClock   ;
+; N/A   ; None         ; 3.632 ns   ; pJPC[25]    ; ePC:cPC|pOut[27] ; pClock   ;
+; N/A   ; None         ; 3.597 ns   ; pNextpc[31] ; ePC:cPC|pOut[31] ; pClock   ;
+; N/A   ; None         ; 3.514 ns   ; pSelect     ; ePC:cPC|pOut[5]  ; pClock   ;
+; N/A   ; None         ; 3.514 ns   ; pSelect     ; ePC:cPC|pOut[6]  ; pClock   ;
+; N/A   ; None         ; 3.514 ns   ; pSelect     ; ePC:cPC|pOut[7]  ; pClock   ;
+; N/A   ; None         ; 3.514 ns   ; pSelect     ; ePC:cPC|pOut[8]  ; pClock   ;
+; N/A   ; None         ; 3.514 ns   ; pSelect     ; ePC:cPC|pOut[9]  ; pClock   ;
+; N/A   ; None         ; 3.514 ns   ; pSelect     ; ePC:cPC|pOut[27] ; pClock   ;
+; N/A   ; None         ; 3.445 ns   ; pJSelect    ; ePC:cPC|pOut[30] ; pClock   ;
+; N/A   ; None         ; 3.444 ns   ; pSelect     ; ePC:cPC|pOut[0]  ; pClock   ;
+; N/A   ; None         ; 3.444 ns   ; pJSelect    ; ePC:cPC|pOut[29] ; pClock   ;
+; N/A   ; None         ; 3.441 ns   ; pJSelect    ; ePC:cPC|pOut[28] ; pClock   ;
+; N/A   ; None         ; 3.440 ns   ; pJSelect    ; ePC:cPC|pOut[31] ; pClock   ;
+; N/A   ; None         ; 3.392 ns   ; pReset      ; ePC:cPC|pOut[20] ; pClock   ;
+; N/A   ; None         ; 3.392 ns   ; pReset      ; ePC:cPC|pOut[21] ; pClock   ;
+; N/A   ; None         ; 3.392 ns   ; pReset      ; ePC:cPC|pOut[22] ; pClock   ;
+; N/A   ; None         ; 3.392 ns   ; pReset      ; ePC:cPC|pOut[23] ; pClock   ;
+; N/A   ; None         ; 3.392 ns   ; pReset      ; ePC:cPC|pOut[24] ; pClock   ;
+; N/A   ; None         ; 3.360 ns   ; pJPC[22]    ; ePC:cPC|pOut[24] ; pClock   ;
+; N/A   ; None         ; 3.334 ns   ; pJPC[15]    ; ePC:cPC|pOut[17] ; pClock   ;
+; N/A   ; None         ; 3.316 ns   ; pJPC[23]    ; ePC:cPC|pOut[25] ; pClock   ;
+; N/A   ; None         ; 3.297 ns   ; pReset      ; ePC:cPC|pOut[30] ; pClock   ;
+; N/A   ; None         ; 3.296 ns   ; pReset      ; ePC:cPC|pOut[29] ; pClock   ;
+; N/A   ; None         ; 3.293 ns   ; pReset      ; ePC:cPC|pOut[28] ; pClock   ;
+; N/A   ; None         ; 3.292 ns   ; pReset      ; ePC:cPC|pOut[31] ; pClock   ;
+; N/A   ; None         ; 3.274 ns   ; pJPC[13]    ; ePC:cPC|pOut[15] ; pClock   ;
+; N/A   ; None         ; 3.259 ns   ; pJPC[20]    ; ePC:cPC|pOut[22] ; pClock   ;
+; N/A   ; None         ; 3.212 ns   ; pJPC[1]     ; ePC:cPC|pOut[3]  ; pClock   ;
+; N/A   ; None         ; 3.204 ns   ; pSelect     ; ePC:cPC|pOut[10] ; pClock   ;
+; N/A   ; None         ; 3.204 ns   ; pSelect     ; ePC:cPC|pOut[11] ; pClock   ;
+; N/A   ; None         ; 3.204 ns   ; pSelect     ; ePC:cPC|pOut[12] ; pClock   ;
+; N/A   ; None         ; 3.204 ns   ; pSelect     ; ePC:cPC|pOut[13] ; pClock   ;
+; N/A   ; None         ; 3.204 ns   ; pSelect     ; ePC:cPC|pOut[14] ; pClock   ;
+; N/A   ; None         ; 3.204 ns   ; pSelect     ; ePC:cPC|pOut[26] ; pClock   ;
+; N/A   ; None         ; 3.195 ns   ; pNextpc[28] ; ePC:cPC|pOut[28] ; pClock   ;
+; N/A   ; None         ; 3.193 ns   ; pSelect     ; ePC:cPC|pOut[2]  ; pClock   ;
+; N/A   ; None         ; 3.193 ns   ; pSelect     ; ePC:cPC|pOut[3]  ; pClock   ;
+; N/A   ; None         ; 3.193 ns   ; pSelect     ; ePC:cPC|pOut[4]  ; pClock   ;
+; N/A   ; None         ; 3.190 ns   ; pReset      ; ePC:cPC|pOut[2]  ; pClock   ;
+; N/A   ; None         ; 3.190 ns   ; pReset      ; ePC:cPC|pOut[3]  ; pClock   ;
+; N/A   ; None         ; 3.190 ns   ; pReset      ; ePC:cPC|pOut[4]  ; pClock   ;
+; N/A   ; None         ; 3.176 ns   ; pJPC[3]     ; ePC:cPC|pOut[5]  ; pClock   ;
+; N/A   ; None         ; 3.173 ns   ; pJPC[16]    ; ePC:cPC|pOut[18] ; pClock   ;
+; N/A   ; None         ; 3.147 ns   ; pReset      ; ePC:cPC|pOut[15] ; pClock   ;
+; N/A   ; None         ; 3.147 ns   ; pReset      ; ePC:cPC|pOut[16] ; pClock   ;
+; N/A   ; None         ; 3.147 ns   ; pReset      ; ePC:cPC|pOut[17] ; pClock   ;
+; N/A   ; None         ; 3.147 ns   ; pReset      ; ePC:cPC|pOut[18] ; pClock   ;
+; N/A   ; None         ; 3.147 ns   ; pReset      ; ePC:cPC|pOut[19] ; pClock   ;
+; N/A   ; None         ; 3.147 ns   ; pReset      ; ePC:cPC|pOut[25] ; pClock   ;
+; N/A   ; None         ; 3.146 ns   ; pJPC[21]    ; ePC:cPC|pOut[23] ; pClock   ;
+; N/A   ; None         ; 3.141 ns   ; pReset      ; ePC:cPC|pOut[5]  ; pClock   ;
+; N/A   ; None         ; 3.141 ns   ; pReset      ; ePC:cPC|pOut[6]  ; pClock   ;
+; N/A   ; None         ; 3.141 ns   ; pReset      ; ePC:cPC|pOut[7]  ; pClock   ;
+; N/A   ; None         ; 3.141 ns   ; pReset      ; ePC:cPC|pOut[8]  ; pClock   ;
+; N/A   ; None         ; 3.141 ns   ; pReset      ; ePC:cPC|pOut[9]  ; pClock   ;
+; N/A   ; None         ; 3.141 ns   ; pReset      ; ePC:cPC|pOut[27] ; pClock   ;
+; N/A   ; None         ; 3.126 ns   ; pReset      ; ePC:cPC|pOut[10] ; pClock   ;
+; N/A   ; None         ; 3.126 ns   ; pReset      ; ePC:cPC|pOut[11] ; pClock   ;
+; N/A   ; None         ; 3.126 ns   ; pReset      ; ePC:cPC|pOut[12] ; pClock   ;
+; N/A   ; None         ; 3.126 ns   ; pReset      ; ePC:cPC|pOut[13] ; pClock   ;
+; N/A   ; None         ; 3.126 ns   ; pReset      ; ePC:cPC|pOut[14] ; pClock   ;
+; N/A   ; None         ; 3.126 ns   ; pReset      ; ePC:cPC|pOut[26] ; pClock   ;
+; N/A   ; None         ; 3.084 ns   ; pSelect     ; ePC:cPC|pOut[30] ; pClock   ;
+; N/A   ; None         ; 3.083 ns   ; pSelect     ; ePC:cPC|pOut[29] ; pClock   ;
+; N/A   ; None         ; 3.081 ns   ; pSelect     ; ePC:cPC|pOut[20] ; pClock   ;
+; N/A   ; None         ; 3.081 ns   ; pSelect     ; ePC:cPC|pOut[21] ; pClock   ;
+; N/A   ; None         ; 3.081 ns   ; pSelect     ; ePC:cPC|pOut[22] ; pClock   ;
+; N/A   ; None         ; 3.081 ns   ; pSelect     ; ePC:cPC|pOut[23] ; pClock   ;
+; N/A   ; None         ; 3.081 ns   ; pSelect     ; ePC:cPC|pOut[24] ; pClock   ;
+; N/A   ; None         ; 3.080 ns   ; pSelect     ; ePC:cPC|pOut[28] ; pClock   ;
+; N/A   ; None         ; 3.079 ns   ; pSelect     ; ePC:cPC|pOut[31] ; pClock   ;
+; N/A   ; None         ; 3.058 ns   ; pJPC[19]    ; ePC:cPC|pOut[21] ; pClock   ;
+; N/A   ; None         ; 3.057 ns   ; pJPC[5]     ; ePC:cPC|pOut[7]  ; pClock   ;
+; N/A   ; None         ; 3.047 ns   ; pJPC[18]    ; ePC:cPC|pOut[20] ; pClock   ;
+; N/A   ; None         ; 3.047 ns   ; pJPC[10]    ; ePC:cPC|pOut[12] ; pClock   ;
+; N/A   ; None         ; 3.045 ns   ; pNextpc[30] ; ePC:cPC|pOut[30] ; pClock   ;
+; N/A   ; None         ; 3.028 ns   ; pJPC[7]     ; ePC:cPC|pOut[9]  ; pClock   ;
+; N/A   ; None         ; 3.001 ns   ; pJPC[8]     ; ePC:cPC|pOut[10] ; pClock   ;
+; N/A   ; None         ; 2.975 ns   ; pNextpc[1]  ; ePC:cPC|pOut[1]  ; pClock   ;
+; N/A   ; None         ; 2.975 ns   ; pNextpc[29] ; ePC:cPC|pOut[29] ; pClock   ;
+; N/A   ; None         ; 2.972 ns   ; pJPC[0]     ; ePC:cPC|pOut[2]  ; pClock   ;
+; N/A   ; None         ; 2.968 ns   ; pJPC[24]    ; ePC:cPC|pOut[26] ; pClock   ;
+; N/A   ; None         ; 2.966 ns   ; pJSelect    ; ePC:cPC|pOut[11] ; pClock   ;
+; N/A   ; None         ; 2.964 ns   ; pJSelect    ; ePC:cPC|pOut[13] ; pClock   ;
+; N/A   ; None         ; 2.964 ns   ; pJSelect    ; ePC:cPC|pOut[14] ; pClock   ;
+; N/A   ; None         ; 2.962 ns   ; pJSelect    ; ePC:cPC|pOut[7]  ; pClock   ;
+; N/A   ; None         ; 2.962 ns   ; pJSelect    ; ePC:cPC|pOut[10] ; pClock   ;
+; N/A   ; None         ; 2.962 ns   ; pJSelect    ; ePC:cPC|pOut[12] ; pClock   ;
+; N/A   ; None         ; 2.959 ns   ; pJSelect    ; ePC:cPC|pOut[8]  ; pClock   ;
+; N/A   ; None         ; 2.959 ns   ; pJSelect    ; ePC:cPC|pOut[26] ; pClock   ;
+; N/A   ; None         ; 2.958 ns   ; pJSelect    ; ePC:cPC|pOut[5]  ; pClock   ;
+; N/A   ; None         ; 2.958 ns   ; pJSelect    ; ePC:cPC|pOut[9]  ; pClock   ;
+; N/A   ; None         ; 2.957 ns   ; pJSelect    ; ePC:cPC|pOut[6]  ; pClock   ;
+; N/A   ; None         ; 2.953 ns   ; pJPC[11]    ; ePC:cPC|pOut[13] ; pClock   ;
+; N/A   ; None         ; 2.943 ns   ; pJSelect    ; ePC:cPC|pOut[3]  ; pClock   ;
+; N/A   ; None         ; 2.943 ns   ; pJSelect    ; ePC:cPC|pOut[4]  ; pClock   ;
+; N/A   ; None         ; 2.939 ns   ; pNextpc[20] ; ePC:cPC|pOut[20] ; pClock   ;
+; N/A   ; None         ; 2.934 ns   ; pNextpc[24] ; ePC:cPC|pOut[24] ; pClock   ;
+; N/A   ; None         ; 2.932 ns   ; pSelect     ; ePC:cPC|pOut[15] ; pClock   ;
+; N/A   ; None         ; 2.932 ns   ; pSelect     ; ePC:cPC|pOut[16] ; pClock   ;
+; N/A   ; None         ; 2.932 ns   ; pSelect     ; ePC:cPC|pOut[17] ; pClock   ;
+; N/A   ; None         ; 2.932 ns   ; pSelect     ; ePC:cPC|pOut[18] ; pClock   ;
+; N/A   ; None         ; 2.932 ns   ; pSelect     ; ePC:cPC|pOut[19] ; pClock   ;
+; N/A   ; None         ; 2.932 ns   ; pSelect     ; ePC:cPC|pOut[25] ; pClock   ;
+; N/A   ; None         ; 2.928 ns   ; pJPC[2]     ; ePC:cPC|pOut[4]  ; pClock   ;
+; N/A   ; None         ; 2.913 ns   ; pJPC[6]     ; ePC:cPC|pOut[8]  ; pClock   ;
+; N/A   ; None         ; 2.881 ns   ; pNextpc[27] ; ePC:cPC|pOut[27] ; pClock   ;
+; N/A   ; None         ; 2.881 ns   ; pJPC[4]     ; ePC:cPC|pOut[6]  ; pClock   ;
+; N/A   ; None         ; 2.877 ns   ; pNextpc[3]  ; ePC:cPC|pOut[3]  ; pClock   ;
+; N/A   ; None         ; 2.869 ns   ; pNextpc[18] ; ePC:cPC|pOut[18] ; pClock   ;
+; N/A   ; None         ; 2.852 ns   ; pNextpc[23] ; ePC:cPC|pOut[23] ; pClock   ;
+; N/A   ; None         ; 2.850 ns   ; pNextpc[8]  ; ePC:cPC|pOut[8]  ; pClock   ;
+; N/A   ; None         ; 2.849 ns   ; pNextpc[0]  ; ePC:cPC|pOut[0]  ; pClock   ;
+; N/A   ; None         ; 2.830 ns   ; pNextpc[14] ; ePC:cPC|pOut[14] ; pClock   ;
+; N/A   ; None         ; 2.817 ns   ; pJPC[17]    ; ePC:cPC|pOut[19] ; pClock   ;
+; N/A   ; None         ; 2.803 ns   ; pJSelect    ; ePC:cPC|pOut[2]  ; pClock   ;
+; N/A   ; None         ; 2.801 ns   ; pJSelect    ; ePC:cPC|pOut[27] ; pClock   ;
+; N/A   ; None         ; 2.800 ns   ; pJPC[9]     ; ePC:cPC|pOut[11] ; pClock   ;
+; N/A   ; None         ; 2.789 ns   ; pNextpc[10] ; ePC:cPC|pOut[10] ; pClock   ;
+; N/A   ; None         ; 2.780 ns   ; pNextpc[13] ; ePC:cPC|pOut[13] ; pClock   ;
+; N/A   ; None         ; 2.765 ns   ; pNextpc[11] ; ePC:cPC|pOut[11] ; pClock   ;
+; N/A   ; None         ; 2.724 ns   ; pJPC[12]    ; ePC:cPC|pOut[14] ; pClock   ;
+; N/A   ; None         ; 2.712 ns   ; pJPC[14]    ; ePC:cPC|pOut[16] ; pClock   ;
+; N/A   ; None         ; 2.709 ns   ; pNextpc[6]  ; ePC:cPC|pOut[6]  ; pClock   ;
+; N/A   ; None         ; 2.682 ns   ; pNextpc[17] ; ePC:cPC|pOut[17] ; pClock   ;
+; N/A   ; None         ; 2.669 ns   ; pNextpc[22] ; ePC:cPC|pOut[22] ; pClock   ;
+; N/A   ; None         ; 2.650 ns   ; pNextpc[7]  ; ePC:cPC|pOut[7]  ; pClock   ;
+; N/A   ; None         ; 2.641 ns   ; pNextpc[21] ; ePC:cPC|pOut[21] ; pClock   ;
+; N/A   ; None         ; 2.634 ns   ; pNextpc[4]  ; ePC:cPC|pOut[4]  ; pClock   ;
+; N/A   ; None         ; 2.579 ns   ; pJSelect    ; ePC:cPC|pOut[17] ; pClock   ;
+; N/A   ; None         ; 2.579 ns   ; pJSelect    ; ePC:cPC|pOut[19] ; pClock   ;
+; N/A   ; None         ; 2.577 ns   ; pJSelect    ; ePC:cPC|pOut[15] ; pClock   ;
+; N/A   ; None         ; 2.576 ns   ; pJSelect    ; ePC:cPC|pOut[16] ; pClock   ;
+; N/A   ; None         ; 2.575 ns   ; pNextpc[19] ; ePC:cPC|pOut[19] ; pClock   ;
+; N/A   ; None         ; 2.575 ns   ; pJSelect    ; ePC:cPC|pOut[25] ; pClock   ;
+; N/A   ; None         ; 2.557 ns   ; pJSelect    ; ePC:cPC|pOut[21] ; pClock   ;
+; N/A   ; None         ; 2.555 ns   ; pJSelect    ; ePC:cPC|pOut[23] ; pClock   ;
+; N/A   ; None         ; 2.555 ns   ; pJSelect    ; ePC:cPC|pOut[24] ; pClock   ;
+; N/A   ; None         ; 2.552 ns   ; pJSelect    ; ePC:cPC|pOut[20] ; pClock   ;
+; N/A   ; None         ; 2.546 ns   ; pNextpc[12] ; ePC:cPC|pOut[12] ; pClock   ;
+; N/A   ; None         ; 2.546 ns   ; pJSelect    ; ePC:cPC|pOut[18] ; pClock   ;
+; N/A   ; None         ; 2.530 ns   ; pJSelect    ; ePC:cPC|pOut[22] ; pClock   ;
+; N/A   ; None         ; 2.481 ns   ; pNextpc[25] ; ePC:cPC|pOut[25] ; pClock   ;
+; N/A   ; None         ; 2.456 ns   ; pNextpc[16] ; ePC:cPC|pOut[16] ; pClock   ;
+; N/A   ; None         ; 2.443 ns   ; pNextpc[26] ; ePC:cPC|pOut[26] ; pClock   ;
+; N/A   ; None         ; 2.412 ns   ; pNextpc[5]  ; ePC:cPC|pOut[5]  ; pClock   ;
+; N/A   ; None         ; 2.327 ns   ; pNextpc[9]  ; ePC:cPC|pOut[9]  ; pClock   ;
+; N/A   ; None         ; 2.306 ns   ; pNextpc[2]  ; ePC:cPC|pOut[2]  ; pClock   ;
+; N/A   ; None         ; 2.269 ns   ; pNextpc[15] ; ePC:cPC|pOut[15] ; pClock   ;
++-------+--------------+------------+-------------+------------------+----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                                                                                                                                                                          ;
++-----------------------------------------+-----------------------------------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------+------------------+------------+
+; Slack                                   ; Required tco                                        ; Actual tco ; From                                                                                                                            ; To               ; From Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------+------------------+------------+
+; N/A                                     ; None                                                ; 12.386 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[17] ; pClock     ;
+; N/A                                     ; None                                                ; 12.386 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[17] ; pClock     ;
+; N/A                                     ; None                                                ; 12.386 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[17] ; pClock     ;
+; N/A                                     ; None                                                ; 12.386 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[17] ; pClock     ;
+; N/A                                     ; None                                                ; 12.386 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[17] ; pClock     ;
+; N/A                                     ; None                                                ; 12.386 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[17] ; pClock     ;
+; N/A                                     ; None                                                ; 12.386 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[17] ; pClock     ;
+; N/A                                     ; None                                                ; 12.386 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[17] ; pClock     ;
+; N/A                                     ; None                                                ; 12.299 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[13] ; pClock     ;
+; N/A                                     ; None                                                ; 12.299 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[13] ; pClock     ;
+; N/A                                     ; None                                                ; 12.299 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[13] ; pClock     ;
+; N/A                                     ; None                                                ; 12.299 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[13] ; pClock     ;
+; N/A                                     ; None                                                ; 12.299 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[13] ; pClock     ;
+; N/A                                     ; None                                                ; 12.299 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[13] ; pClock     ;
+; N/A                                     ; None                                                ; 12.299 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[13] ; pClock     ;
+; N/A                                     ; None                                                ; 12.299 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[13] ; pClock     ;
+; N/A                                     ; None                                                ; 12.211 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg0 ; pInstruction[24] ; pClock     ;
+; N/A                                     ; None                                                ; 12.211 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg1 ; pInstruction[24] ; pClock     ;
+; N/A                                     ; None                                                ; 12.211 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg2 ; pInstruction[24] ; pClock     ;
+; N/A                                     ; None                                                ; 12.211 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg3 ; pInstruction[24] ; pClock     ;
+; N/A                                     ; None                                                ; 12.211 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg4 ; pInstruction[24] ; pClock     ;
+; N/A                                     ; None                                                ; 12.211 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg5 ; pInstruction[24] ; pClock     ;
+; N/A                                     ; None                                                ; 12.211 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg6 ; pInstruction[24] ; pClock     ;
+; N/A                                     ; None                                                ; 12.211 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg7 ; pInstruction[24] ; pClock     ;
+; N/A                                     ; None                                                ; 12.080 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[0]  ; pClock     ;
+; N/A                                     ; None                                                ; 12.080 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[0]  ; pClock     ;
+; N/A                                     ; None                                                ; 12.080 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[0]  ; pClock     ;
+; N/A                                     ; None                                                ; 12.080 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[0]  ; pClock     ;
+; N/A                                     ; None                                                ; 12.080 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[0]  ; pClock     ;
+; N/A                                     ; None                                                ; 12.080 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[0]  ; pClock     ;
+; N/A                                     ; None                                                ; 12.080 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[0]  ; pClock     ;
+; N/A                                     ; None                                                ; 12.080 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[0]  ; pClock     ;
+; N/A                                     ; None                                                ; 12.001 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[7]  ; pClock     ;
+; N/A                                     ; None                                                ; 12.001 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[7]  ; pClock     ;
+; N/A                                     ; None                                                ; 12.001 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[7]  ; pClock     ;
+; N/A                                     ; None                                                ; 12.001 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[7]  ; pClock     ;
+; N/A                                     ; None                                                ; 12.001 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[7]  ; pClock     ;
+; N/A                                     ; None                                                ; 12.001 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[7]  ; pClock     ;
+; N/A                                     ; None                                                ; 12.001 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[7]  ; pClock     ;
+; N/A                                     ; None                                                ; 12.001 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[7]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.951 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg0 ; pInstruction[30] ; pClock     ;
+; N/A                                     ; None                                                ; 11.951 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg1 ; pInstruction[30] ; pClock     ;
+; N/A                                     ; None                                                ; 11.951 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg2 ; pInstruction[30] ; pClock     ;
+; N/A                                     ; None                                                ; 11.951 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg3 ; pInstruction[30] ; pClock     ;
+; N/A                                     ; None                                                ; 11.951 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg4 ; pInstruction[30] ; pClock     ;
+; N/A                                     ; None                                                ; 11.951 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg5 ; pInstruction[30] ; pClock     ;
+; N/A                                     ; None                                                ; 11.951 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg6 ; pInstruction[30] ; pClock     ;
+; N/A                                     ; None                                                ; 11.951 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg7 ; pInstruction[30] ; pClock     ;
+; N/A                                     ; None                                                ; 11.896 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[6]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.896 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[6]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.896 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[6]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.896 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[6]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.896 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[6]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.896 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[6]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.896 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[6]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.896 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[6]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.716 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg0 ; pInstruction[28] ; pClock     ;
+; N/A                                     ; None                                                ; 11.716 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg1 ; pInstruction[28] ; pClock     ;
+; N/A                                     ; None                                                ; 11.716 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg2 ; pInstruction[28] ; pClock     ;
+; N/A                                     ; None                                                ; 11.716 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg3 ; pInstruction[28] ; pClock     ;
+; N/A                                     ; None                                                ; 11.716 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg4 ; pInstruction[28] ; pClock     ;
+; N/A                                     ; None                                                ; 11.716 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg5 ; pInstruction[28] ; pClock     ;
+; N/A                                     ; None                                                ; 11.716 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg6 ; pInstruction[28] ; pClock     ;
+; N/A                                     ; None                                                ; 11.716 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg7 ; pInstruction[28] ; pClock     ;
+; N/A                                     ; None                                                ; 11.672 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[16] ; pClock     ;
+; N/A                                     ; None                                                ; 11.672 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[16] ; pClock     ;
+; N/A                                     ; None                                                ; 11.672 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[16] ; pClock     ;
+; N/A                                     ; None                                                ; 11.672 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[16] ; pClock     ;
+; N/A                                     ; None                                                ; 11.672 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[16] ; pClock     ;
+; N/A                                     ; None                                                ; 11.672 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[16] ; pClock     ;
+; N/A                                     ; None                                                ; 11.672 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[16] ; pClock     ;
+; N/A                                     ; None                                                ; 11.672 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[16] ; pClock     ;
+; N/A                                     ; None                                                ; 11.607 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg0 ; pInstruction[31] ; pClock     ;
+; N/A                                     ; None                                                ; 11.607 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg1 ; pInstruction[31] ; pClock     ;
+; N/A                                     ; None                                                ; 11.607 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg2 ; pInstruction[31] ; pClock     ;
+; N/A                                     ; None                                                ; 11.607 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg3 ; pInstruction[31] ; pClock     ;
+; N/A                                     ; None                                                ; 11.607 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg4 ; pInstruction[31] ; pClock     ;
+; N/A                                     ; None                                                ; 11.607 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg5 ; pInstruction[31] ; pClock     ;
+; N/A                                     ; None                                                ; 11.607 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg6 ; pInstruction[31] ; pClock     ;
+; N/A                                     ; None                                                ; 11.607 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg7 ; pInstruction[31] ; pClock     ;
+; N/A                                     ; None                                                ; 11.604 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg0 ; pInstruction[22] ; pClock     ;
+; N/A                                     ; None                                                ; 11.604 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg1 ; pInstruction[22] ; pClock     ;
+; N/A                                     ; None                                                ; 11.604 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg2 ; pInstruction[22] ; pClock     ;
+; N/A                                     ; None                                                ; 11.604 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg3 ; pInstruction[22] ; pClock     ;
+; N/A                                     ; None                                                ; 11.604 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg4 ; pInstruction[22] ; pClock     ;
+; N/A                                     ; None                                                ; 11.604 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg5 ; pInstruction[22] ; pClock     ;
+; N/A                                     ; None                                                ; 11.604 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg6 ; pInstruction[22] ; pClock     ;
+; N/A                                     ; None                                                ; 11.604 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg7 ; pInstruction[22] ; pClock     ;
+; N/A                                     ; None                                                ; 11.572 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[8]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.572 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[8]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.572 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[8]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.572 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[8]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.572 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[8]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.572 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[8]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.572 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[8]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.572 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[8]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.569 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[12] ; pClock     ;
+; N/A                                     ; None                                                ; 11.569 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[12] ; pClock     ;
+; N/A                                     ; None                                                ; 11.569 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[12] ; pClock     ;
+; N/A                                     ; None                                                ; 11.569 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[12] ; pClock     ;
+; N/A                                     ; None                                                ; 11.569 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[12] ; pClock     ;
+; N/A                                     ; None                                                ; 11.569 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[12] ; pClock     ;
+; N/A                                     ; None                                                ; 11.569 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[12] ; pClock     ;
+; N/A                                     ; None                                                ; 11.569 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[12] ; pClock     ;
+; N/A                                     ; None                                                ; 11.508 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[14] ; pClock     ;
+; N/A                                     ; None                                                ; 11.508 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[14] ; pClock     ;
+; N/A                                     ; None                                                ; 11.508 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[14] ; pClock     ;
+; N/A                                     ; None                                                ; 11.508 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[14] ; pClock     ;
+; N/A                                     ; None                                                ; 11.508 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[14] ; pClock     ;
+; N/A                                     ; None                                                ; 11.508 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[14] ; pClock     ;
+; N/A                                     ; None                                                ; 11.508 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[14] ; pClock     ;
+; N/A                                     ; None                                                ; 11.508 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[14] ; pClock     ;
+; N/A                                     ; None                                                ; 11.500 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[4]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.500 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[4]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.500 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[4]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.500 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[4]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.500 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[4]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.500 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[4]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.500 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[4]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.500 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[4]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.495 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[10] ; pClock     ;
+; N/A                                     ; None                                                ; 11.495 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[10] ; pClock     ;
+; N/A                                     ; None                                                ; 11.495 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[10] ; pClock     ;
+; N/A                                     ; None                                                ; 11.495 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[10] ; pClock     ;
+; N/A                                     ; None                                                ; 11.495 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[10] ; pClock     ;
+; N/A                                     ; None                                                ; 11.495 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[10] ; pClock     ;
+; N/A                                     ; None                                                ; 11.495 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[10] ; pClock     ;
+; N/A                                     ; None                                                ; 11.495 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[10] ; pClock     ;
+; N/A                                     ; None                                                ; 11.411 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[15] ; pClock     ;
+; N/A                                     ; None                                                ; 11.411 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[15] ; pClock     ;
+; N/A                                     ; None                                                ; 11.411 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[15] ; pClock     ;
+; N/A                                     ; None                                                ; 11.411 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[15] ; pClock     ;
+; N/A                                     ; None                                                ; 11.411 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[15] ; pClock     ;
+; N/A                                     ; None                                                ; 11.411 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[15] ; pClock     ;
+; N/A                                     ; None                                                ; 11.411 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[15] ; pClock     ;
+; N/A                                     ; None                                                ; 11.411 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[15] ; pClock     ;
+; N/A                                     ; None                                                ; 11.381 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[9]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.381 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[9]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.381 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[9]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.381 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[9]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.381 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[9]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.381 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[9]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.381 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[9]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.381 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[9]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.379 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[3]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.379 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[3]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.379 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[3]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.379 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[3]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.379 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[3]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.379 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[3]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.379 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[3]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.379 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[3]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.345 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg0 ; pInstruction[20] ; pClock     ;
+; N/A                                     ; None                                                ; 11.345 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg1 ; pInstruction[20] ; pClock     ;
+; N/A                                     ; None                                                ; 11.345 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg2 ; pInstruction[20] ; pClock     ;
+; N/A                                     ; None                                                ; 11.345 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg3 ; pInstruction[20] ; pClock     ;
+; N/A                                     ; None                                                ; 11.345 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg4 ; pInstruction[20] ; pClock     ;
+; N/A                                     ; None                                                ; 11.345 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg5 ; pInstruction[20] ; pClock     ;
+; N/A                                     ; None                                                ; 11.345 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg6 ; pInstruction[20] ; pClock     ;
+; N/A                                     ; None                                                ; 11.345 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg7 ; pInstruction[20] ; pClock     ;
+; N/A                                     ; None                                                ; 11.284 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg0 ; pInstruction[25] ; pClock     ;
+; N/A                                     ; None                                                ; 11.284 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg1 ; pInstruction[25] ; pClock     ;
+; N/A                                     ; None                                                ; 11.284 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg2 ; pInstruction[25] ; pClock     ;
+; N/A                                     ; None                                                ; 11.284 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg3 ; pInstruction[25] ; pClock     ;
+; N/A                                     ; None                                                ; 11.284 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg4 ; pInstruction[25] ; pClock     ;
+; N/A                                     ; None                                                ; 11.284 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg5 ; pInstruction[25] ; pClock     ;
+; N/A                                     ; None                                                ; 11.284 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg6 ; pInstruction[25] ; pClock     ;
+; N/A                                     ; None                                                ; 11.284 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg7 ; pInstruction[25] ; pClock     ;
+; N/A                                     ; None                                                ; 11.276 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg0 ; pInstruction[27] ; pClock     ;
+; N/A                                     ; None                                                ; 11.276 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg1 ; pInstruction[27] ; pClock     ;
+; N/A                                     ; None                                                ; 11.276 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg2 ; pInstruction[27] ; pClock     ;
+; N/A                                     ; None                                                ; 11.276 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg3 ; pInstruction[27] ; pClock     ;
+; N/A                                     ; None                                                ; 11.276 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg4 ; pInstruction[27] ; pClock     ;
+; N/A                                     ; None                                                ; 11.276 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg5 ; pInstruction[27] ; pClock     ;
+; N/A                                     ; None                                                ; 11.276 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg6 ; pInstruction[27] ; pClock     ;
+; N/A                                     ; None                                                ; 11.276 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg7 ; pInstruction[27] ; pClock     ;
+; N/A                                     ; None                                                ; 11.260 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[1]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.260 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[1]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.260 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[1]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.260 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[1]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.260 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[1]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.260 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[1]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.260 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[1]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.260 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[1]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.258 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0  ; pInstruction[5]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.258 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg1  ; pInstruction[5]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.258 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg2  ; pInstruction[5]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.258 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg3  ; pInstruction[5]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.258 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg4  ; pInstruction[5]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.258 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg5  ; pInstruction[5]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.258 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg6  ; pInstruction[5]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.258 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg7  ; pInstruction[5]  ; pClock     ;
+; N/A                                     ; None                                                ; 11.243 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg0 ; pInstruction[29] ; pClock     ;
+; N/A                                     ; None                                                ; 11.243 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg1 ; pInstruction[29] ; pClock     ;
+; N/A                                     ; None                                                ; 11.243 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg2 ; pInstruction[29] ; pClock     ;
+; N/A                                     ; None                                                ; 11.243 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg3 ; pInstruction[29] ; pClock     ;
+; N/A                                     ; None                                                ; 11.243 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg4 ; pInstruction[29] ; pClock     ;
+; N/A                                     ; None                                                ; 11.243 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg5 ; pInstruction[29] ; pClock     ;
+; N/A                                     ; None                                                ; 11.243 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg6 ; pInstruction[29] ; pClock     ;
+; N/A                                     ; None                                                ; 11.243 ns  ; eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a18~porta_address_reg7 ; pInstruction[29] ; pClock     ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;                                                                                                                                 ;                  ;            ;
++-----------------------------------------+-----------------------------------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------+------------------+------------+
+
+
++-------------------------------------------------------------------------+
+; tpd                                                                     ;
++-------+-------------------+-----------------+--------+------------------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From   ; To               ;
++-------+-------------------+-----------------+--------+------------------+
+; N/A   ; None              ; 10.362 ns       ; pReset ; pInstruction[13] ;
+; N/A   ; None              ; 10.342 ns       ; pReset ; pInstruction[17] ;
+; N/A   ; None              ; 9.868 ns        ; pReset ; pInstruction[7]  ;
+; N/A   ; None              ; 9.836 ns        ; pReset ; pInstruction[0]  ;
+; N/A   ; None              ; 9.787 ns        ; pReset ; pInstruction[24] ;
+; N/A   ; None              ; 9.719 ns        ; pReset ; pInstruction[12] ;
+; N/A   ; None              ; 9.700 ns        ; pReset ; pInstruction[25] ;
+; N/A   ; None              ; 9.662 ns        ; pReset ; pInstruction[6]  ;
+; N/A   ; None              ; 9.657 ns        ; pReset ; pInstruction[22] ;
+; N/A   ; None              ; 9.651 ns        ; pReset ; pInstruction[14] ;
+; N/A   ; None              ; 9.598 ns        ; pReset ; pInstruction[9]  ;
+; N/A   ; None              ; 9.552 ns        ; pReset ; pInstruction[16] ;
+; N/A   ; None              ; 9.537 ns        ; pReset ; pInstruction[15] ;
+; N/A   ; None              ; 9.499 ns        ; pReset ; pInstruction[21] ;
+; N/A   ; None              ; 9.495 ns        ; pReset ; pInstruction[27] ;
+; N/A   ; None              ; 9.470 ns        ; pReset ; pInstruction[20] ;
+; N/A   ; None              ; 9.458 ns        ; pReset ; pInstruction[29] ;
+; N/A   ; None              ; 9.443 ns        ; pReset ; pInstruction[10] ;
+; N/A   ; None              ; 9.422 ns        ; pReset ; pInstruction[19] ;
+; N/A   ; None              ; 9.343 ns        ; pReset ; pInstruction[31] ;
+; N/A   ; None              ; 9.337 ns        ; pReset ; pInstruction[11] ;
+; N/A   ; None              ; 9.280 ns        ; pReset ; pInstruction[4]  ;
+; N/A   ; None              ; 9.265 ns        ; pReset ; pInstruction[30] ;
+; N/A   ; None              ; 9.262 ns        ; pReset ; pInstruction[18] ;
+; N/A   ; None              ; 9.249 ns        ; pReset ; pInstruction[23] ;
+; N/A   ; None              ; 9.242 ns        ; pReset ; pInstruction[8]  ;
+; N/A   ; None              ; 9.129 ns        ; pReset ; pInstruction[5]  ;
+; N/A   ; None              ; 9.077 ns        ; pReset ; pInstruction[26] ;
+; N/A   ; None              ; 9.029 ns        ; pReset ; pInstruction[3]  ;
+; N/A   ; None              ; 9.018 ns        ; pReset ; pInstruction[28] ;
+; N/A   ; None              ; 9.017 ns        ; pReset ; pInstruction[1]  ;
+; N/A   ; None              ; 8.789 ns        ; pReset ; pInstruction[2]  ;
++-------+-------------------+-----------------+--------+------------------+
+
+
++-------------------------------------------------------------------------------------+
+; th                                                                                  ;
++---------------+-------------+-----------+-------------+------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From        ; To               ; To Clock ;
++---------------+-------------+-----------+-------------+------------------+----------+
+; N/A           ; None        ; -2.159 ns ; pNextpc[15] ; ePC:cPC|pOut[15] ; pClock   ;
+; N/A           ; None        ; -2.196 ns ; pNextpc[2]  ; ePC:cPC|pOut[2]  ; pClock   ;
+; N/A           ; None        ; -2.217 ns ; pNextpc[9]  ; ePC:cPC|pOut[9]  ; pClock   ;
+; N/A           ; None        ; -2.302 ns ; pNextpc[5]  ; ePC:cPC|pOut[5]  ; pClock   ;
+; N/A           ; None        ; -2.333 ns ; pNextpc[26] ; ePC:cPC|pOut[26] ; pClock   ;
+; N/A           ; None        ; -2.346 ns ; pNextpc[16] ; ePC:cPC|pOut[16] ; pClock   ;
+; N/A           ; None        ; -2.371 ns ; pNextpc[25] ; ePC:cPC|pOut[25] ; pClock   ;
+; N/A           ; None        ; -2.420 ns ; pJSelect    ; ePC:cPC|pOut[22] ; pClock   ;
+; N/A           ; None        ; -2.436 ns ; pNextpc[12] ; ePC:cPC|pOut[12] ; pClock   ;
+; N/A           ; None        ; -2.436 ns ; pSelect     ; ePC:cPC|pOut[1]  ; pClock   ;
+; N/A           ; None        ; -2.436 ns ; pJSelect    ; ePC:cPC|pOut[18] ; pClock   ;
+; N/A           ; None        ; -2.442 ns ; pJSelect    ; ePC:cPC|pOut[20] ; pClock   ;
+; N/A           ; None        ; -2.445 ns ; pJSelect    ; ePC:cPC|pOut[23] ; pClock   ;
+; N/A           ; None        ; -2.445 ns ; pJSelect    ; ePC:cPC|pOut[24] ; pClock   ;
+; N/A           ; None        ; -2.447 ns ; pJSelect    ; ePC:cPC|pOut[21] ; pClock   ;
+; N/A           ; None        ; -2.448 ns ; pSelect     ; ePC:cPC|pOut[31] ; pClock   ;
+; N/A           ; None        ; -2.465 ns ; pNextpc[19] ; ePC:cPC|pOut[19] ; pClock   ;
+; N/A           ; None        ; -2.465 ns ; pJSelect    ; ePC:cPC|pOut[25] ; pClock   ;
+; N/A           ; None        ; -2.466 ns ; pJSelect    ; ePC:cPC|pOut[16] ; pClock   ;
+; N/A           ; None        ; -2.467 ns ; pJSelect    ; ePC:cPC|pOut[15] ; pClock   ;
+; N/A           ; None        ; -2.469 ns ; pJSelect    ; ePC:cPC|pOut[17] ; pClock   ;
+; N/A           ; None        ; -2.469 ns ; pJSelect    ; ePC:cPC|pOut[19] ; pClock   ;
+; N/A           ; None        ; -2.524 ns ; pNextpc[4]  ; ePC:cPC|pOut[4]  ; pClock   ;
+; N/A           ; None        ; -2.531 ns ; pNextpc[21] ; ePC:cPC|pOut[21] ; pClock   ;
+; N/A           ; None        ; -2.540 ns ; pNextpc[7]  ; ePC:cPC|pOut[7]  ; pClock   ;
+; N/A           ; None        ; -2.559 ns ; pNextpc[22] ; ePC:cPC|pOut[22] ; pClock   ;
+; N/A           ; None        ; -2.572 ns ; pNextpc[17] ; ePC:cPC|pOut[17] ; pClock   ;
+; N/A           ; None        ; -2.599 ns ; pNextpc[6]  ; ePC:cPC|pOut[6]  ; pClock   ;
+; N/A           ; None        ; -2.602 ns ; pJPC[14]    ; ePC:cPC|pOut[16] ; pClock   ;
+; N/A           ; None        ; -2.614 ns ; pJPC[12]    ; ePC:cPC|pOut[14] ; pClock   ;
+; N/A           ; None        ; -2.650 ns ; pReset      ; ePC:cPC|pOut[0]  ; pClock   ;
+; N/A           ; None        ; -2.655 ns ; pNextpc[11] ; ePC:cPC|pOut[11] ; pClock   ;
+; N/A           ; None        ; -2.670 ns ; pNextpc[13] ; ePC:cPC|pOut[13] ; pClock   ;
+; N/A           ; None        ; -2.679 ns ; pNextpc[10] ; ePC:cPC|pOut[10] ; pClock   ;
+; N/A           ; None        ; -2.690 ns ; pJPC[9]     ; ePC:cPC|pOut[11] ; pClock   ;
+; N/A           ; None        ; -2.691 ns ; pJSelect    ; ePC:cPC|pOut[27] ; pClock   ;
+; N/A           ; None        ; -2.693 ns ; pJSelect    ; ePC:cPC|pOut[2]  ; pClock   ;
+; N/A           ; None        ; -2.707 ns ; pJPC[17]    ; ePC:cPC|pOut[19] ; pClock   ;
+; N/A           ; None        ; -2.720 ns ; pNextpc[14] ; ePC:cPC|pOut[14] ; pClock   ;
+; N/A           ; None        ; -2.739 ns ; pNextpc[0]  ; ePC:cPC|pOut[0]  ; pClock   ;
+; N/A           ; None        ; -2.740 ns ; pNextpc[8]  ; ePC:cPC|pOut[8]  ; pClock   ;
+; N/A           ; None        ; -2.742 ns ; pNextpc[23] ; ePC:cPC|pOut[23] ; pClock   ;
+; N/A           ; None        ; -2.747 ns ; pReset      ; ePC:cPC|pOut[1]  ; pClock   ;
+; N/A           ; None        ; -2.759 ns ; pNextpc[18] ; ePC:cPC|pOut[18] ; pClock   ;
+; N/A           ; None        ; -2.767 ns ; pNextpc[3]  ; ePC:cPC|pOut[3]  ; pClock   ;
+; N/A           ; None        ; -2.768 ns ; pSelect     ; ePC:cPC|pOut[29] ; pClock   ;
+; N/A           ; None        ; -2.768 ns ; pSelect     ; ePC:cPC|pOut[0]  ; pClock   ;
+; N/A           ; None        ; -2.769 ns ; pSelect     ; ePC:cPC|pOut[30] ; pClock   ;
+; N/A           ; None        ; -2.771 ns ; pNextpc[27] ; ePC:cPC|pOut[27] ; pClock   ;
+; N/A           ; None        ; -2.771 ns ; pJPC[4]     ; ePC:cPC|pOut[6]  ; pClock   ;
+; N/A           ; None        ; -2.778 ns ; pSelect     ; ePC:cPC|pOut[28] ; pClock   ;
+; N/A           ; None        ; -2.803 ns ; pJPC[6]     ; ePC:cPC|pOut[8]  ; pClock   ;
+; N/A           ; None        ; -2.818 ns ; pJPC[2]     ; ePC:cPC|pOut[4]  ; pClock   ;
+; N/A           ; None        ; -2.822 ns ; pSelect     ; ePC:cPC|pOut[15] ; pClock   ;
+; N/A           ; None        ; -2.822 ns ; pSelect     ; ePC:cPC|pOut[16] ; pClock   ;
+; N/A           ; None        ; -2.822 ns ; pSelect     ; ePC:cPC|pOut[17] ; pClock   ;
+; N/A           ; None        ; -2.822 ns ; pSelect     ; ePC:cPC|pOut[18] ; pClock   ;
+; N/A           ; None        ; -2.822 ns ; pSelect     ; ePC:cPC|pOut[19] ; pClock   ;
+; N/A           ; None        ; -2.822 ns ; pSelect     ; ePC:cPC|pOut[25] ; pClock   ;
+; N/A           ; None        ; -2.824 ns ; pNextpc[24] ; ePC:cPC|pOut[24] ; pClock   ;
+; N/A           ; None        ; -2.829 ns ; pNextpc[20] ; ePC:cPC|pOut[20] ; pClock   ;
+; N/A           ; None        ; -2.833 ns ; pJSelect    ; ePC:cPC|pOut[3]  ; pClock   ;
+; N/A           ; None        ; -2.833 ns ; pJSelect    ; ePC:cPC|pOut[4]  ; pClock   ;
+; N/A           ; None        ; -2.843 ns ; pJPC[11]    ; ePC:cPC|pOut[13] ; pClock   ;
+; N/A           ; None        ; -2.847 ns ; pJSelect    ; ePC:cPC|pOut[6]  ; pClock   ;
+; N/A           ; None        ; -2.848 ns ; pJSelect    ; ePC:cPC|pOut[5]  ; pClock   ;
+; N/A           ; None        ; -2.848 ns ; pJSelect    ; ePC:cPC|pOut[9]  ; pClock   ;
+; N/A           ; None        ; -2.849 ns ; pJSelect    ; ePC:cPC|pOut[8]  ; pClock   ;
+; N/A           ; None        ; -2.849 ns ; pJSelect    ; ePC:cPC|pOut[26] ; pClock   ;
+; N/A           ; None        ; -2.852 ns ; pJSelect    ; ePC:cPC|pOut[7]  ; pClock   ;
+; N/A           ; None        ; -2.852 ns ; pJSelect    ; ePC:cPC|pOut[10] ; pClock   ;
+; N/A           ; None        ; -2.852 ns ; pJSelect    ; ePC:cPC|pOut[12] ; pClock   ;
+; N/A           ; None        ; -2.854 ns ; pJSelect    ; ePC:cPC|pOut[13] ; pClock   ;
+; N/A           ; None        ; -2.854 ns ; pJSelect    ; ePC:cPC|pOut[14] ; pClock   ;
+; N/A           ; None        ; -2.856 ns ; pJSelect    ; ePC:cPC|pOut[11] ; pClock   ;
+; N/A           ; None        ; -2.858 ns ; pJPC[24]    ; ePC:cPC|pOut[26] ; pClock   ;
+; N/A           ; None        ; -2.862 ns ; pJPC[0]     ; ePC:cPC|pOut[2]  ; pClock   ;
+; N/A           ; None        ; -2.865 ns ; pNextpc[1]  ; ePC:cPC|pOut[1]  ; pClock   ;
+; N/A           ; None        ; -2.865 ns ; pNextpc[29] ; ePC:cPC|pOut[29] ; pClock   ;
+; N/A           ; None        ; -2.891 ns ; pJPC[8]     ; ePC:cPC|pOut[10] ; pClock   ;
+; N/A           ; None        ; -2.918 ns ; pJPC[7]     ; ePC:cPC|pOut[9]  ; pClock   ;
+; N/A           ; None        ; -2.935 ns ; pNextpc[30] ; ePC:cPC|pOut[30] ; pClock   ;
+; N/A           ; None        ; -2.937 ns ; pJPC[18]    ; ePC:cPC|pOut[20] ; pClock   ;
+; N/A           ; None        ; -2.937 ns ; pJPC[10]    ; ePC:cPC|pOut[12] ; pClock   ;
+; N/A           ; None        ; -2.947 ns ; pJPC[5]     ; ePC:cPC|pOut[7]  ; pClock   ;
+; N/A           ; None        ; -2.948 ns ; pJPC[19]    ; ePC:cPC|pOut[21] ; pClock   ;
+; N/A           ; None        ; -2.971 ns ; pSelect     ; ePC:cPC|pOut[20] ; pClock   ;
+; N/A           ; None        ; -2.971 ns ; pSelect     ; ePC:cPC|pOut[21] ; pClock   ;
+; N/A           ; None        ; -2.971 ns ; pSelect     ; ePC:cPC|pOut[22] ; pClock   ;
+; N/A           ; None        ; -2.971 ns ; pSelect     ; ePC:cPC|pOut[23] ; pClock   ;
+; N/A           ; None        ; -2.971 ns ; pSelect     ; ePC:cPC|pOut[24] ; pClock   ;
+; N/A           ; None        ; -3.016 ns ; pReset      ; ePC:cPC|pOut[10] ; pClock   ;
+; N/A           ; None        ; -3.016 ns ; pReset      ; ePC:cPC|pOut[11] ; pClock   ;
+; N/A           ; None        ; -3.016 ns ; pReset      ; ePC:cPC|pOut[12] ; pClock   ;
+; N/A           ; None        ; -3.016 ns ; pReset      ; ePC:cPC|pOut[13] ; pClock   ;
+; N/A           ; None        ; -3.016 ns ; pReset      ; ePC:cPC|pOut[14] ; pClock   ;
+; N/A           ; None        ; -3.016 ns ; pReset      ; ePC:cPC|pOut[26] ; pClock   ;
+; N/A           ; None        ; -3.031 ns ; pReset      ; ePC:cPC|pOut[5]  ; pClock   ;
+; N/A           ; None        ; -3.031 ns ; pReset      ; ePC:cPC|pOut[6]  ; pClock   ;
+; N/A           ; None        ; -3.031 ns ; pReset      ; ePC:cPC|pOut[7]  ; pClock   ;
+; N/A           ; None        ; -3.031 ns ; pReset      ; ePC:cPC|pOut[8]  ; pClock   ;
+; N/A           ; None        ; -3.031 ns ; pReset      ; ePC:cPC|pOut[9]  ; pClock   ;
+; N/A           ; None        ; -3.031 ns ; pReset      ; ePC:cPC|pOut[27] ; pClock   ;
+; N/A           ; None        ; -3.036 ns ; pJPC[21]    ; ePC:cPC|pOut[23] ; pClock   ;
+; N/A           ; None        ; -3.037 ns ; pReset      ; ePC:cPC|pOut[15] ; pClock   ;
+; N/A           ; None        ; -3.037 ns ; pReset      ; ePC:cPC|pOut[16] ; pClock   ;
+; N/A           ; None        ; -3.037 ns ; pReset      ; ePC:cPC|pOut[17] ; pClock   ;
+; N/A           ; None        ; -3.037 ns ; pReset      ; ePC:cPC|pOut[18] ; pClock   ;
+; N/A           ; None        ; -3.037 ns ; pReset      ; ePC:cPC|pOut[19] ; pClock   ;
+; N/A           ; None        ; -3.037 ns ; pReset      ; ePC:cPC|pOut[25] ; pClock   ;
+; N/A           ; None        ; -3.063 ns ; pJPC[16]    ; ePC:cPC|pOut[18] ; pClock   ;
+; N/A           ; None        ; -3.066 ns ; pJPC[3]     ; ePC:cPC|pOut[5]  ; pClock   ;
+; N/A           ; None        ; -3.080 ns ; pReset      ; ePC:cPC|pOut[2]  ; pClock   ;
+; N/A           ; None        ; -3.080 ns ; pReset      ; ePC:cPC|pOut[3]  ; pClock   ;
+; N/A           ; None        ; -3.080 ns ; pReset      ; ePC:cPC|pOut[4]  ; pClock   ;
+; N/A           ; None        ; -3.083 ns ; pSelect     ; ePC:cPC|pOut[2]  ; pClock   ;
+; N/A           ; None        ; -3.083 ns ; pSelect     ; ePC:cPC|pOut[3]  ; pClock   ;
+; N/A           ; None        ; -3.083 ns ; pSelect     ; ePC:cPC|pOut[4]  ; pClock   ;
+; N/A           ; None        ; -3.085 ns ; pNextpc[28] ; ePC:cPC|pOut[28] ; pClock   ;
+; N/A           ; None        ; -3.094 ns ; pSelect     ; ePC:cPC|pOut[10] ; pClock   ;
+; N/A           ; None        ; -3.094 ns ; pSelect     ; ePC:cPC|pOut[11] ; pClock   ;
+; N/A           ; None        ; -3.094 ns ; pSelect     ; ePC:cPC|pOut[12] ; pClock   ;
+; N/A           ; None        ; -3.094 ns ; pSelect     ; ePC:cPC|pOut[13] ; pClock   ;
+; N/A           ; None        ; -3.094 ns ; pSelect     ; ePC:cPC|pOut[14] ; pClock   ;
+; N/A           ; None        ; -3.094 ns ; pSelect     ; ePC:cPC|pOut[26] ; pClock   ;
+; N/A           ; None        ; -3.102 ns ; pJPC[1]     ; ePC:cPC|pOut[3]  ; pClock   ;
+; N/A           ; None        ; -3.149 ns ; pJPC[20]    ; ePC:cPC|pOut[22] ; pClock   ;
+; N/A           ; None        ; -3.164 ns ; pJPC[13]    ; ePC:cPC|pOut[15] ; pClock   ;
+; N/A           ; None        ; -3.182 ns ; pReset      ; ePC:cPC|pOut[31] ; pClock   ;
+; N/A           ; None        ; -3.183 ns ; pReset      ; ePC:cPC|pOut[28] ; pClock   ;
+; N/A           ; None        ; -3.186 ns ; pReset      ; ePC:cPC|pOut[29] ; pClock   ;
+; N/A           ; None        ; -3.187 ns ; pReset      ; ePC:cPC|pOut[30] ; pClock   ;
+; N/A           ; None        ; -3.206 ns ; pJPC[23]    ; ePC:cPC|pOut[25] ; pClock   ;
+; N/A           ; None        ; -3.224 ns ; pJPC[15]    ; ePC:cPC|pOut[17] ; pClock   ;
+; N/A           ; None        ; -3.250 ns ; pJPC[22]    ; ePC:cPC|pOut[24] ; pClock   ;
+; N/A           ; None        ; -3.282 ns ; pReset      ; ePC:cPC|pOut[20] ; pClock   ;
+; N/A           ; None        ; -3.282 ns ; pReset      ; ePC:cPC|pOut[21] ; pClock   ;
+; N/A           ; None        ; -3.282 ns ; pReset      ; ePC:cPC|pOut[22] ; pClock   ;
+; N/A           ; None        ; -3.282 ns ; pReset      ; ePC:cPC|pOut[23] ; pClock   ;
+; N/A           ; None        ; -3.282 ns ; pReset      ; ePC:cPC|pOut[24] ; pClock   ;
+; N/A           ; None        ; -3.330 ns ; pJSelect    ; ePC:cPC|pOut[31] ; pClock   ;
+; N/A           ; None        ; -3.331 ns ; pJSelect    ; ePC:cPC|pOut[28] ; pClock   ;
+; N/A           ; None        ; -3.334 ns ; pJSelect    ; ePC:cPC|pOut[29] ; pClock   ;
+; N/A           ; None        ; -3.335 ns ; pJSelect    ; ePC:cPC|pOut[30] ; pClock   ;
+; N/A           ; None        ; -3.404 ns ; pSelect     ; ePC:cPC|pOut[5]  ; pClock   ;
+; N/A           ; None        ; -3.404 ns ; pSelect     ; ePC:cPC|pOut[6]  ; pClock   ;
+; N/A           ; None        ; -3.404 ns ; pSelect     ; ePC:cPC|pOut[7]  ; pClock   ;
+; N/A           ; None        ; -3.404 ns ; pSelect     ; ePC:cPC|pOut[8]  ; pClock   ;
+; N/A           ; None        ; -3.404 ns ; pSelect     ; ePC:cPC|pOut[9]  ; pClock   ;
+; N/A           ; None        ; -3.404 ns ; pSelect     ; ePC:cPC|pOut[27] ; pClock   ;
+; N/A           ; None        ; -3.487 ns ; pNextpc[31] ; ePC:cPC|pOut[31] ; pClock   ;
+; N/A           ; None        ; -3.522 ns ; pJPC[25]    ; ePC:cPC|pOut[27] ; pClock   ;
+; N/A           ; None        ; -3.694 ns ; pJSelect    ; ePC:cPC|pOut[0]  ; pClock   ;
+; N/A           ; None        ; -4.153 ns ; pJSelect    ; ePC:cPC|pOut[1]  ; pClock   ;
++---------------+-------------+-----------+-------------+------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Dec 04 10:14:12 2014
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off IF -c eIF --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "pClock" is an undefined clock
+Info: Clock "pClock" has Internal fmax of 248.45 MHz between source register "ePC:cPC|pOut[7]" and destination register "ePC:cPC|pOut[25]" (period= 4.025 ns)
+    Info: + Longest register to register delay is 3.859 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X36_Y25_N5; Fanout = 6; REG Node = 'ePC:cPC|pOut[7]'
+        Info: 2: + IC(1.033 ns) + CELL(0.443 ns) = 1.476 ns; Loc. = LC_X35_Y26_N5; Fanout = 2; COMB Node = 'eAdd4:cadd4|pOut[7]~27'
+        Info: 3: + IC(0.000 ns) + CELL(0.058 ns) = 1.534 ns; Loc. = LC_X35_Y26_N6; Fanout = 2; COMB Node = 'eAdd4:cadd4|pOut[8]~32'
+        Info: 4: + IC(0.000 ns) + CELL(0.058 ns) = 1.592 ns; Loc. = LC_X35_Y26_N7; Fanout = 2; COMB Node = 'eAdd4:cadd4|pOut[9]~37'
+        Info: 5: + IC(0.000 ns) + CELL(0.058 ns) = 1.650 ns; Loc. = LC_X35_Y26_N8; Fanout = 2; COMB Node = 'eAdd4:cadd4|pOut[10]~42'
+        Info: 6: + IC(0.000 ns) + CELL(0.214 ns) = 1.864 ns; Loc. = LC_X35_Y26_N9; Fanout = 6; COMB Node = 'eAdd4:cadd4|pOut[11]~47'
+        Info: 7: + IC(0.000 ns) + CELL(0.098 ns) = 1.962 ns; Loc. = LC_X35_Y25_N4; Fanout = 6; COMB Node = 'eAdd4:cadd4|pOut[16]~72'
+        Info: 8: + IC(0.000 ns) + CELL(0.142 ns) = 2.104 ns; Loc. = LC_X35_Y25_N9; Fanout = 6; COMB Node = 'eAdd4:cadd4|pOut[21]~97'
+        Info: 9: + IC(0.000 ns) + CELL(0.469 ns) = 2.573 ns; Loc. = LC_X35_Y24_N3; Fanout = 1; COMB Node = 'eAdd4:cadd4|pOut[25]~115'
+        Info: 10: + IC(1.063 ns) + CELL(0.223 ns) = 3.859 ns; Loc. = LC_X34_Y25_N4; Fanout = 4; REG Node = 'ePC:cPC|pOut[25]'
+        Info: Total cell delay = 1.763 ns ( 45.69 % )
+        Info: Total interconnect delay = 2.096 ns ( 54.31 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "pClock" to destination register is 2.888 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.828 ns) = 0.828 ns; Loc. = PIN_M20; Fanout = 48; CLK Node = 'pClock'
+            Info: 2: + IC(1.518 ns) + CELL(0.542 ns) = 2.888 ns; Loc. = LC_X34_Y25_N4; Fanout = 4; REG Node = 'ePC:cPC|pOut[25]'
+            Info: Total cell delay = 1.370 ns ( 47.44 % )
+            Info: Total interconnect delay = 1.518 ns ( 52.56 % )
+        Info: - Longest clock path from clock "pClock" to source register is 2.888 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.828 ns) = 0.828 ns; Loc. = PIN_M20; Fanout = 48; CLK Node = 'pClock'
+            Info: 2: + IC(1.518 ns) + CELL(0.542 ns) = 2.888 ns; Loc. = LC_X36_Y25_N5; Fanout = 6; REG Node = 'ePC:cPC|pOut[7]'
+            Info: Total cell delay = 1.370 ns ( 47.44 % )
+            Info: Total interconnect delay = 1.518 ns ( 52.56 % )
+    Info: + Micro clock to output delay of source is 0.156 ns
+    Info: + Micro setup delay of destination is 0.010 ns
+Info: tsu for register "ePC:cPC|pOut[1]" (data pin = "pJSelect", clock pin = "pClock") is 4.263 ns
+    Info: + Longest pin to register delay is 7.150 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.087 ns) = 1.087 ns; Loc. = PIN_J9; Fanout = 28; PIN Node = 'pJSelect'
+        Info: 2: + IC(4.205 ns) + CELL(0.366 ns) = 5.658 ns; Loc. = LC_X36_Y24_N1; Fanout = 2; COMB Node = 'ePC:cPC|pOut[0]~1'
+        Info: 3: + IC(0.787 ns) + CELL(0.705 ns) = 7.150 ns; Loc. = LC_X34_Y24_N2; Fanout = 1; REG Node = 'ePC:cPC|pOut[1]'
+        Info: Total cell delay = 2.158 ns ( 30.18 % )
+        Info: Total interconnect delay = 4.992 ns ( 69.82 % )
+    Info: + Micro setup delay of destination is 0.010 ns
+    Info: - Shortest clock path from clock "pClock" to destination register is 2.897 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.828 ns) = 0.828 ns; Loc. = PIN_M20; Fanout = 48; CLK Node = 'pClock'
+        Info: 2: + IC(1.527 ns) + CELL(0.542 ns) = 2.897 ns; Loc. = LC_X34_Y24_N2; Fanout = 1; REG Node = 'ePC:cPC|pOut[1]'
+        Info: Total cell delay = 1.370 ns ( 47.29 % )
+        Info: Total interconnect delay = 1.527 ns ( 52.71 % )
+Info: tco from clock "pClock" to destination pin "pInstruction[17]" through memory "eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0" is 12.386 ns
+    Info: + Longest clock path from clock "pClock" to source memory is 2.867 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.828 ns) = 0.828 ns; Loc. = PIN_M20; Fanout = 48; CLK Node = 'pClock'
+        Info: 2: + IC(1.527 ns) + CELL(0.512 ns) = 2.867 ns; Loc. = M4K_X37_Y24; Fanout = 18; MEM Node = 'eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0'
+        Info: Total cell delay = 1.340 ns ( 46.74 % )
+        Info: Total interconnect delay = 1.527 ns ( 53.26 % )
+    Info: + Micro clock to output delay of source is 0.420 ns
+    Info: + Longest memory to pin delay is 9.099 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = M4K_X37_Y24; Fanout = 18; MEM Node = 'eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|ram_block1a0~porta_address_reg0'
+        Info: 2: + IC(0.000 ns) + CELL(3.069 ns) = 3.069 ns; Loc. = M4K_X37_Y24; Fanout = 1; MEM Node = 'eImem:cimem|lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_unv:auto_generated|q_a[17]'
+        Info: 3: + IC(0.747 ns) + CELL(0.366 ns) = 4.182 ns; Loc. = LC_X39_Y24_N6; Fanout = 1; COMB Node = 'pInstruction~17'
+        Info: 4: + IC(2.513 ns) + CELL(2.404 ns) = 9.099 ns; Loc. = PIN_U8; Fanout = 0; PIN Node = 'pInstruction[17]'
+        Info: Total cell delay = 5.839 ns ( 64.17 % )
+        Info: Total interconnect delay = 3.260 ns ( 35.83 % )
+Info: Longest tpd from source pin "pReset" to destination pin "pInstruction[13]" is 10.362 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.087 ns) = 1.087 ns; Loc. = PIN_E8; Fanout = 62; PIN Node = 'pReset'
+    Info: 2: + IC(4.252 ns) + CELL(0.075 ns) = 5.414 ns; Loc. = LC_X39_Y24_N2; Fanout = 1; COMB Node = 'pInstruction~13'
+    Info: 3: + IC(2.544 ns) + CELL(2.404 ns) = 10.362 ns; Loc. = PIN_V8; Fanout = 0; PIN Node = 'pInstruction[13]'
+    Info: Total cell delay = 3.566 ns ( 34.41 % )
+    Info: Total interconnect delay = 6.796 ns ( 65.59 % )
+Info: th for register "ePC:cPC|pOut[15]" (data pin = "pNextpc[15]", clock pin = "pClock") is -2.159 ns
+    Info: + Longest clock path from clock "pClock" to destination register is 2.888 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.828 ns) = 0.828 ns; Loc. = PIN_M20; Fanout = 48; CLK Node = 'pClock'
+        Info: 2: + IC(1.518 ns) + CELL(0.542 ns) = 2.888 ns; Loc. = LC_X34_Y25_N9; Fanout = 4; REG Node = 'ePC:cPC|pOut[15]'
+        Info: Total cell delay = 1.370 ns ( 47.44 % )
+        Info: Total interconnect delay = 1.518 ns ( 52.56 % )
+    Info: + Micro hold delay of destination is 0.100 ns
+    Info: - Shortest pin to register delay is 5.147 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.972 ns) = 0.972 ns; Loc. = PIN_B11; Fanout = 1; PIN Node = 'pNextpc[15]'
+        Info: 2: + IC(4.090 ns) + CELL(0.085 ns) = 5.147 ns; Loc. = LC_X34_Y25_N9; Fanout = 4; REG Node = 'ePC:cPC|pOut[15]'
+        Info: Total cell delay = 1.057 ns ( 20.54 % )
+        Info: Total interconnect delay = 4.090 ns ( 79.46 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 183 megabytes
+    Info: Processing ended: Thu Dec 04 10:14:13 2014
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
+
+

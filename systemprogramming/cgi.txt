@@ -1,0 +1,27 @@
+CGI(common Gateway Interface)---구버전
+                        url(패킷) 
+wb                  <---------------->            ws           <----------> 외부 응용 프로그램
+client                                            server
+
+-웹의 하이퍼미디어 시스템과 외부 응용 프로그램이 서로 연계되기 위한 인코딩,
+디코딩 방법과 데이터 교환 방법을 표준화
+-CGI 프로그램은 client의 요청에 따라 web server(http server)를 통하여 실행된다.
+
+예시
+-search engine
+-order form
+-변역 등등
+
+GET - 전부 보여주는것 url 전부 보여준다 !!(예를 들어서, 회원가입의 경우 부적절!)
+POST - 패킷에 숨겨짐
+---> 차이 크지 않다!!!
+
+
+15-6 참고
+
+execl("/bin/ls","ls",-lR","/usr/bin",0);
+execv("/bin/ls",argv);
+argv[0] "ls"
+argv[1] "-lR"
+argv[2] "/usr/bin"
+arv[3] ""

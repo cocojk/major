@@ -1,0 +1,4 @@
+리눅스 명령어 모음
+kill -l 시그널 번호 종류 나열해준다!
+기본적으로 
+kill -signalID PID

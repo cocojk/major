@@ -1,0 +1,12 @@
+<공유기 연결>
+sudo ifconfig eth0 192.168.1.2 up
+192.168.1.2 netmask 255.255.255.0
+sudo arp -s 192.168.1.1 00:1D:73:B1:95:54
+sudo ssh 192.168.1.1
+
+sudo scp 파일 192.168.1.1:/root  -->파일 전송
+
+커널 이미지 ! 쉽게
+openwrt-ar71xx-wzr-hp-g300nh-squashfs-sysupgrade.bin 파일을
+winscp을 통해서 옮기고
+sysupgrade openwrt-ar71xx-wzr-hp-g300nh-squashfs-sysupgrade.bin 하면 된다!!

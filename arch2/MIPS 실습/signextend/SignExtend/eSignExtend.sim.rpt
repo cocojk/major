@@ -1,0 +1,235 @@
+Simulator report for eSignExtend
+Thu Nov 27 09:39:11 2014
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 48 nodes     ;
+; Simulation Coverage         ;      45.83 % ;
+; Total Number of Transitions ; 44           ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Stratix      ;
+; Device                      ; EP1S10F484C5 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      45.83 % ;
+; Total nodes checked                                 ; 48           ;
+; Total output ports checked                          ; 48           ;
+; Total output ports with complete 1/0-value coverage ; 22           ;
+; Total output ports with no 1/0-value coverage       ; 26           ;
+; Total output ports with no 1-value coverage         ; 26           ;
+; Total output ports with no 0-value coverage         ; 26           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                            ;
++-----------------------+-----------------------------+------------------+
+; Node Name             ; Output Port Name            ; Output Port Type ;
++-----------------------+-----------------------------+------------------+
+; |eSignExtend|pIn[0]   ; |eSignExtend|pIn[0]~corein  ; combout          ;
+; |eSignExtend|pIn[13]  ; |eSignExtend|pIn[13]~corein ; combout          ;
+; |eSignExtend|pIn[15]  ; |eSignExtend|pIn[15]~corein ; combout          ;
+; |eSignExtend|pOut[0]  ; |eSignExtend|pOut[0]        ; padio            ;
+; |eSignExtend|pOut[13] ; |eSignExtend|pOut[13]       ; padio            ;
+; |eSignExtend|pOut[15] ; |eSignExtend|pOut[15]       ; padio            ;
+; |eSignExtend|pOut[16] ; |eSignExtend|pOut[16]       ; padio            ;
+; |eSignExtend|pOut[17] ; |eSignExtend|pOut[17]       ; padio            ;
+; |eSignExtend|pOut[18] ; |eSignExtend|pOut[18]       ; padio            ;
+; |eSignExtend|pOut[19] ; |eSignExtend|pOut[19]       ; padio            ;
+; |eSignExtend|pOut[20] ; |eSignExtend|pOut[20]       ; padio            ;
+; |eSignExtend|pOut[21] ; |eSignExtend|pOut[21]       ; padio            ;
+; |eSignExtend|pOut[22] ; |eSignExtend|pOut[22]       ; padio            ;
+; |eSignExtend|pOut[23] ; |eSignExtend|pOut[23]       ; padio            ;
+; |eSignExtend|pOut[24] ; |eSignExtend|pOut[24]       ; padio            ;
+; |eSignExtend|pOut[25] ; |eSignExtend|pOut[25]       ; padio            ;
+; |eSignExtend|pOut[26] ; |eSignExtend|pOut[26]       ; padio            ;
+; |eSignExtend|pOut[27] ; |eSignExtend|pOut[27]       ; padio            ;
+; |eSignExtend|pOut[28] ; |eSignExtend|pOut[28]       ; padio            ;
+; |eSignExtend|pOut[29] ; |eSignExtend|pOut[29]       ; padio            ;
+; |eSignExtend|pOut[30] ; |eSignExtend|pOut[30]       ; padio            ;
+; |eSignExtend|pOut[31] ; |eSignExtend|pOut[31]       ; padio            ;
++-----------------------+-----------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                               ;
++-----------------------+-----------------------------+------------------+
+; Node Name             ; Output Port Name            ; Output Port Type ;
++-----------------------+-----------------------------+------------------+
+; |eSignExtend|pIn[1]   ; |eSignExtend|pIn[1]~corein  ; combout          ;
+; |eSignExtend|pIn[2]   ; |eSignExtend|pIn[2]~corein  ; combout          ;
+; |eSignExtend|pIn[3]   ; |eSignExtend|pIn[3]~corein  ; combout          ;
+; |eSignExtend|pIn[4]   ; |eSignExtend|pIn[4]~corein  ; combout          ;
+; |eSignExtend|pIn[5]   ; |eSignExtend|pIn[5]~corein  ; combout          ;
+; |eSignExtend|pIn[6]   ; |eSignExtend|pIn[6]~corein  ; combout          ;
+; |eSignExtend|pIn[7]   ; |eSignExtend|pIn[7]~corein  ; combout          ;
+; |eSignExtend|pIn[8]   ; |eSignExtend|pIn[8]~corein  ; combout          ;
+; |eSignExtend|pIn[9]   ; |eSignExtend|pIn[9]~corein  ; combout          ;
+; |eSignExtend|pIn[10]  ; |eSignExtend|pIn[10]~corein ; combout          ;
+; |eSignExtend|pIn[11]  ; |eSignExtend|pIn[11]~corein ; combout          ;
+; |eSignExtend|pIn[12]  ; |eSignExtend|pIn[12]~corein ; combout          ;
+; |eSignExtend|pIn[14]  ; |eSignExtend|pIn[14]~corein ; combout          ;
+; |eSignExtend|pOut[1]  ; |eSignExtend|pOut[1]        ; padio            ;
+; |eSignExtend|pOut[2]  ; |eSignExtend|pOut[2]        ; padio            ;
+; |eSignExtend|pOut[3]  ; |eSignExtend|pOut[3]        ; padio            ;
+; |eSignExtend|pOut[4]  ; |eSignExtend|pOut[4]        ; padio            ;
+; |eSignExtend|pOut[5]  ; |eSignExtend|pOut[5]        ; padio            ;
+; |eSignExtend|pOut[6]  ; |eSignExtend|pOut[6]        ; padio            ;
+; |eSignExtend|pOut[7]  ; |eSignExtend|pOut[7]        ; padio            ;
+; |eSignExtend|pOut[8]  ; |eSignExtend|pOut[8]        ; padio            ;
+; |eSignExtend|pOut[9]  ; |eSignExtend|pOut[9]        ; padio            ;
+; |eSignExtend|pOut[10] ; |eSignExtend|pOut[10]       ; padio            ;
+; |eSignExtend|pOut[11] ; |eSignExtend|pOut[11]       ; padio            ;
+; |eSignExtend|pOut[12] ; |eSignExtend|pOut[12]       ; padio            ;
+; |eSignExtend|pOut[14] ; |eSignExtend|pOut[14]       ; padio            ;
++-----------------------+-----------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                               ;
++-----------------------+-----------------------------+------------------+
+; Node Name             ; Output Port Name            ; Output Port Type ;
++-----------------------+-----------------------------+------------------+
+; |eSignExtend|pIn[1]   ; |eSignExtend|pIn[1]~corein  ; combout          ;
+; |eSignExtend|pIn[2]   ; |eSignExtend|pIn[2]~corein  ; combout          ;
+; |eSignExtend|pIn[3]   ; |eSignExtend|pIn[3]~corein  ; combout          ;
+; |eSignExtend|pIn[4]   ; |eSignExtend|pIn[4]~corein  ; combout          ;
+; |eSignExtend|pIn[5]   ; |eSignExtend|pIn[5]~corein  ; combout          ;
+; |eSignExtend|pIn[6]   ; |eSignExtend|pIn[6]~corein  ; combout          ;
+; |eSignExtend|pIn[7]   ; |eSignExtend|pIn[7]~corein  ; combout          ;
+; |eSignExtend|pIn[8]   ; |eSignExtend|pIn[8]~corein  ; combout          ;
+; |eSignExtend|pIn[9]   ; |eSignExtend|pIn[9]~corein  ; combout          ;
+; |eSignExtend|pIn[10]  ; |eSignExtend|pIn[10]~corein ; combout          ;
+; |eSignExtend|pIn[11]  ; |eSignExtend|pIn[11]~corein ; combout          ;
+; |eSignExtend|pIn[12]  ; |eSignExtend|pIn[12]~corein ; combout          ;
+; |eSignExtend|pIn[14]  ; |eSignExtend|pIn[14]~corein ; combout          ;
+; |eSignExtend|pOut[1]  ; |eSignExtend|pOut[1]        ; padio            ;
+; |eSignExtend|pOut[2]  ; |eSignExtend|pOut[2]        ; padio            ;
+; |eSignExtend|pOut[3]  ; |eSignExtend|pOut[3]        ; padio            ;
+; |eSignExtend|pOut[4]  ; |eSignExtend|pOut[4]        ; padio            ;
+; |eSignExtend|pOut[5]  ; |eSignExtend|pOut[5]        ; padio            ;
+; |eSignExtend|pOut[6]  ; |eSignExtend|pOut[6]        ; padio            ;
+; |eSignExtend|pOut[7]  ; |eSignExtend|pOut[7]        ; padio            ;
+; |eSignExtend|pOut[8]  ; |eSignExtend|pOut[8]        ; padio            ;
+; |eSignExtend|pOut[9]  ; |eSignExtend|pOut[9]        ; padio            ;
+; |eSignExtend|pOut[10] ; |eSignExtend|pOut[10]       ; padio            ;
+; |eSignExtend|pOut[11] ; |eSignExtend|pOut[11]       ; padio            ;
+; |eSignExtend|pOut[12] ; |eSignExtend|pOut[12]       ; padio            ;
+; |eSignExtend|pOut[14] ; |eSignExtend|pOut[14]       ; padio            ;
++-----------------------+-----------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Nov 27 09:39:11 2014
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off SignExtend -c eSignExtend
+Info: Using vector source file "C:/Users/내문서/Desktop/전공 자료/컴퓨터구조2/MIPS 실습/signextend/SignExtend/eSignExtend.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      45.83 %
+Info: Number of transitions in simulation is 44
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 159 megabytes
+    Info: Processing ended: Thu Nov 27 09:39:12 2014
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

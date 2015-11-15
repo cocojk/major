@@ -1,0 +1,139 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L91 is pOut~45
+--operation mode is normal
+
+A1L91 = pSelect & pIn1[0] # !pSelect & (pIn0[0]);
+
+
+--A1L02 is pOut~46
+--operation mode is normal
+
+A1L02 = pSelect & pIn1[1] # !pSelect & (pIn0[1]);
+
+
+--A1L12 is pOut~47
+--operation mode is normal
+
+A1L12 = pSelect & pIn1[2] # !pSelect & (pIn0[2]);
+
+
+--A1L22 is pOut~48
+--operation mode is normal
+
+A1L22 = pSelect & pIn1[3] # !pSelect & (pIn0[3]);
+
+
+--A1L32 is pOut~49
+--operation mode is normal
+
+A1L32 = pSelect & pIn1[4] # !pSelect & (pIn0[4]);
+
+
+--pIn1[0] is pIn1[0]
+--operation mode is input
+
+pIn1[0] = INPUT();
+
+
+--pIn0[0] is pIn0[0]
+--operation mode is input
+
+pIn0[0] = INPUT();
+
+
+--pSelect is pSelect
+--operation mode is input
+
+pSelect = INPUT();
+
+
+--pIn1[1] is pIn1[1]
+--operation mode is input
+
+pIn1[1] = INPUT();
+
+
+--pIn0[1] is pIn0[1]
+--operation mode is input
+
+pIn0[1] = INPUT();
+
+
+--pIn1[2] is pIn1[2]
+--operation mode is input
+
+pIn1[2] = INPUT();
+
+
+--pIn0[2] is pIn0[2]
+--operation mode is input
+
+pIn0[2] = INPUT();
+
+
+--pIn1[3] is pIn1[3]
+--operation mode is input
+
+pIn1[3] = INPUT();
+
+
+--pIn0[3] is pIn0[3]
+--operation mode is input
+
+pIn0[3] = INPUT();
+
+
+--pIn1[4] is pIn1[4]
+--operation mode is input
+
+pIn1[4] = INPUT();
+
+
+--pIn0[4] is pIn0[4]
+--operation mode is input
+
+pIn0[4] = INPUT();
+
+
+--pOut[0] is pOut[0]
+--operation mode is output
+
+pOut[0] = OUTPUT(A1L91);
+
+
+--pOut[1] is pOut[1]
+--operation mode is output
+
+pOut[1] = OUTPUT(A1L02);
+
+
+--pOut[2] is pOut[2]
+--operation mode is output
+
+pOut[2] = OUTPUT(A1L12);
+
+
+--pOut[3] is pOut[3]
+--operation mode is output
+
+pOut[3] = OUTPUT(A1L22);
+
+
+--pOut[4] is pOut[4]
+--operation mode is output
+
+pOut[4] = OUTPUT(A1L32);
+
+

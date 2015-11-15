@@ -1,0 +1,169 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L52 is reduce_nor~106
+--operation mode is normal
+
+A1L52 = !pOpcode[1] & !pOpcode[4] & !pOpcode[3] & !pOpcode[5];
+
+
+--A1L42 is reduce_nor~3
+--operation mode is normal
+
+A1L42 = A1L52 & (!pOpcode[0] & !pOpcode[2]);
+
+
+--A1L62 is reduce_nor~107
+--operation mode is normal
+
+A1L62 = pOpcode[1] & (!pOpcode[4]);
+
+
+--A1L72 is reduce_nor~108
+--operation mode is normal
+
+A1L72 = pOpcode[5] & pOpcode[0] & A1L62 & !pOpcode[2];
+
+
+--A1L22 is pRegWrite~52
+--operation mode is normal
+
+A1L22 = !pReset & (A1L42 # A1L72 & !pOpcode[3]);
+
+
+--A1L7 is pMem2Reg~12
+--operation mode is normal
+
+A1L7 = A1L72 & (!pOpcode[3] & !pReset);
+
+
+--A1L01 is pMemWrite~12
+--operation mode is normal
+
+A1L01 = pOpcode[3] & A1L72 & (!pReset);
+
+
+--A1L5 is pBranch~11
+--operation mode is normal
+
+A1L5 = A1L52 & pOpcode[2] & (!pReset);
+
+
+--A1L11 is pMemWrite~13
+--operation mode is normal
+
+A1L11 = A1L72 & (!pReset);
+
+
+--A1L2 is pALUop~45
+--operation mode is normal
+
+A1L2 = A1L52 & !pReset & (pOpcode[0] $ !pOpcode[2]);
+
+
+--A1L02 is pRegDst~12
+--operation mode is normal
+
+A1L02 = A1L52 & !pOpcode[0] & !pOpcode[2] & !pReset;
+
+
+--pOpcode[1] is pOpcode[1]
+--operation mode is input
+
+pOpcode[1] = INPUT();
+
+
+--pOpcode[4] is pOpcode[4]
+--operation mode is input
+
+pOpcode[4] = INPUT();
+
+
+--pOpcode[3] is pOpcode[3]
+--operation mode is input
+
+pOpcode[3] = INPUT();
+
+
+--pOpcode[5] is pOpcode[5]
+--operation mode is input
+
+pOpcode[5] = INPUT();
+
+
+--pOpcode[0] is pOpcode[0]
+--operation mode is input
+
+pOpcode[0] = INPUT();
+
+
+--pOpcode[2] is pOpcode[2]
+--operation mode is input
+
+pOpcode[2] = INPUT();
+
+
+--pReset is pReset
+--operation mode is input
+
+pReset = INPUT();
+
+
+--pRegWrite is pRegWrite
+--operation mode is output
+
+pRegWrite = OUTPUT(A1L22);
+
+
+--pMem2Reg is pMem2Reg
+--operation mode is output
+
+pMem2Reg = OUTPUT(A1L7);
+
+
+--pMemWrite is pMemWrite
+--operation mode is output
+
+pMemWrite = OUTPUT(A1L01);
+
+
+--pMemRead is pMemRead
+--operation mode is output
+
+pMemRead = OUTPUT(A1L7);
+
+
+--pBranch is pBranch
+--operation mode is output
+
+pBranch = OUTPUT(A1L5);
+
+
+--pALUSrc is pALUSrc
+--operation mode is output
+
+pALUSrc = OUTPUT(A1L11);
+
+
+--pALUop is pALUop
+--operation mode is output
+
+pALUop = OUTPUT(A1L2);
+
+
+--pRegDst is pRegDst
+--operation mode is output
+
+pRegDst = OUTPUT(A1L02);
+
+
