@@ -1,0 +1,7 @@
+Analyse.o: Analyse.c Analyse.h Globals.h SymTab.h Util.h
+CGen.o: CGen.c CGen.h Globals.h Util.h
+Main.o: Main.c Globals.h Util.h Parse.h Analyse.h CGen.h
+Parse.o: Parse.c Globals.h Util.h Scan.h Parse.h
+Scan.o: Scan.c Globals.h Scan.h Util.h
+SymTab.o: SymTab.c Globals.h SymTab.h Util.h
+Util.o: Util.c Globals.h Util.h

@@ -1,0 +1,11 @@
+void add(int x,int y)
+{
+
+
+}
+
+int main()
+{
+add(2,4);
+
+}

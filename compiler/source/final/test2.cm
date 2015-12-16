@@ -1,0 +1,16 @@
+
+int x[10];
+
+int add(int x[],int y[])
+{
+
+return x[0]+y[0];
+}
+
+int main(void)
+{
+int i[10];
+x[0] =10;
+i[0] =1;
+output(add(x,i)); 
+}
