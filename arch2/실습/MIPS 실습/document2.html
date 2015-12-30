@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0057)http://csl.hanyang.ac.kr/2015/data_arch/mips_tutorials/A/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="MSHTML 6.00.2900.2180" name="GENERATOR"></head>
+<body><p>1. Quartus setup</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>2. Download pre-builded block</p>
+<p>&nbsp;</p>
+<p>3.Make project</p>
+<p><img height="647" src="./document2_files/1.jpg" width="596"></p>
+<p><img height="501" src="./document2_files/2.jpg" width="617"></p>
+<p><img height="503" src="./document2_files/3.jpg" width="617"></p>
+<p>add all vhd files</p>
+<p><img height="503" src="./document2_files/4.jpg" width="656"></p>
+<p>&nbsp;</p>
+<p>---------------------------------------- 1 ------------------------------------------------</p>
+<p>4. new file for top entity</p>
+<p><img height="665" src="./document2_files/5.jpg" width="861"></p>
+<p>&nbsp;</p>
+<p>5. write source</p>
+<p><img height="866" src="./document2_files/6.jpg" width="1046"></p>
+<p></p>
+<p>    source ex)</p>
+<p>library ieee; -- includes</p>
+<p>use ieee.std_logic_1164.all;</p>
+<p>use ieee.std_logic_arith.all;</p>
+<p>use ieee.std_logic_signed.all;</p>
+<p>use ieee.numeric_std.all;</p>
+<p></p>
+<p>entity single is  -- top entry ports</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port (</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pReset&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std_logic;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pClock&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std_logic;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pPC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std_logic_vector(31 downto 0);</p>
+<p>...</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pMR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std_logic;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pIM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out std_logic_vector(31 downto 0);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pBranch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std_logic</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</p>
+<p>end single;</p>
+<p></p>
+<p>architecture behavior of single is -- behavior for top entry</p>
+<p>------------------------------------- define components</p>
+<p>component eAdd4 </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port (</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pIn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std_logic_vector(31 downto 0);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pOut&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std_logic_vector(31 downto 0)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</p>
+<p>end component;</p>
+<p></p>
+<p>component eALU </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port(</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pOperator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:in std_logic_vector(5 downto 0);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pOperation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:in std_logic;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pBranch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:in std_logic;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pIn1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:in std_logic_vector(31 downto 0);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pIn2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:in std_logic_vector(31 downto 0);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+pBranch_out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:out std_logic;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pOut&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:out std_logic_vector(31 downto 0)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</p>
+<p>end component;</p>
+<p>...</p>
+<p>component eSignExtend </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port(</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pIn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:in std_logic_vector(15 downto 0);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pOut&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:out std_logic_vector(31 downto 0)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</p>
+<p>end component;</p>
+<p>-------------------------------- define signals</p>
+<p>signal sCPC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std_logic_vector(31 downto 0);</p>
+<p>signal sR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std_logic;</p>
+<p>...</p>
+<p>signal sMEM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std_logic_vector(31 downto 0);</p>
+<p>signal sWB			:	std_logic_vector(31 downto 0);</p>
+<p>-------------------------------- begin behavior</p>
+<p>begin</p>
+<p>-------------------------------- output port </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pIM 
+&lt; =sIM;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pPC 
+&lt;	=sCPC;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pNextPC 
+&lt; =sNPC;</p>
+<p>...</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pMW&lt;=sMW;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pMR&lt;=sMR;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pBranch&lt;=sB;</p>
+<p>------------------------------- component connect</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cPC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ePC</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port map(</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pIn=&gt;sNPC,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pOut=&gt;sCPC,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pReset=&gt;pReset,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pClock=&gt;not pClock</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cMUX_PC	:	eMUX32</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port map(</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sAPC,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sBPC,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sBO,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sNPC</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cMUX_S2orI:	eMUX32</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port map(</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sRD2,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sIM,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sAS,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sALU_In2</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</p>
+<p>...</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cMUX_DST:	eMUX5</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port map(</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sINS(20 downto 16),</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sINS(15 downto 11),</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sR,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sW</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cSignExtend:	eSignExtend</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port map(</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sINS(15 downto 0),</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sIM</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</p>
+<p></p>
+<p>&nbsp;&nbsp;end behavior;</p>
+<p></p>
+<p><img height="901" src="./document2_files/7.jpg" width="885"></p>
+<p>&nbsp;</p>
+<p>6. compile</p>
+<p><img height="472" src="./document2_files/8.jpg" width="711"></p>
+<p>&nbsp;</p>
+<p>7. simulation</p>
+<p>1) make vector wave form file</p>
+<p><img height="745" src="./document2_files/9.jpg" width="901"></p>
+<p><img height="443" src="./document2_files/23.jpg" width="727"></p>
+<p><img height="488" src="./document2_files/10.jpg" width="750"></p>
+<p><img height="230" src="./document2_files/11.jpg" width="374"></p>
+<p><img height="670" src="./document2_files/19.jpg" width="977"></p>
+<p><img height="365" src="./document2_files/24.jpg" width="640"></p>
+<p><img height="390" src="./document2_files/17.jpg" width="617"></p>
+<p>2) make memory initialize file</p>
+<p><img height="662" src="./document2_files/18.jpg" width="955"></p>
+<p><img height="627" src="./document2_files/20.jpg" width="918"></p>
+<p>3) instruction memory initialize</p>
+<p>Translating assembly code into hexdecimal mechine code: use SPIM</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img height="728" src="./document2_files/25.jpg" width="960"></p>
+<p><img height="799" src="./document2_files/21.jpg" width="971"></p>
+<p>&nbsp;</p>
+<p>4) data memory initialize</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img height="792" src="./document2_files/22.jpg" width="970"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>5) recompile</p>
+<p><img height="472" src="./document2_files/8.jpg" width="711"></p>
+<p>&nbsp;</p>
+<p>6) simulation start</p>
+<p>&nbsp;</p>
+<p><img height="568" src="./document2_files/12.jpg" width="788"></p>
+<p>&nbsp;</p>
+<div></div>
+<p>7) simulation result</p>
+<p><img height="568" src="./document2_files/26.jpg"></p>
+</body></html>

@@ -1,0 +1,787 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--E1_q_a[0] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[0]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[0]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[0]_PORT_A_address_reg = DFFE(E1_q_a[0]_PORT_A_address, E1_q_a[0]_clock_0, , , );
+E1_q_a[0]_clock_0 = pClock;
+E1_q_a[0]_PORT_A_data_out = MEMORY(, , E1_q_a[0]_PORT_A_address_reg, , , , , , E1_q_a[0]_clock_0, , , , , );
+E1_q_a[0] = E1_q_a[0]_PORT_A_data_out[0];
+
+
+--E1_q_a[1] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[1]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[1]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[1]_PORT_A_address_reg = DFFE(E1_q_a[1]_PORT_A_address, E1_q_a[1]_clock_0, , , );
+E1_q_a[1]_clock_0 = pClock;
+E1_q_a[1]_PORT_A_data_out = MEMORY(, , E1_q_a[1]_PORT_A_address_reg, , , , , , E1_q_a[1]_clock_0, , , , , );
+E1_q_a[1] = E1_q_a[1]_PORT_A_data_out[0];
+
+
+--E1_q_a[2] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[2]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[2]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[2]_PORT_A_address_reg = DFFE(E1_q_a[2]_PORT_A_address, E1_q_a[2]_clock_0, , , );
+E1_q_a[2]_clock_0 = pClock;
+E1_q_a[2]_PORT_A_data_out = MEMORY(, , E1_q_a[2]_PORT_A_address_reg, , , , , , E1_q_a[2]_clock_0, , , , , );
+E1_q_a[2] = E1_q_a[2]_PORT_A_data_out[0];
+
+
+--E1_q_a[3] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[3]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[3]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[3]_PORT_A_address_reg = DFFE(E1_q_a[3]_PORT_A_address, E1_q_a[3]_clock_0, , , );
+E1_q_a[3]_clock_0 = pClock;
+E1_q_a[3]_PORT_A_data_out = MEMORY(, , E1_q_a[3]_PORT_A_address_reg, , , , , , E1_q_a[3]_clock_0, , , , , );
+E1_q_a[3] = E1_q_a[3]_PORT_A_data_out[0];
+
+
+--E1_q_a[4] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[4]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[4]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[4]_PORT_A_address_reg = DFFE(E1_q_a[4]_PORT_A_address, E1_q_a[4]_clock_0, , , );
+E1_q_a[4]_clock_0 = pClock;
+E1_q_a[4]_PORT_A_data_out = MEMORY(, , E1_q_a[4]_PORT_A_address_reg, , , , , , E1_q_a[4]_clock_0, , , , , );
+E1_q_a[4] = E1_q_a[4]_PORT_A_data_out[0];
+
+
+--E1_q_a[5] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[5]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[5]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[5]_PORT_A_address_reg = DFFE(E1_q_a[5]_PORT_A_address, E1_q_a[5]_clock_0, , , );
+E1_q_a[5]_clock_0 = pClock;
+E1_q_a[5]_PORT_A_data_out = MEMORY(, , E1_q_a[5]_PORT_A_address_reg, , , , , , E1_q_a[5]_clock_0, , , , , );
+E1_q_a[5] = E1_q_a[5]_PORT_A_data_out[0];
+
+
+--E1_q_a[6] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[6]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[6]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[6]_PORT_A_address_reg = DFFE(E1_q_a[6]_PORT_A_address, E1_q_a[6]_clock_0, , , );
+E1_q_a[6]_clock_0 = pClock;
+E1_q_a[6]_PORT_A_data_out = MEMORY(, , E1_q_a[6]_PORT_A_address_reg, , , , , , E1_q_a[6]_clock_0, , , , , );
+E1_q_a[6] = E1_q_a[6]_PORT_A_data_out[0];
+
+
+--E1_q_a[7] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[7]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[7]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[7]_PORT_A_address_reg = DFFE(E1_q_a[7]_PORT_A_address, E1_q_a[7]_clock_0, , , );
+E1_q_a[7]_clock_0 = pClock;
+E1_q_a[7]_PORT_A_data_out = MEMORY(, , E1_q_a[7]_PORT_A_address_reg, , , , , , E1_q_a[7]_clock_0, , , , , );
+E1_q_a[7] = E1_q_a[7]_PORT_A_data_out[0];
+
+
+--E1_q_a[8] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[8]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[8]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[8]_PORT_A_address_reg = DFFE(E1_q_a[8]_PORT_A_address, E1_q_a[8]_clock_0, , , );
+E1_q_a[8]_clock_0 = pClock;
+E1_q_a[8]_PORT_A_data_out = MEMORY(, , E1_q_a[8]_PORT_A_address_reg, , , , , , E1_q_a[8]_clock_0, , , , , );
+E1_q_a[8] = E1_q_a[8]_PORT_A_data_out[0];
+
+
+--E1_q_a[9] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[9]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[9]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[9]_PORT_A_address_reg = DFFE(E1_q_a[9]_PORT_A_address, E1_q_a[9]_clock_0, , , );
+E1_q_a[9]_clock_0 = pClock;
+E1_q_a[9]_PORT_A_data_out = MEMORY(, , E1_q_a[9]_PORT_A_address_reg, , , , , , E1_q_a[9]_clock_0, , , , , );
+E1_q_a[9] = E1_q_a[9]_PORT_A_data_out[0];
+
+
+--E1_q_a[10] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[10]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[10]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[10]_PORT_A_address_reg = DFFE(E1_q_a[10]_PORT_A_address, E1_q_a[10]_clock_0, , , );
+E1_q_a[10]_clock_0 = pClock;
+E1_q_a[10]_PORT_A_data_out = MEMORY(, , E1_q_a[10]_PORT_A_address_reg, , , , , , E1_q_a[10]_clock_0, , , , , );
+E1_q_a[10] = E1_q_a[10]_PORT_A_data_out[0];
+
+
+--E1_q_a[11] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[11]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[11]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[11]_PORT_A_address_reg = DFFE(E1_q_a[11]_PORT_A_address, E1_q_a[11]_clock_0, , , );
+E1_q_a[11]_clock_0 = pClock;
+E1_q_a[11]_PORT_A_data_out = MEMORY(, , E1_q_a[11]_PORT_A_address_reg, , , , , , E1_q_a[11]_clock_0, , , , , );
+E1_q_a[11] = E1_q_a[11]_PORT_A_data_out[0];
+
+
+--E1_q_a[12] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[12]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[12]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[12]_PORT_A_address_reg = DFFE(E1_q_a[12]_PORT_A_address, E1_q_a[12]_clock_0, , , );
+E1_q_a[12]_clock_0 = pClock;
+E1_q_a[12]_PORT_A_data_out = MEMORY(, , E1_q_a[12]_PORT_A_address_reg, , , , , , E1_q_a[12]_clock_0, , , , , );
+E1_q_a[12] = E1_q_a[12]_PORT_A_data_out[0];
+
+
+--E1_q_a[13] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[13]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[13]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[13]_PORT_A_address_reg = DFFE(E1_q_a[13]_PORT_A_address, E1_q_a[13]_clock_0, , , );
+E1_q_a[13]_clock_0 = pClock;
+E1_q_a[13]_PORT_A_data_out = MEMORY(, , E1_q_a[13]_PORT_A_address_reg, , , , , , E1_q_a[13]_clock_0, , , , , );
+E1_q_a[13] = E1_q_a[13]_PORT_A_data_out[0];
+
+
+--E1_q_a[14] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[14]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[14]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[14]_PORT_A_address_reg = DFFE(E1_q_a[14]_PORT_A_address, E1_q_a[14]_clock_0, , , );
+E1_q_a[14]_clock_0 = pClock;
+E1_q_a[14]_PORT_A_data_out = MEMORY(, , E1_q_a[14]_PORT_A_address_reg, , , , , , E1_q_a[14]_clock_0, , , , , );
+E1_q_a[14] = E1_q_a[14]_PORT_A_data_out[0];
+
+
+--E1_q_a[15] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[15]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[15]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[15]_PORT_A_address_reg = DFFE(E1_q_a[15]_PORT_A_address, E1_q_a[15]_clock_0, , , );
+E1_q_a[15]_clock_0 = pClock;
+E1_q_a[15]_PORT_A_data_out = MEMORY(, , E1_q_a[15]_PORT_A_address_reg, , , , , , E1_q_a[15]_clock_0, , , , , );
+E1_q_a[15] = E1_q_a[15]_PORT_A_data_out[0];
+
+
+--E1_q_a[16] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[16]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[16]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[16]_PORT_A_address_reg = DFFE(E1_q_a[16]_PORT_A_address, E1_q_a[16]_clock_0, , , );
+E1_q_a[16]_clock_0 = pClock;
+E1_q_a[16]_PORT_A_data_out = MEMORY(, , E1_q_a[16]_PORT_A_address_reg, , , , , , E1_q_a[16]_clock_0, , , , , );
+E1_q_a[16] = E1_q_a[16]_PORT_A_data_out[0];
+
+
+--E1_q_a[17] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[17]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[17]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[17]_PORT_A_address_reg = DFFE(E1_q_a[17]_PORT_A_address, E1_q_a[17]_clock_0, , , );
+E1_q_a[17]_clock_0 = pClock;
+E1_q_a[17]_PORT_A_data_out = MEMORY(, , E1_q_a[17]_PORT_A_address_reg, , , , , , E1_q_a[17]_clock_0, , , , , );
+E1_q_a[17] = E1_q_a[17]_PORT_A_data_out[0];
+
+
+--E1_q_a[18] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[18]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[18]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[18]_PORT_A_address_reg = DFFE(E1_q_a[18]_PORT_A_address, E1_q_a[18]_clock_0, , , );
+E1_q_a[18]_clock_0 = pClock;
+E1_q_a[18]_PORT_A_data_out = MEMORY(, , E1_q_a[18]_PORT_A_address_reg, , , , , , E1_q_a[18]_clock_0, , , , , );
+E1_q_a[18] = E1_q_a[18]_PORT_A_data_out[0];
+
+
+--E1_q_a[19] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[19]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[19]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[19]_PORT_A_address_reg = DFFE(E1_q_a[19]_PORT_A_address, E1_q_a[19]_clock_0, , , );
+E1_q_a[19]_clock_0 = pClock;
+E1_q_a[19]_PORT_A_data_out = MEMORY(, , E1_q_a[19]_PORT_A_address_reg, , , , , , E1_q_a[19]_clock_0, , , , , );
+E1_q_a[19] = E1_q_a[19]_PORT_A_data_out[0];
+
+
+--E1_q_a[20] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[20]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[20]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[20]_PORT_A_address_reg = DFFE(E1_q_a[20]_PORT_A_address, E1_q_a[20]_clock_0, , , );
+E1_q_a[20]_clock_0 = pClock;
+E1_q_a[20]_PORT_A_data_out = MEMORY(, , E1_q_a[20]_PORT_A_address_reg, , , , , , E1_q_a[20]_clock_0, , , , , );
+E1_q_a[20] = E1_q_a[20]_PORT_A_data_out[0];
+
+
+--E1_q_a[21] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[21]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[21]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[21]_PORT_A_address_reg = DFFE(E1_q_a[21]_PORT_A_address, E1_q_a[21]_clock_0, , , );
+E1_q_a[21]_clock_0 = pClock;
+E1_q_a[21]_PORT_A_data_out = MEMORY(, , E1_q_a[21]_PORT_A_address_reg, , , , , , E1_q_a[21]_clock_0, , , , , );
+E1_q_a[21] = E1_q_a[21]_PORT_A_data_out[0];
+
+
+--E1_q_a[22] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[22]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[22]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[22]_PORT_A_address_reg = DFFE(E1_q_a[22]_PORT_A_address, E1_q_a[22]_clock_0, , , );
+E1_q_a[22]_clock_0 = pClock;
+E1_q_a[22]_PORT_A_data_out = MEMORY(, , E1_q_a[22]_PORT_A_address_reg, , , , , , E1_q_a[22]_clock_0, , , , , );
+E1_q_a[22] = E1_q_a[22]_PORT_A_data_out[0];
+
+
+--E1_q_a[23] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[23]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[23]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[23]_PORT_A_address_reg = DFFE(E1_q_a[23]_PORT_A_address, E1_q_a[23]_clock_0, , , );
+E1_q_a[23]_clock_0 = pClock;
+E1_q_a[23]_PORT_A_data_out = MEMORY(, , E1_q_a[23]_PORT_A_address_reg, , , , , , E1_q_a[23]_clock_0, , , , , );
+E1_q_a[23] = E1_q_a[23]_PORT_A_data_out[0];
+
+
+--E1_q_a[24] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[24]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[24]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[24]_PORT_A_address_reg = DFFE(E1_q_a[24]_PORT_A_address, E1_q_a[24]_clock_0, , , );
+E1_q_a[24]_clock_0 = pClock;
+E1_q_a[24]_PORT_A_data_out = MEMORY(, , E1_q_a[24]_PORT_A_address_reg, , , , , , E1_q_a[24]_clock_0, , , , , );
+E1_q_a[24] = E1_q_a[24]_PORT_A_data_out[0];
+
+
+--E1_q_a[25] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[25]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[25]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[25]_PORT_A_address_reg = DFFE(E1_q_a[25]_PORT_A_address, E1_q_a[25]_clock_0, , , );
+E1_q_a[25]_clock_0 = pClock;
+E1_q_a[25]_PORT_A_data_out = MEMORY(, , E1_q_a[25]_PORT_A_address_reg, , , , , , E1_q_a[25]_clock_0, , , , , );
+E1_q_a[25] = E1_q_a[25]_PORT_A_data_out[0];
+
+
+--E1_q_a[26] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[26]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[26]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[26]_PORT_A_address_reg = DFFE(E1_q_a[26]_PORT_A_address, E1_q_a[26]_clock_0, , , );
+E1_q_a[26]_clock_0 = pClock;
+E1_q_a[26]_PORT_A_data_out = MEMORY(, , E1_q_a[26]_PORT_A_address_reg, , , , , , E1_q_a[26]_clock_0, , , , , );
+E1_q_a[26] = E1_q_a[26]_PORT_A_data_out[0];
+
+
+--E1_q_a[27] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[27]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[27]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[27]_PORT_A_address_reg = DFFE(E1_q_a[27]_PORT_A_address, E1_q_a[27]_clock_0, , , );
+E1_q_a[27]_clock_0 = pClock;
+E1_q_a[27]_PORT_A_data_out = MEMORY(, , E1_q_a[27]_PORT_A_address_reg, , , , , , E1_q_a[27]_clock_0, , , , , );
+E1_q_a[27] = E1_q_a[27]_PORT_A_data_out[0];
+
+
+--E1_q_a[28] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[28]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[28]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[28]_PORT_A_address_reg = DFFE(E1_q_a[28]_PORT_A_address, E1_q_a[28]_clock_0, , , );
+E1_q_a[28]_clock_0 = pClock;
+E1_q_a[28]_PORT_A_data_out = MEMORY(, , E1_q_a[28]_PORT_A_address_reg, , , , , , E1_q_a[28]_clock_0, , , , , );
+E1_q_a[28] = E1_q_a[28]_PORT_A_data_out[0];
+
+
+--E1_q_a[29] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[29]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[29]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[29]_PORT_A_address_reg = DFFE(E1_q_a[29]_PORT_A_address, E1_q_a[29]_clock_0, , , );
+E1_q_a[29]_clock_0 = pClock;
+E1_q_a[29]_PORT_A_data_out = MEMORY(, , E1_q_a[29]_PORT_A_address_reg, , , , , , E1_q_a[29]_clock_0, , , , , );
+E1_q_a[29] = E1_q_a[29]_PORT_A_data_out[0];
+
+
+--E1_q_a[30] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[30]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[30]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[30]_PORT_A_address_reg = DFFE(E1_q_a[30]_PORT_A_address, E1_q_a[30]_clock_0, , , );
+E1_q_a[30]_clock_0 = pClock;
+E1_q_a[30]_PORT_A_data_out = MEMORY(, , E1_q_a[30]_PORT_A_address_reg, , , , , , E1_q_a[30]_clock_0, , , , , );
+E1_q_a[30] = E1_q_a[30]_PORT_A_data_out[0];
+
+
+--E1_q_a[31] is lpm_rom:data_memory|altrom:srom|altsyncram:rom_block|altsyncram_njm:auto_generated|q_a[31]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 32
+--Port A Input: Registered, Port A Output: Un-registered
+E1_q_a[31]_PORT_A_address = BUS(pReadaddr[2], pReadaddr[3], pReadaddr[4], pReadaddr[5], pReadaddr[6], pReadaddr[7], pReadaddr[8], pReadaddr[9]);
+E1_q_a[31]_PORT_A_address_reg = DFFE(E1_q_a[31]_PORT_A_address, E1_q_a[31]_clock_0, , , );
+E1_q_a[31]_clock_0 = pClock;
+E1_q_a[31]_PORT_A_data_out = MEMORY(, , E1_q_a[31]_PORT_A_address_reg, , , , , , E1_q_a[31]_clock_0, , , , , );
+E1_q_a[31] = E1_q_a[31]_PORT_A_data_out[0];
+
+
+--pReadaddr[0] is pReadaddr[0]
+--operation mode is input
+
+pReadaddr[0] = INPUT();
+
+
+--pReadaddr[1] is pReadaddr[1]
+--operation mode is input
+
+pReadaddr[1] = INPUT();
+
+
+--pReadaddr[10] is pReadaddr[10]
+--operation mode is input
+
+pReadaddr[10] = INPUT();
+
+
+--pReadaddr[11] is pReadaddr[11]
+--operation mode is input
+
+pReadaddr[11] = INPUT();
+
+
+--pReadaddr[12] is pReadaddr[12]
+--operation mode is input
+
+pReadaddr[12] = INPUT();
+
+
+--pReadaddr[13] is pReadaddr[13]
+--operation mode is input
+
+pReadaddr[13] = INPUT();
+
+
+--pReadaddr[14] is pReadaddr[14]
+--operation mode is input
+
+pReadaddr[14] = INPUT();
+
+
+--pReadaddr[15] is pReadaddr[15]
+--operation mode is input
+
+pReadaddr[15] = INPUT();
+
+
+--pReadaddr[16] is pReadaddr[16]
+--operation mode is input
+
+pReadaddr[16] = INPUT();
+
+
+--pReadaddr[17] is pReadaddr[17]
+--operation mode is input
+
+pReadaddr[17] = INPUT();
+
+
+--pReadaddr[18] is pReadaddr[18]
+--operation mode is input
+
+pReadaddr[18] = INPUT();
+
+
+--pReadaddr[19] is pReadaddr[19]
+--operation mode is input
+
+pReadaddr[19] = INPUT();
+
+
+--pReadaddr[20] is pReadaddr[20]
+--operation mode is input
+
+pReadaddr[20] = INPUT();
+
+
+--pReadaddr[21] is pReadaddr[21]
+--operation mode is input
+
+pReadaddr[21] = INPUT();
+
+
+--pReadaddr[22] is pReadaddr[22]
+--operation mode is input
+
+pReadaddr[22] = INPUT();
+
+
+--pReadaddr[23] is pReadaddr[23]
+--operation mode is input
+
+pReadaddr[23] = INPUT();
+
+
+--pReadaddr[24] is pReadaddr[24]
+--operation mode is input
+
+pReadaddr[24] = INPUT();
+
+
+--pReadaddr[25] is pReadaddr[25]
+--operation mode is input
+
+pReadaddr[25] = INPUT();
+
+
+--pReadaddr[26] is pReadaddr[26]
+--operation mode is input
+
+pReadaddr[26] = INPUT();
+
+
+--pReadaddr[27] is pReadaddr[27]
+--operation mode is input
+
+pReadaddr[27] = INPUT();
+
+
+--pReadaddr[28] is pReadaddr[28]
+--operation mode is input
+
+pReadaddr[28] = INPUT();
+
+
+--pReadaddr[29] is pReadaddr[29]
+--operation mode is input
+
+pReadaddr[29] = INPUT();
+
+
+--pReadaddr[30] is pReadaddr[30]
+--operation mode is input
+
+pReadaddr[30] = INPUT();
+
+
+--pReadaddr[31] is pReadaddr[31]
+--operation mode is input
+
+pReadaddr[31] = INPUT();
+
+
+--pClock is pClock
+--operation mode is input
+
+pClock = INPUT();
+
+
+--pReadaddr[2] is pReadaddr[2]
+--operation mode is input
+
+pReadaddr[2] = INPUT();
+
+
+--pReadaddr[3] is pReadaddr[3]
+--operation mode is input
+
+pReadaddr[3] = INPUT();
+
+
+--pReadaddr[4] is pReadaddr[4]
+--operation mode is input
+
+pReadaddr[4] = INPUT();
+
+
+--pReadaddr[5] is pReadaddr[5]
+--operation mode is input
+
+pReadaddr[5] = INPUT();
+
+
+--pReadaddr[6] is pReadaddr[6]
+--operation mode is input
+
+pReadaddr[6] = INPUT();
+
+
+--pReadaddr[7] is pReadaddr[7]
+--operation mode is input
+
+pReadaddr[7] = INPUT();
+
+
+--pReadaddr[8] is pReadaddr[8]
+--operation mode is input
+
+pReadaddr[8] = INPUT();
+
+
+--pReadaddr[9] is pReadaddr[9]
+--operation mode is input
+
+pReadaddr[9] = INPUT();
+
+
+--pDataout[0] is pDataout[0]
+--operation mode is output
+
+pDataout[0] = OUTPUT(E1_q_a[0]);
+
+
+--pDataout[1] is pDataout[1]
+--operation mode is output
+
+pDataout[1] = OUTPUT(E1_q_a[1]);
+
+
+--pDataout[2] is pDataout[2]
+--operation mode is output
+
+pDataout[2] = OUTPUT(E1_q_a[2]);
+
+
+--pDataout[3] is pDataout[3]
+--operation mode is output
+
+pDataout[3] = OUTPUT(E1_q_a[3]);
+
+
+--pDataout[4] is pDataout[4]
+--operation mode is output
+
+pDataout[4] = OUTPUT(E1_q_a[4]);
+
+
+--pDataout[5] is pDataout[5]
+--operation mode is output
+
+pDataout[5] = OUTPUT(E1_q_a[5]);
+
+
+--pDataout[6] is pDataout[6]
+--operation mode is output
+
+pDataout[6] = OUTPUT(E1_q_a[6]);
+
+
+--pDataout[7] is pDataout[7]
+--operation mode is output
+
+pDataout[7] = OUTPUT(E1_q_a[7]);
+
+
+--pDataout[8] is pDataout[8]
+--operation mode is output
+
+pDataout[8] = OUTPUT(E1_q_a[8]);
+
+
+--pDataout[9] is pDataout[9]
+--operation mode is output
+
+pDataout[9] = OUTPUT(E1_q_a[9]);
+
+
+--pDataout[10] is pDataout[10]
+--operation mode is output
+
+pDataout[10] = OUTPUT(E1_q_a[10]);
+
+
+--pDataout[11] is pDataout[11]
+--operation mode is output
+
+pDataout[11] = OUTPUT(E1_q_a[11]);
+
+
+--pDataout[12] is pDataout[12]
+--operation mode is output
+
+pDataout[12] = OUTPUT(E1_q_a[12]);
+
+
+--pDataout[13] is pDataout[13]
+--operation mode is output
+
+pDataout[13] = OUTPUT(E1_q_a[13]);
+
+
+--pDataout[14] is pDataout[14]
+--operation mode is output
+
+pDataout[14] = OUTPUT(E1_q_a[14]);
+
+
+--pDataout[15] is pDataout[15]
+--operation mode is output
+
+pDataout[15] = OUTPUT(E1_q_a[15]);
+
+
+--pDataout[16] is pDataout[16]
+--operation mode is output
+
+pDataout[16] = OUTPUT(E1_q_a[16]);
+
+
+--pDataout[17] is pDataout[17]
+--operation mode is output
+
+pDataout[17] = OUTPUT(E1_q_a[17]);
+
+
+--pDataout[18] is pDataout[18]
+--operation mode is output
+
+pDataout[18] = OUTPUT(E1_q_a[18]);
+
+
+--pDataout[19] is pDataout[19]
+--operation mode is output
+
+pDataout[19] = OUTPUT(E1_q_a[19]);
+
+
+--pDataout[20] is pDataout[20]
+--operation mode is output
+
+pDataout[20] = OUTPUT(E1_q_a[20]);
+
+
+--pDataout[21] is pDataout[21]
+--operation mode is output
+
+pDataout[21] = OUTPUT(E1_q_a[21]);
+
+
+--pDataout[22] is pDataout[22]
+--operation mode is output
+
+pDataout[22] = OUTPUT(E1_q_a[22]);
+
+
+--pDataout[23] is pDataout[23]
+--operation mode is output
+
+pDataout[23] = OUTPUT(E1_q_a[23]);
+
+
+--pDataout[24] is pDataout[24]
+--operation mode is output
+
+pDataout[24] = OUTPUT(E1_q_a[24]);
+
+
+--pDataout[25] is pDataout[25]
+--operation mode is output
+
+pDataout[25] = OUTPUT(E1_q_a[25]);
+
+
+--pDataout[26] is pDataout[26]
+--operation mode is output
+
+pDataout[26] = OUTPUT(E1_q_a[26]);
+
+
+--pDataout[27] is pDataout[27]
+--operation mode is output
+
+pDataout[27] = OUTPUT(E1_q_a[27]);
+
+
+--pDataout[28] is pDataout[28]
+--operation mode is output
+
+pDataout[28] = OUTPUT(E1_q_a[28]);
+
+
+--pDataout[29] is pDataout[29]
+--operation mode is output
+
+pDataout[29] = OUTPUT(E1_q_a[29]);
+
+
+--pDataout[30] is pDataout[30]
+--operation mode is output
+
+pDataout[30] = OUTPUT(E1_q_a[30]);
+
+
+--pDataout[31] is pDataout[31]
+--operation mode is output
+
+pDataout[31] = OUTPUT(E1_q_a[31]);
+
+

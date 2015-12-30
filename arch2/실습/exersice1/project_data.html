@@ -1,0 +1,91 @@
+
+<!-- saved from url=(0065)http://csl.hanyang.ac.kr/2015/data_arch/run_project/project_data/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR"></head><body><div class="view" style="FONT-SIZE: 10pt; FONT-FAMILY: 994265_10">
+<p>windows (vs 6.0)</p>
+<p>&nbsp;</p>
+<p>1. dhrystone : <a class="con_link" href="http://csl.hanyang.ac.kr/2015/data_arch/run_project/project_data/dhrystone-src.zip" target="_blank">dhrystone-src.zip</a></p>
+<p>&nbsp;</p>
+<p>2. setting (@f7 )</p>
+<p><img height="446" src="./project_data_files/1.jpg" width="677"></p>
+<p>&nbsp;</p>
+<p>3. PE explorer : <a class="con_link" href="http://csl.hanyang.ac.kr/2015/data_arch/run_project/project_data/PE_exp.zip" target="_blank">PE_exp.zip</a></p>
+<p>&nbsp;&nbsp; PE view : <a class="con_link" href="http://csl.hanyang.ac.kr/2015/data_arch/run_project/project_data/PEview.zip" target="_blank">PEview.zip</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; <img height="772" src="./project_data_files/2.jpg" width="889"><img height="570" src="./project_data_files/3.jpg" width="740"></p>
+<p>&nbsp;</p>
+<p>4. f5 (start debug)</p>
+<p><img height="303" src="./project_data_files/4.jpg" width="411"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>5. </p>
+<p>ex code)</p>
+<p>&nbsp;</p>
+<p>int global[5000];<br>int localf();</p>
+<p>int main()<br>{<br>&nbsp;return localf();<br>}</p>
+<p>int localf()<br>{<br>&nbsp;int local=3;<br>&nbsp;int* heap=new int(3);<br>&nbsp;return localf();<br>}</p>
+<p>&nbsp;</p>
+<p><img height="349" src="./project_data_files/5.jpg" width="686"></p>
+<p><img height="326" src="./project_data_files/6.jpg" width="518"></p>
+<p>&nbsp;</p>
+<p>6.</p>
+<p><img height="446" src="./project_data_files/7.jpg" width="677"><img height="320" src="./project_data_files/8.jpg" width="354"></p>
+<p><img height="426" src="./project_data_files/9.jpg" width="560"></p>
+<p>&nbsp;</p>
+<p>7.</p>
+<p><img height="446" src="./project_data_files/1.jpg" width="677"></p>
+<p>&nbsp;</p>
+<p>linux (redhat 9.0 -2.4.20 , gcc 3.2.2)</p>
+<p>1.</p>
+<p>wget <a class="con_link" href="http://csl.hanyang.ac.kr/2015/data_arch/run_project/project_data/dhrystone-src.tar.gz" target="_blank">dhrystone-src.tar.gz</a></p>
+<p>tar -xzvf dhrystone-src.tar.gz</p>
+<p>cd dhrystone-src<br></p>
+<p>2.</p>
+<p>gcc -o dhry0 -O0 dhry21a.c dhry21b.c timers.c</p>
+<p>ls -al</p>
+<p>./dhry0</p>
+<p>&nbsp;</p>
+<p>3.</p>
+<p>file dhry0</p>
+<p>readelf -a dhry0</p>
+<p>objdump -d dhry0</p>
+<p>&nbsp;</p>
+<p>4.</p>
+<p>gcc -g -o dhrydebug -O0 dhry21a.c dhry21b.c timers.c<br>gdb dhrydebug</p>
+<p>&nbsp;</p>
+<p>(gdb) run</p>
+<p>(gdb) bt</p>
+<p>&nbsp;</p>
+<p>#0&nbsp; 0x08048fad in Proc_7 (Int_1_Par_Val=10, Int_2_Par_Val=5,<br>&nbsp;&nbsp;&nbsp; Int_Par_Ref=0x804cb8c) at dhry21b.c:83<br>#1&nbsp; 0x08048ed4 in Proc_3 (Ptr_Ref_Par=0x804cb48) at dhry21a.c:366<br>#2&nbsp; 0x08048de9 in Proc_1 (Ptr_Val_Par=0x804cb80) at dhry21a.c:317<br>#3&nbsp; 0x0804873a in main () at dhry21a.c:181<br>#4&nbsp; 0x42015574 in __libc_start_main () from /lib/tls/libc.so.6<br><br>(gdb) info frame<br>Stack level 0, frame at 0xbfffda28:<br>&nbsp;eip = 0x8048fad in Proc_7 (dhry21b.c:83); saved eip 0x8048ed4<br>&nbsp;called by frame at 0xbfffda48<br>&nbsp;source language c.<br>&nbsp;Arglist at 0xbfffda28, args: Int_1_Par_Val=10, Int_2_Par_Val=5,<br>&nbsp;&nbsp;&nbsp; Int_Par_Ref=0x804cb8c<br>&nbsp;Locals at 0xbfffda28, Previous frame's sp in esp<br>&nbsp;Saved registers:<br>&nbsp; ebp at 0xbfffda28, eip at 0xbfffda2c<br><br>(gdb) info local<br>Int_Loc = 12<br></p>
+<p>(gdb) info address Int_Loc<br>Symbol "Int_Loc" is a variable at offset -4 from register ebp.<br></p>
+<p>(gdb) info args<br>Int_1_Par_Val = 10<br>Int_2_Par_Val = 5<br>Int_Par_Ref = (One_Fifty *) 0x804cb8c<br></p>
+<p>(gdb) info register<br>eax&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x11&nbsp;&nbsp;&nbsp;&nbsp; 17<br>ecx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>edx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x804cb8c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 134531980<br>ebx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x42130a14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1108544020<br>esp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xbfffda24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xbfffda24<br>ebp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xbfffda28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xbfffda28<br>esi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x804cbb0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 134532016<br>edi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x804cb78&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 134531960<br>eip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x8048fad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x8048fad<br>eflags&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x216&nbsp;&nbsp;&nbsp; 534<br>cs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x23&nbsp;&nbsp;&nbsp;&nbsp; 35<br>ss&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x2b&nbsp;&nbsp;&nbsp;&nbsp; 43<br>ds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x2b&nbsp;&nbsp;&nbsp;&nbsp; 43<br>es&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x2b&nbsp;&nbsp;&nbsp;&nbsp; 43<br>fs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>gs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x33&nbsp;&nbsp;&nbsp;&nbsp; 51<br></p>
+<p>(gdb) x/4 0xbfffda24<br>0xbfffda24:&nbsp;&nbsp;&nbsp;&nbsp; 0x0000000c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xbfffda48&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x08048ed4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x0000000a<br></p>
+<p>(gdb) q<br>The program is running.&nbsp; Exit anyway? (y or n) y<br></p>
+<p>5.</p>
+<p>vi test.c</p>
+<p><em>int global=0;<br>int localf();</em></p>
+<p><em>int main()<br>{<br>&nbsp;return localf();<br>}</em></p>
+<p><em>int localf()<br>{<br>&nbsp;int local=3;<br>&nbsp;int* heap=new int(3);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(5==global++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return localf();<br>}<br></em></p>
+<p>g++ -o test test.c -g<br>gdb test</p>
+<p>&nbsp;</p>
+<p>(gdb) break 13<br>Breakpoint 1 at 0x80484b0: file test.c, line 13.<br>(gdb) command<br>Type commands for when breakpoint 1 is hit, one per line.<br>End with a line saying just "end".<br>&gt;printf "local : %x global :%x heap : %x\n",&amp;local,&amp;global,heap<br>&gt;end<br>(gdb) run<br>Starting program: /root/hwhw/test</p>
+<p>Breakpoint 1, localf() () at test.c:13<br>13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(5==global++)<br>Current language:&nbsp; auto; currently c++<br>local : bffff0b4 global :8049620 heap : 8049790<br>(gdb) c<br>Continuing.</p>
+<p>Breakpoint 1, localf() () at test.c:13<br>13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(5==global++)<br>local : bffff094 global :8049620 heap : 80497a0<br>(gdb) c<br>Continuing.</p>
+<p>Breakpoint 1, localf() () at test.c:13<br>13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(5==global++)<br>local : bffff074 global :8049620 heap : 80497b0<br>(gdb) c<br>Continuing.</p>
+<p>Breakpoint 1, localf() () at test.c:13<br>13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(5==global++)<br>local : bffff054 global :8049620 heap : 80497c0<br>(gdb) c<br>Continuing.</p>
+<p>Breakpoint 1, localf() () at test.c:13<br>13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(5==global++)<br>local : bffff034 global :8049620 heap : 80497d0<br>(gdb) c<br>Continuing.</p>
+<p>Breakpoint 1, localf() () at test.c:13<br>13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(5==global++)<br>local : bffff014 global :8049620 heap : 80497e0<br>(gdb)<br></p>
+<p>6.</p>
+<p>gcc -pg -o dhryp dhry21a.c dhry21b.c timers.c</p>
+<p>./dhryp</p>
+<p>gprof dhryp gmon.out</p>
+<p>&nbsp;</p>
+<p>7.</p>
+<p>man gcc</p>
+<p>gcc -o dhry0 -O0 dhry21a.c dhry21b.c timers.c&nbsp;</p>
+<p>gcc -o dhry1 -O1 dhry21a.c dhry21b.c timers.c </p>
+<p>gcc -o dhry2 -O2 dhry21a.c dhry21b.c timers.c </p>
+<p>gcc -o dhry3 -O3 dhry21a.c dhry21b.c timers.c </p>
+<p>gcc -o dhrys -Os dhry21a.c dhry21b.c timers.c </p>
+<p>&nbsp;</p></div>
+</body></html>

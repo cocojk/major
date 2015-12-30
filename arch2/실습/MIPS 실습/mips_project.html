@@ -1,0 +1,355 @@
+
+<!-- saved from url=(0053)http://csl.hanyang.ac.kr/2015/data_arch/mips_project/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR"></head><body><h2 align="center">Implement MIPS processor </h2>
+<hr>
+<h3><a name="#contents">Contents</a></h3><a name="#contents">
+</a><dl><a name="#contents">
+	</a><dd><a name="#contents"></a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#phase1">Phase 1</a> - Implement single-clock-cycle MIPS processor</dd>
+	<dl>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p1s1">Step 1</a> - Adder (32-bit input + 4)</dd>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p1s2">Step 2</a> - Sign extender</dd>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p1s3">Step 3</a> - 2-to-1 multiplexer (5-bit and 32-bit)</dd>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p1s4">Step 4</a> - 2-bit-shift adder</dd>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p1s5">Step 5</a> - PC (program counter)</dd>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p1s6">Step 6</a> - Memory - Insturction &amp; Data</dd>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p1s7">Step 7</a> - Register file</dd>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p1s8">Step 8</a> - Control Unit</dd>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p1s9">Step 9</a> - ALU (Arithmetic and Logic Unit)</dd>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p1s10">Step 10</a> - Build top-entity, that is, generate and test a VHDL source file for the single cycle implementation</dd>
+	</dl>
+        <br>
+	<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#phase2">Phase 2</a> - Implement pipelined MIPS processor</dd>
+	<dl>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p2s1">Step 1</a> - IF (Instruction Fetch stage)</dd>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p2s2">Step 2</a> - ID (Instruction Decode stage)</dd>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p2s3">Step 3</a> - EX (Execution stage)</dd>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p2s4">Step 4</a> - MEM (Memory stage)</dd>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p2s5">Step 5</a> - WB (Write-back stage)</dd>
+		<dd><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#p2s6">Step 6</a> - Build top-entity, that is, generate and test a VHDL source file for the pipelined implementation</dd>
+	</dl>
+        <br>
+	<dd>Phase 3 - resolving hazards </dd>
+	<dl>
+		<dd>Step 1 - Implement "load stalls" and "zero-defection stalls"</dd>
+		<dd>Step 2 - Remove data hazards by implement forwarding</dd>
+		<dd>Step 3 - Remove control hazards</dd>
+	</dl>
+</dl>
+<!--
+<hr><h3>Reference</h3>
+<dl>
+	<dd><a href='guide/Guide_of_Quartus.hwp'>Quartus tool guide</a></dd>
+	<dd><a href='guide/pcspim.zip'>SPIM simulator for windows(Using default setting in this project)</a></dd>
+</dl>
+-->
+
+<hr>
+<a name="phase1"><h4>Phase 1 - Implement single clock cycle MIPS processor</h4></a><dl><a name="phase1">
+<!--########################################################################################################-->
+	</a><dd><a name="phase1">
+		</a><a name="p1s1"><h4>Step 1 - Adder (32-bit input + 4)</h4>
+		</a><dl><a name="p1s1">
+			</a><dd><a name="p1s1">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/4adder.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					Used for adding 4 to PC (program counter).
+				</td></tr></tbody></table></td></tr></tbody></table>
+				<br>Test in&amp;out<br>
+				<img src="./mips_project_files/t4adder.jpg" border="1"><br>
+				<a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/add4.zip">[Project file download]</a>
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+	<dd>
+		<a name="p1s2"><h4>Step 2 - Sign extender</h4>
+		</a><dl><a name="p1s2">
+			</a><dd><a name="p1s2">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/signextend.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					Extend 16-bit immediate value to 32-bit value by extending its sign.
+				</td></tr></tbody></table></td></tr></tbody></table>
+				<br>Test in&amp;out<br>
+				<img src="./mips_project_files/tsignextender.jpg" border="1"><br>
+				<a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/signextend.zip">[Project file download]</a>
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+	<dd>
+		<a name="p1s3"><h4>Step 3 - 2-to-1 multiplexer (5-bit and 32-bit)</h4>
+		</a><dl><a name="p1s3">
+			</a><dd><a name="p1s3">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/mux.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					For example, 32-bit MUX is used for selecting the correct next value of PC and 5-bit MUX is used for selecting the correct register number. 
+				</td></tr></tbody></table></td></tr></tbody></table>
+				<br>Test in&amp;out - 5bits MUX<br>
+				<img src="./mips_project_files/t5mux.jpg" border="1"><br>
+				Test in&amp;out - 32bits MUX<br>
+				<img src="./mips_project_files/t32mux.jpg" border="1"><br>
+				[Project file download:<a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/mux5.zip">5bits</a>, <a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/mux32.zip">32bits</a>]
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+	<dd>
+		<a name="p1s4"><h4>Step 4 - 2-bit-shift adder</h4>
+		</a><dl><a name="p1s4">
+			</a><dd><a name="p1s4">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/shiftadder.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					Before the addition, convert word address to byte address by shifting by 2 bits. (Default setting of SPIM simulator is not delayed branch. Therefore, we subtract 4 from the address. See the "information for Task 1" document for more details.)
+				</td></tr></tbody></table></td></tr></tbody></table>
+				<br>Test in&amp;out<br>
+				<img src="./mips_project_files/tshiftadder.jpg" border="1"><br>
+				<a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/shiftadder.zip">[Project file download]</a>
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+	<dd>
+		<a name="p1s5"><h4>Step 5 - PC (Program Counter)</h4>
+		</a><dl><a name="p1s5">
+			</a><dd><a name="p1s5">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/pc.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					If the clock signal is on the rising edge and the value of the reset signal is 0, the PC value is updated.
+If the clock signal is on the rising edge and the value of the reset signal is 1, the PC value becomes zero.
+Otherwise, the PC value does not change.
+				</td></tr></tbody></table></td></tr></tbody></table>
+				<br>Test in&amp;out<br>
+				<img src="./mips_project_files/tpc.jpg" border="1"><br>
+				<a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/pc.zip">[Project file download]</a>
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+	<dd>
+		<a name="p1s6"><h4>Step 6 - Instruction &amp; Data memory</h4>
+		</a><dl><a name="p1s6">
+			</a><dd><a name="p1s6">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/mems.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					We use the LPM library to implement the instruction memory and data memory with FPGA. See the "information for Task 1" document for more details.
+				</td></tr></tbody></table></td></tr></tbody></table>
+				<br>Test in&amp;out - Instruction memory<br>
+				<img src="./mips_project_files/init_imem.jpg" border="1"><br>
+				<img src="./mips_project_files/timem.jpg" border="1"><br>
+				Test in&amp;out - Data memory<br>
+				<img src="./mips_project_files/init_dmem.jpg" border="1"><br>
+				<img src="./mips_project_files/tdmem.jpg" border="1"><br>
+				Project file download:<a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/imem.zip">[Instruction memory]</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/dmem.zip">[Data memory]</a>
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+	<dd>
+		<a name="p1s7"><h4>Step 7 - Register file</h4>
+		</a><dl><a name="p1s7">
+			</a><dd><a name="p1s7">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/regfile.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					If the clock signal is on the rising edge and the value of the reset signal is 1, the eight registers are initialized.
+If the clock signal is on the rising edge and the value of the reset signal is 0 and the value of the write signal is 1 and the address of the selected register is not zero, the value of the selected register is updated.<br>
+<br>
+The zero register(r0) always contains the value of 0.
+				</td></tr></tbody></table></td></tr></tbody></table>
+				<br>Test in&amp;out<br>
+				<img src="./mips_project_files/tregfile.jpg" border="1"><br>
+				<a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/regfile.zip">[Project file download]</a>
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+	<dd>
+		<a name="p1s8"><h4>Step 8 - Control unit</h4>
+		</a><dl><a name="p1s8">
+			</a><dd><a name="p1s8">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/ctrl.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					This unit implements the control signal generator. (The meaning of the ALUop signal is different from that in the textbook. See the "information for Task 1" document for more details.)
+<br>
+
+<br>
+opcode 000000:  R-type instruction
+<br>
+opcode 100011:  lw
+<br>
+opcode 101011:  sw
+<br>
+opcode 000100:  beq
+<br>
+opcode 000101:  bne
+				</td></tr></tbody></table></td></tr></tbody></table>
+				<br>Test in&amp;out<br>
+				<img src="./mips_project_files/tcontrol.jpg" border="1"><br>
+				<a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/control.zip">[Project file download]</a>
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+	<dd>
+		<a name="p1s9"><h4>Step 9 - ALU ( Arithmetic and Logic Unit )</h4>
+		</a><dl><a name="p1s9">
+			</a><dd><a name="p1s9">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/alu.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					"Operation = 1" means that it is an R-type instruction or the "bne" instruction.
+<br>
+"Branch = 1" means that it is the "beq" or "bne" instruction.
+<br>
+In addition to calculating the memory address for "lw" and "sw" instructions, ALU supports seven operations (ADD, SUB, AND, OR, SLT, BEQ and BNE).<br>
+<br>
+Operation = 0  and Branch = 0  -&gt;  lw, sw instruction <br>
+Operation = 0  and Branch = 1  -&gt;  beq instruction <br>
+Operation = 1  and Branch = 0 and Out = ln1 + ln2  -&gt;  add instruction <br>
+Operation = 1  and Branch = 0 and Out = ln1 - ln2  -&gt;  sub instruction <br>
+Operation = 1  and Branch = 0 and Out = ln1 &amp; ln2  -&gt;  and instruction <br>
+Operation = 1  and Branch = 0 and Out = ln1 | ln2  -&gt;  or instruction <br>
+Operation = 1  and Branch = 0 and Out = if(ln1 less than ln2) 1 else 0  -&gt;  slt instruction <br>
+Operation = 1  and Branch = 1 -&gt;  bne instruction <br>
+				</td></tr></tbody></table></td></tr></tbody></table>
+				<br>Test in&amp;out<br>
+				<img src="./mips_project_files/talu.jpg" border="1"><br>
+				<a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/alu.zip">[Project file download]</a>
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+	<dd>
+		<a name="p1s10"><h4>Step 10 - Build top-entity (i.e., single-cycle MIPS processor)</h4>
+<br> Hint: Take a look at the project file for the "IF" stage in Phase 2 - it shows how we can build a top-level entity using existing components.<br><br>
+		</a><dl><a name="p1s10">
+			</a><dd><a name="p1s10">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/mips_singleclock.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					You can build the single-cycle MIPS processor using the components developed in Step 1 through Step 9.
+				</td></tr></tbody></table></td></tr></tbody></table>
+				<br><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/bubblesort_without_j.asm">[Test program - bubble sort in assembler form]</a><br>
+You can use the "SPIM" simulator to convert this assembler code into a binary (hexadecimal) form which can subsequently be used to initialize the "Imem.mif" file.
+<br> We also provide the hexadecimal code for the test program for your convenience:
+				<br><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/bubblesort_without_j_hex.asm">[Test program - bubble sort in hexadecimal form]</a><br>
+<br>
+				<br>Test in - Data memory initialize<br>
+				<img src="./mips_project_files/tscc_dmem.jpg" border="1">
+				<br>Test in&amp;out - timing simulation - click to enlarge<br>
+				<a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/imgs/tsingle.jpg" target="_new"><img src="./mips_project_files/itsingle.jpg" border="1"></a>
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+</dl>
+<hr>
+<a name="phase2"><h4>Phase 2 - Implement pipelined MIPS processor</h4></a><dl><a name="phase2">
+<!--########################################################################################################-->
+	</a><dd><a name="phase2">
+		</a><a name="p2s1"><h4>Step 1 - IF (Instruction Fetch stage)</h4>
+		</a><dl><a name="p2s1">
+			</a><dd><a name="p2s1">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/if.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					Instruction-fetch stage: read instruction and increase PC
+<br>* The support for the J-format instruction is added.
+				</td></tr></tbody></table></td></tr></tbody></table>
+				<br>Test in&amp;out<br>
+				<img src="./mips_project_files/tif.jpg" border="1"><br>
+				<a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/if.zip">[Project file download]</a>
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+	<dd>
+		<a name="p2s2"><h4>Step 2 - ID (Instruction Decode stage)</h4>
+		</a><dl><a name="p2s2">
+			</a><dd><a name="p2s2">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/id.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					Decoding instruction; reading and writing registers; calculating branch address.<br>* The support for the J-format instruction is added.
+				</td></tr></tbody></table></td></tr></tbody></table>
+				<br>Test in&amp;out<br>
+				<img src="./mips_project_files/tid.jpg" border="1"><br>
+				<a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/id.zip">[Project file download]</a>
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+	<dd>
+		<a name="p2s3"><h4>Step 3 - EX (Execution stage)</h4>
+		</a><dl><a name="p2s3">
+			</a><dd><a name="p2s3">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/ex.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					ALU operation (may calculate memory address); examine branch conditions.<br>
+				</td></tr></tbody></table></td></tr></tbody></table>
+				<br>Test in&amp;out<br>
+				<img src="./mips_project_files/tex.jpg" border="1"><br>
+				<a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/ex.zip">[Project file download]</a>
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+	<dd>
+		<a name="p2s4"><h4>Step 4 - MEM (Memory stage) </h4>
+		</a><dl><a name="p2s4">
+			</a><dd><a name="p2s4">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/mem.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					Read from or write to data memory; finish branch instruction.<br>
+				</td></tr></tbody></table></td></tr></tbody></table>
+				<br>Test in&amp;out<br>
+				<img src="./mips_project_files/tmem.jpg" border="1"><br>
+				<a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/mem.zip">[Project file download]</a>
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+	<dd>
+		<a name="p2s5"><h4>Step 5 - WB (Write-back stage)</h4>
+		</a><dl><a name="p2s5">
+			</a><dd><a name="p2s5">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/wb.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					Project files are not provided because this stage consists of a single MUX.
+				</td></tr></tbody></table></td></tr></tbody></table>
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+	<dd>
+		<a name="p2s6"><h4>Step 6 - Build top-entity (pipelined MIPS processor) </h4>
+		</a><dl><a name="p2s6">
+			</a><dd><a name="p2s6">
+				</a><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/#contents">[Move to contents]</a><br>
+				<img src="./mips_project_files/pipelinedmips.jpg" border="1">
+				<table border="0" bgcolor="black" cellpadding="0" cellspacing="0"><tbody><tr><td><table width="800" border="0" cellpadding="0" cellspacing="1"><tbody><tr><td bgcolor="white">
+					Add pipeline registers and flip-flops between stages.
+				</td></tr></tbody></table></td></tr></tbody></table><br>
+				<br><a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/prjs/bubblesort_stall.asm">[Test program with stalls - bubble sort]</a>
+				 - use the SPIM simulator to translate to binary.<br>
+				<br>Test in - Data memory initialize<br>
+				<img src="./mips_project_files/tscc_dmem.jpg" border="1">
+				<br>Test in&amp;out - timing simulation - click to enlarge<br>
+				<a href="http://csl.hanyang.ac.kr/2015/data_arch/mips_project/imgs/tpipeline.jpg" target="_new"><img src="./mips_project_files/itpipeline.jpg" border="1"></a>
+			</dd>
+		</dl>
+	</dd>
+<!--########################################################################################################-->
+</dl>
+<hr>
+</body></html>

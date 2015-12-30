@@ -1,0 +1,751 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L1 is add~151
+--operation mode is arithmetic
+
+A1L1 = !pIn[2];
+
+--A1L2 is add~153
+--operation mode is arithmetic
+
+A1L2 = CARRY(pIn[2]);
+
+
+--A1L3 is add~156
+--operation mode is arithmetic
+
+A1L3_carry_eqn = A1L2;
+A1L3 = pIn[3] $ (A1L3_carry_eqn);
+
+--A1L4 is add~158
+--operation mode is arithmetic
+
+A1L4 = CARRY(!A1L2 # !pIn[3]);
+
+
+--A1L5 is add~161
+--operation mode is arithmetic
+
+A1L5_carry_eqn = A1L4;
+A1L5 = pIn[4] $ (!A1L5_carry_eqn);
+
+--A1L6 is add~163
+--operation mode is arithmetic
+
+A1L6 = CARRY(pIn[4] & (!A1L4));
+
+
+--A1L7 is add~166
+--operation mode is arithmetic
+
+A1L7_carry_eqn = A1L6;
+A1L7 = pIn[5] $ (A1L7_carry_eqn);
+
+--A1L8 is add~168
+--operation mode is arithmetic
+
+A1L8 = CARRY(!A1L6 # !pIn[5]);
+
+
+--A1L9 is add~171
+--operation mode is arithmetic
+
+A1L9_carry_eqn = A1L8;
+A1L9 = pIn[6] $ (!A1L9_carry_eqn);
+
+--A1L01 is add~173
+--operation mode is arithmetic
+
+A1L01 = CARRY(pIn[6] & (!A1L8));
+
+
+--A1L11 is add~176
+--operation mode is arithmetic
+
+A1L11_carry_eqn = A1L01;
+A1L11 = pIn[7] $ (A1L11_carry_eqn);
+
+--A1L21 is add~178
+--operation mode is arithmetic
+
+A1L21 = CARRY(!A1L01 # !pIn[7]);
+
+
+--A1L31 is add~181
+--operation mode is arithmetic
+
+A1L31_carry_eqn = A1L21;
+A1L31 = pIn[8] $ (!A1L31_carry_eqn);
+
+--A1L41 is add~183
+--operation mode is arithmetic
+
+A1L41 = CARRY(pIn[8] & (!A1L21));
+
+
+--A1L51 is add~186
+--operation mode is arithmetic
+
+A1L51_carry_eqn = A1L41;
+A1L51 = pIn[9] $ (A1L51_carry_eqn);
+
+--A1L61 is add~188
+--operation mode is arithmetic
+
+A1L61 = CARRY(!A1L41 # !pIn[9]);
+
+
+--A1L71 is add~191
+--operation mode is arithmetic
+
+A1L71_carry_eqn = A1L61;
+A1L71 = pIn[10] $ (!A1L71_carry_eqn);
+
+--A1L81 is add~193
+--operation mode is arithmetic
+
+A1L81 = CARRY(pIn[10] & (!A1L61));
+
+
+--A1L91 is add~196
+--operation mode is arithmetic
+
+A1L91_carry_eqn = A1L81;
+A1L91 = pIn[11] $ (A1L91_carry_eqn);
+
+--A1L02 is add~198
+--operation mode is arithmetic
+
+A1L02 = CARRY(!A1L81 # !pIn[11]);
+
+
+--A1L12 is add~201
+--operation mode is arithmetic
+
+A1L12_carry_eqn = A1L02;
+A1L12 = pIn[12] $ (!A1L12_carry_eqn);
+
+--A1L22 is add~203
+--operation mode is arithmetic
+
+A1L22 = CARRY(pIn[12] & (!A1L02));
+
+
+--A1L32 is add~206
+--operation mode is arithmetic
+
+A1L32_carry_eqn = A1L22;
+A1L32 = pIn[13] $ (A1L32_carry_eqn);
+
+--A1L42 is add~208
+--operation mode is arithmetic
+
+A1L42 = CARRY(!A1L22 # !pIn[13]);
+
+
+--A1L52 is add~211
+--operation mode is arithmetic
+
+A1L52_carry_eqn = A1L42;
+A1L52 = pIn[14] $ (!A1L52_carry_eqn);
+
+--A1L62 is add~213
+--operation mode is arithmetic
+
+A1L62 = CARRY(pIn[14] & (!A1L42));
+
+
+--A1L72 is add~216
+--operation mode is arithmetic
+
+A1L72_carry_eqn = A1L62;
+A1L72 = pIn[15] $ (A1L72_carry_eqn);
+
+--A1L82 is add~218
+--operation mode is arithmetic
+
+A1L82 = CARRY(!A1L62 # !pIn[15]);
+
+
+--A1L92 is add~221
+--operation mode is arithmetic
+
+A1L92_carry_eqn = A1L82;
+A1L92 = pIn[16] $ (!A1L92_carry_eqn);
+
+--A1L03 is add~223
+--operation mode is arithmetic
+
+A1L03 = CARRY(pIn[16] & (!A1L82));
+
+
+--A1L13 is add~226
+--operation mode is arithmetic
+
+A1L13_carry_eqn = A1L03;
+A1L13 = pIn[17] $ (A1L13_carry_eqn);
+
+--A1L23 is add~228
+--operation mode is arithmetic
+
+A1L23 = CARRY(!A1L03 # !pIn[17]);
+
+
+--A1L33 is add~231
+--operation mode is arithmetic
+
+A1L33_carry_eqn = A1L23;
+A1L33 = pIn[18] $ (!A1L33_carry_eqn);
+
+--A1L43 is add~233
+--operation mode is arithmetic
+
+A1L43 = CARRY(pIn[18] & (!A1L23));
+
+
+--A1L53 is add~236
+--operation mode is arithmetic
+
+A1L53_carry_eqn = A1L43;
+A1L53 = pIn[19] $ (A1L53_carry_eqn);
+
+--A1L63 is add~238
+--operation mode is arithmetic
+
+A1L63 = CARRY(!A1L43 # !pIn[19]);
+
+
+--A1L73 is add~241
+--operation mode is arithmetic
+
+A1L73_carry_eqn = A1L63;
+A1L73 = pIn[20] $ (!A1L73_carry_eqn);
+
+--A1L83 is add~243
+--operation mode is arithmetic
+
+A1L83 = CARRY(pIn[20] & (!A1L63));
+
+
+--A1L93 is add~246
+--operation mode is arithmetic
+
+A1L93_carry_eqn = A1L83;
+A1L93 = pIn[21] $ (A1L93_carry_eqn);
+
+--A1L04 is add~248
+--operation mode is arithmetic
+
+A1L04 = CARRY(!A1L83 # !pIn[21]);
+
+
+--A1L14 is add~251
+--operation mode is arithmetic
+
+A1L14_carry_eqn = A1L04;
+A1L14 = pIn[22] $ (!A1L14_carry_eqn);
+
+--A1L24 is add~253
+--operation mode is arithmetic
+
+A1L24 = CARRY(pIn[22] & (!A1L04));
+
+
+--A1L34 is add~256
+--operation mode is arithmetic
+
+A1L34_carry_eqn = A1L24;
+A1L34 = pIn[23] $ (A1L34_carry_eqn);
+
+--A1L44 is add~258
+--operation mode is arithmetic
+
+A1L44 = CARRY(!A1L24 # !pIn[23]);
+
+
+--A1L54 is add~261
+--operation mode is arithmetic
+
+A1L54_carry_eqn = A1L44;
+A1L54 = pIn[24] $ (!A1L54_carry_eqn);
+
+--A1L64 is add~263
+--operation mode is arithmetic
+
+A1L64 = CARRY(pIn[24] & (!A1L44));
+
+
+--A1L74 is add~266
+--operation mode is arithmetic
+
+A1L74_carry_eqn = A1L64;
+A1L74 = pIn[25] $ (A1L74_carry_eqn);
+
+--A1L84 is add~268
+--operation mode is arithmetic
+
+A1L84 = CARRY(!A1L64 # !pIn[25]);
+
+
+--A1L94 is add~271
+--operation mode is arithmetic
+
+A1L94_carry_eqn = A1L84;
+A1L94 = pIn[26] $ (!A1L94_carry_eqn);
+
+--A1L05 is add~273
+--operation mode is arithmetic
+
+A1L05 = CARRY(pIn[26] & (!A1L84));
+
+
+--A1L15 is add~276
+--operation mode is arithmetic
+
+A1L15_carry_eqn = A1L05;
+A1L15 = pIn[27] $ (A1L15_carry_eqn);
+
+--A1L25 is add~278
+--operation mode is arithmetic
+
+A1L25 = CARRY(!A1L05 # !pIn[27]);
+
+
+--A1L35 is add~281
+--operation mode is arithmetic
+
+A1L35_carry_eqn = A1L25;
+A1L35 = pIn[28] $ (!A1L35_carry_eqn);
+
+--A1L45 is add~283
+--operation mode is arithmetic
+
+A1L45 = CARRY(pIn[28] & (!A1L25));
+
+
+--A1L55 is add~286
+--operation mode is arithmetic
+
+A1L55_carry_eqn = A1L45;
+A1L55 = pIn[29] $ (A1L55_carry_eqn);
+
+--A1L65 is add~288
+--operation mode is arithmetic
+
+A1L65 = CARRY(!A1L45 # !pIn[29]);
+
+
+--A1L75 is add~291
+--operation mode is arithmetic
+
+A1L75_carry_eqn = A1L65;
+A1L75 = pIn[30] $ (!A1L75_carry_eqn);
+
+--A1L85 is add~293
+--operation mode is arithmetic
+
+A1L85 = CARRY(pIn[30] & (!A1L65));
+
+
+--A1L95 is add~296
+--operation mode is normal
+
+A1L95_carry_eqn = A1L85;
+A1L95 = pIn[31] $ (A1L95_carry_eqn);
+
+
+--pIn[0] is pIn[0]
+--operation mode is input
+
+pIn[0] = INPUT();
+
+
+--pIn[1] is pIn[1]
+--operation mode is input
+
+pIn[1] = INPUT();
+
+
+--pIn[2] is pIn[2]
+--operation mode is input
+
+pIn[2] = INPUT();
+
+
+--pIn[3] is pIn[3]
+--operation mode is input
+
+pIn[3] = INPUT();
+
+
+--pIn[4] is pIn[4]
+--operation mode is input
+
+pIn[4] = INPUT();
+
+
+--pIn[5] is pIn[5]
+--operation mode is input
+
+pIn[5] = INPUT();
+
+
+--pIn[6] is pIn[6]
+--operation mode is input
+
+pIn[6] = INPUT();
+
+
+--pIn[7] is pIn[7]
+--operation mode is input
+
+pIn[7] = INPUT();
+
+
+--pIn[8] is pIn[8]
+--operation mode is input
+
+pIn[8] = INPUT();
+
+
+--pIn[9] is pIn[9]
+--operation mode is input
+
+pIn[9] = INPUT();
+
+
+--pIn[10] is pIn[10]
+--operation mode is input
+
+pIn[10] = INPUT();
+
+
+--pIn[11] is pIn[11]
+--operation mode is input
+
+pIn[11] = INPUT();
+
+
+--pIn[12] is pIn[12]
+--operation mode is input
+
+pIn[12] = INPUT();
+
+
+--pIn[13] is pIn[13]
+--operation mode is input
+
+pIn[13] = INPUT();
+
+
+--pIn[14] is pIn[14]
+--operation mode is input
+
+pIn[14] = INPUT();
+
+
+--pIn[15] is pIn[15]
+--operation mode is input
+
+pIn[15] = INPUT();
+
+
+--pIn[16] is pIn[16]
+--operation mode is input
+
+pIn[16] = INPUT();
+
+
+--pIn[17] is pIn[17]
+--operation mode is input
+
+pIn[17] = INPUT();
+
+
+--pIn[18] is pIn[18]
+--operation mode is input
+
+pIn[18] = INPUT();
+
+
+--pIn[19] is pIn[19]
+--operation mode is input
+
+pIn[19] = INPUT();
+
+
+--pIn[20] is pIn[20]
+--operation mode is input
+
+pIn[20] = INPUT();
+
+
+--pIn[21] is pIn[21]
+--operation mode is input
+
+pIn[21] = INPUT();
+
+
+--pIn[22] is pIn[22]
+--operation mode is input
+
+pIn[22] = INPUT();
+
+
+--pIn[23] is pIn[23]
+--operation mode is input
+
+pIn[23] = INPUT();
+
+
+--pIn[24] is pIn[24]
+--operation mode is input
+
+pIn[24] = INPUT();
+
+
+--pIn[25] is pIn[25]
+--operation mode is input
+
+pIn[25] = INPUT();
+
+
+--pIn[26] is pIn[26]
+--operation mode is input
+
+pIn[26] = INPUT();
+
+
+--pIn[27] is pIn[27]
+--operation mode is input
+
+pIn[27] = INPUT();
+
+
+--pIn[28] is pIn[28]
+--operation mode is input
+
+pIn[28] = INPUT();
+
+
+--pIn[29] is pIn[29]
+--operation mode is input
+
+pIn[29] = INPUT();
+
+
+--pIn[30] is pIn[30]
+--operation mode is input
+
+pIn[30] = INPUT();
+
+
+--pIn[31] is pIn[31]
+--operation mode is input
+
+pIn[31] = INPUT();
+
+
+--pOut[0] is pOut[0]
+--operation mode is output
+
+pOut[0] = OUTPUT(pIn[0]);
+
+
+--pOut[1] is pOut[1]
+--operation mode is output
+
+pOut[1] = OUTPUT(pIn[1]);
+
+
+--pOut[2] is pOut[2]
+--operation mode is output
+
+pOut[2] = OUTPUT(A1L1);
+
+
+--pOut[3] is pOut[3]
+--operation mode is output
+
+pOut[3] = OUTPUT(A1L3);
+
+
+--pOut[4] is pOut[4]
+--operation mode is output
+
+pOut[4] = OUTPUT(A1L5);
+
+
+--pOut[5] is pOut[5]
+--operation mode is output
+
+pOut[5] = OUTPUT(A1L7);
+
+
+--pOut[6] is pOut[6]
+--operation mode is output
+
+pOut[6] = OUTPUT(A1L9);
+
+
+--pOut[7] is pOut[7]
+--operation mode is output
+
+pOut[7] = OUTPUT(A1L11);
+
+
+--pOut[8] is pOut[8]
+--operation mode is output
+
+pOut[8] = OUTPUT(A1L31);
+
+
+--pOut[9] is pOut[9]
+--operation mode is output
+
+pOut[9] = OUTPUT(A1L51);
+
+
+--pOut[10] is pOut[10]
+--operation mode is output
+
+pOut[10] = OUTPUT(A1L71);
+
+
+--pOut[11] is pOut[11]
+--operation mode is output
+
+pOut[11] = OUTPUT(A1L91);
+
+
+--pOut[12] is pOut[12]
+--operation mode is output
+
+pOut[12] = OUTPUT(A1L12);
+
+
+--pOut[13] is pOut[13]
+--operation mode is output
+
+pOut[13] = OUTPUT(A1L32);
+
+
+--pOut[14] is pOut[14]
+--operation mode is output
+
+pOut[14] = OUTPUT(A1L52);
+
+
+--pOut[15] is pOut[15]
+--operation mode is output
+
+pOut[15] = OUTPUT(A1L72);
+
+
+--pOut[16] is pOut[16]
+--operation mode is output
+
+pOut[16] = OUTPUT(A1L92);
+
+
+--pOut[17] is pOut[17]
+--operation mode is output
+
+pOut[17] = OUTPUT(A1L13);
+
+
+--pOut[18] is pOut[18]
+--operation mode is output
+
+pOut[18] = OUTPUT(A1L33);
+
+
+--pOut[19] is pOut[19]
+--operation mode is output
+
+pOut[19] = OUTPUT(A1L53);
+
+
+--pOut[20] is pOut[20]
+--operation mode is output
+
+pOut[20] = OUTPUT(A1L73);
+
+
+--pOut[21] is pOut[21]
+--operation mode is output
+
+pOut[21] = OUTPUT(A1L93);
+
+
+--pOut[22] is pOut[22]
+--operation mode is output
+
+pOut[22] = OUTPUT(A1L14);
+
+
+--pOut[23] is pOut[23]
+--operation mode is output
+
+pOut[23] = OUTPUT(A1L34);
+
+
+--pOut[24] is pOut[24]
+--operation mode is output
+
+pOut[24] = OUTPUT(A1L54);
+
+
+--pOut[25] is pOut[25]
+--operation mode is output
+
+pOut[25] = OUTPUT(A1L74);
+
+
+--pOut[26] is pOut[26]
+--operation mode is output
+
+pOut[26] = OUTPUT(A1L94);
+
+
+--pOut[27] is pOut[27]
+--operation mode is output
+
+pOut[27] = OUTPUT(A1L15);
+
+
+--pOut[28] is pOut[28]
+--operation mode is output
+
+pOut[28] = OUTPUT(A1L35);
+
+
+--pOut[29] is pOut[29]
+--operation mode is output
+
+pOut[29] = OUTPUT(A1L55);
+
+
+--pOut[30] is pOut[30]
+--operation mode is output
+
+pOut[30] = OUTPUT(A1L75);
+
+
+--pOut[31] is pOut[31]
+--operation mode is output
+
+pOut[31] = OUTPUT(A1L95);
+
+

@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="IF">
+		<CBX_INST_ENTRY INSTANCE_NAME="|eIF|eImem:cimem|LPM_ROM:data_memory|altrom:srom|altsyncram:rom_block" CBX_FILE_NAME="altsyncram_unv.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

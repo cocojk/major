@@ -1,0 +1,2509 @@
+
+<!-- saved from url=(0057)http://csl.hanyang.ac.kr/2015/data_arch/mips_tutorials/B/ -->
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40"><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 12">
+<meta name="Originator" content="Microsoft Word 12">
+<link rel="File-List" href="http://csl.hanyang.ac.kr/2015/data_arch/mips_tutorials/B/caproj.files/filelist.xml">
+<link rel="Edit-Time-Data" href="http://csl.hanyang.ac.kr/2015/data_arch/mips_tutorials/B/caproj.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>sunhong</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Inhong</o:LastAuthor>
+  <o:Revision>18</o:Revision>
+  <o:TotalTime>38</o:TotalTime>
+  <o:Created>2010-04-29T03:51:00Z</o:Created>
+  <o:LastSaved>2010-04-29T05:20:00Z</o:LastSaved>
+  <o:Pages>13</o:Pages>
+  <o:Words>721</o:Words>
+  <o:Characters>4113</o:Characters>
+  <o:Lines>34</o:Lines>
+  <o:Paragraphs>9</o:Paragraphs>
+  <o:CharactersWithSpaces>4825</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel="themeData" href="http://csl.hanyang.ac.kr/2015/data_arch/mips_tutorials/B/caproj.files/themedata.thmx">
+<link rel="colorSchemeMapping" href="http://csl.hanyang.ac.kr/2015/data_arch/mips_tutorials/B/caproj.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>KO</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="--"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:바탕;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-alt:Batang;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:굴림;
+	panose-1:2 11 6 0 0 1 1 1 1 1;
+	mso-font-alt:Gulim;
+	mso-font-charset:129;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:"맑은 고딕";
+	panose-1:2 11 5 3 2 0 0 2 0 4;
+	mso-font-charset:129;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1879047505 165117179 18 0 524289 0;}
+@font-face
+	{font-family:"\@바탕";
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:"\@굴림";
+	panose-1:2 11 6 0 0 1 1 1 1 1;
+	mso-font-charset:129;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:"\@맑은 고딕";
+	panose-1:2 11 5 3 2 0 0 2 0 4;
+	mso-font-charset:129;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1879047505 165117179 18 0 524289 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	text-autospace:none;
+	word-break:break-hangul;
+	font-size:10.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"맑은 고딕";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"제목 1 Char";
+	mso-style-next:표준;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	text-autospace:none;
+	word-break:break-hangul;
+	font-size:14.0pt;
+	font-family:"맑은 고딕";
+	mso-ascii-font-family:"맑은 고딕";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"맑은 고딕";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"맑은 고딕";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	mso-font-kerning:1.0pt;
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"머리글 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	tab-stops:center 225.65pt right 451.3pt;
+	layout-grid-mode:char;
+	text-autospace:none;
+	word-break:break-hangul;
+	font-size:10.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"맑은 고딕";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"바닥글 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	tab-stops:center 225.65pt right 451.3pt;
+	layout-grid-mode:char;
+	text-autospace:none;
+	word-break:break-hangul;
+	font-size:10.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"맑은 고딕";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:굴림;
+	mso-bidi-font-family:굴림;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"풍선 도움말 텍스트 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	text-autospace:none;
+	word-break:break-hangul;
+	font-size:9.0pt;
+	font-family:"맑은 고딕";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-noshow:yes;
+	mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	mso-para-margin-top:0cm;
+	mso-para-margin-right:0cm;
+	mso-para-margin-bottom:0cm;
+	mso-para-margin-left:4.0gd;
+	mso-para-margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	text-autospace:none;
+	word-break:break-hangul;
+	font-size:10.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"맑은 고딕";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;}
+span.1Char
+	{mso-style-name:"제목 1 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"제목 1";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"맑은 고딕";
+	mso-ascii-font-family:"맑은 고딕";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"맑은 고딕";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"맑은 고딕";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	mso-font-kerning:1.0pt;}
+span.Char
+	{mso-style-name:"머리글 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:머리글;
+	mso-bidi-font-size:11.0pt;
+	mso-font-kerning:1.0pt;}
+span.Char0
+	{mso-style-name:"바닥글 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:바닥글;
+	mso-bidi-font-size:11.0pt;
+	mso-font-kerning:1.0pt;}
+span.Char1
+	{mso-style-name:"풍선 도움말 텍스트 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"풍선 도움말 텍스트";
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;
+	font-family:"맑은 고딕";
+	mso-ascii-font-family:"맑은 고딕";
+	mso-fareast-font-family:"맑은 고딕";
+	mso-hansi-font-family:"맑은 고딕";
+	mso-bidi-font-family:"Times New Roman";}
+p.MS, li.MS, div.MS
+	{mso-style-name:MS바탕글;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:160%;
+	mso-pagination:widow-orphan;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"맑은 고딕";
+	mso-bidi-font-family:굴림;
+	color:black;}
+p.a, li.a, div.a
+	{mso-style-name:바탕글;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:160%;
+	mso-pagination:widow-orphan;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"바탕","serif";
+	mso-bidi-font-family:굴림;
+	color:black;}
+span.apple-style-span
+	{mso-style-name:apple-style-span;
+	mso-style-unhide:no;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;
+	mso-style-unhide:no;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	mso-bidi-font-size:10.0pt;
+	mso-ascii-font-family:"맑은 고딕";
+	mso-fareast-font-family:"맑은 고딕";
+	mso-hansi-font-family:"맑은 고딕";
+	mso-font-kerning:0pt;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;
+	mso-footnote-separator:url("caproj.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("caproj.files/header.htm") fcs;
+	mso-endnote-separator:url("caproj.files/header.htm") es;
+	mso-endnote-continuation-separator:url("caproj.files/header.htm") ecs;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:3.0cm 72.0pt 72.0pt 72.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"표준 표";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"맑은 고딕";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="15362"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang="KO" link="blue" vlink="purple" style="tab-interval:40.0pt">
+
+<div class="Section1">
+
+<p class="MS" align="center" style="text-align:center"><span lang="EN-US" style="font-size:28.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast">CA
+Project<o:p></o:p></span></p>
+
+
+<p class="MS"><span lang="EN-US" style="font-size:16.0pt;line-height:160%;
+mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+mso-hansi-theme-font:minor-fareast">1 Quatus Setup<o:p></o:p></span></p>
+
+
+<p><span lang="EN-US" style="font-size:13.5pt;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+color:black">&nbsp;<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:16.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">2 Download pre-builded block<o:p></o:p></span></p>
+
+
+<p><span lang="EN-US" style="font-size:13.5pt;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p><span style="font-size:13.5pt;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+color:black">이중 여기에서는<span lang="EN-US"> adder4</span>만 예로 들겠다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-no-proof:yes"><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x129858952" o:spid="_x0000_i1046" type="#_x0000_t75"
+ alt="EMB00000d0823ed" style='width:407.25pt;height:273.75pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image001.jpg" o:title="EMB00000d0823ed"
+  cropleft="10518f" cropright="9308f"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="543" height="365" src="./document1_files/image002.jpg" alt="EMB00000d0823ed" v:shapes="_x129858952"><!--[endif]--></span><span lang="EN-US" style="font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p><span lang="EN-US" style="font-size:13.5pt;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>EX)
+Adder4<o:p></o:p></span></p>
+
+<p><span lang="EN-US" style="font-size:13.5pt;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><i style="mso-bidi-font-style:normal"><span lang="EN-US" style="font-size:20.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">walk
+through<o:p></o:p></span></i></p>
+
+<p class="a"><i style="mso-bidi-font-style:normal"><span lang="EN-US" style="font-size:20.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></i></p>
+
+<p class="a"><span style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">직접 작성하는 방법과 다운받은 컴포넌트 파일을 실행하는 방법<span lang="EN-US"> 2</span>가지가 있다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">다운받은 파일은<span lang="EN-US"> project</span>파일을
+로드 하면 된다<span lang="EN-US">. </span>여기서는 직접작성만 설명하겠다<span lang="EN-US"><o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:16.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">3 Make Project<o:p></o:p></span></p>
+
+<p class="a"><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">새로운 프로젝트를 생성한다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">File -&gt; New Project
+Wizard...<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="_x113177856" o:spid="_x0000_i1045" type="#_x0000_t75" alt="EMB0000115082b5"
+ style='width:249pt;height:557.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image003.png" o:title="EMB0000115082b5"
+  cropbottom="28884f" cropright="53393f"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="332" height="743" src="./document1_files/image004.jpg" alt="EMB0000115082b5" v:shapes="_x113177856"><!--[endif]--></span><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="_x113178656" o:spid="_x0000_i1044" type="#_x0000_t75" alt="EMB0000115082b6"
+ style='width:402pt;height:319.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image005.png" o:title="EMB0000115082b6"
+  croptop="14714f" cropbottom="17302f" cropleft="16772f" cropright="16525f"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="536" height="426" src="./document1_files/image006.jpg" alt="EMB0000115082b6" v:shapes="_x113178656"><!--[endif]--></span><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">Wizard</span><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">의
+실행 순서를 안내하는 화면이다<span lang="EN-US">. Next&gt; </span>를 클릭하자<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="_x113179936" o:spid="_x0000_i1043" type="#_x0000_t75" alt="EMB0000115082b7"
+ style='width:443.25pt;height:350.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image007.png" o:title="EMB0000115082b7"
+  croptop="14714f" cropbottom="17439f" cropleft="16663f" cropright="16624f"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="591" height="467" src="./document1_files/image008.jpg" alt="EMB0000115082b7" v:shapes="_x113179936"><!--[endif]--></span><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a"><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">첫째 항목은 프로젝트를 생성할 디렉토리를 입력합니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">두번째<span lang="EN-US"></span> 항목은 프로젝트의 이름을
+입력합니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">세번째 항목은 프로젝트의 엔티티를 선언하는 곳으로 나중에<span lang="EN-US"> vhd</span>파일을 작성할 때 정확히 일치해야 합니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">홈페이지의 프로젝트 파일과 완전히 동일하게 만들려면 이들을 각각 <span lang="EN-US"> Add4, Add4, eAdd4</span>라고 정의해야 합니다 - 위의 그림에 나타난 이름과는 다름에 유의하십시오<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="_x113188936" o:spid="_x0000_i1042" type="#_x0000_t75" alt="EMB0000115082b8"
+ style='width:443.25pt;height:351.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image009.png" o:title="EMB0000115082b8"
+  croptop="14850f" cropbottom="17030f" cropleft="16663f" cropright="16406f"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="591" height="469" src="./document1_files/image010.jpg" alt="EMB0000115082b8" v:shapes="_x113188936"><!--[endif]--></span><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a"><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">예<span lang="EN-US">(Y)</span>를 눌러 새 폴더를 만듭니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:16.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:16.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">vhd</span><span style="font-size:16.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">파일
+직접 작성<span lang="EN-US"><o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">File -&gt; New... </span><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">에서
+새로운<span lang="EN-US"> vhd</span>파일을 작성합니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="_x113191576" o:spid="_x0000_i1041" type="#_x0000_t75" alt="EMB0000115082b9"
+ style='width:276.75pt;height:343.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image011.png" o:title="EMB0000115082b9"
+  croptop="15668f" cropbottom="17984f" cropleft="23306f" cropright="23059f"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="369" height="458" src="./document1_files/image012.jpg" alt="EMB0000115082b9" v:shapes="_x113191576"><!--[endif]--></span><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">vhd</span><span style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">파일
+작성<span lang="EN-US"><o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">library ieee;<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">use ieee.std_logic_1164.all;<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">use ieee.std_logic_arith.all;<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">use
+ieee.std_logic_signed.all;<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">use ieee.numeric_std.all;<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">entity </span><span lang="EN-US" style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast;color:red">add4</span><span lang="EN-US" style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">
+is<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">port (<o:p></o:p></span></p>
+
+<p class="a" style="text-indent:40.0pt"><span lang="EN-US" style="font-size:12.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">pIn :
+in std_logic_vector(31 downto 0);<o:p></o:p></span></p>
+
+<p class="a" style="text-indent:40.0pt"><span lang="EN-US" style="font-size:12.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">pOut :
+out std_logic_vector(31 downto 0)<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">);<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">end </span><span lang="EN-US" style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+color:red">add4</span><span lang="EN-US" style="font-size:12.0pt;line-height:
+160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">;<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">architecture behavior of </span><span lang="EN-US" style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast;color:red">add4</span><span lang="EN-US" style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">
+is<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">begin<o:p></o:p></span></p>
+
+<p class="a" style="text-indent:40.0pt"><span lang="EN-US" style="font-size:12.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">process(pIn)<o:p></o:p></span></p>
+
+<p class="a" style="text-indent:40.0pt"><span lang="EN-US" style="font-size:12.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">begin<o:p></o:p></span></p>
+
+<p class="a" style="margin-left:40.0pt;text-indent:40.0pt"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">pOut
+&lt;= pIn +4;<o:p></o:p></span></p>
+
+<p class="a" style="text-indent:40.0pt"><span lang="EN-US" style="font-size:12.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">end
+process;<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">end behavior;<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">붉은색으로 쓰여진<span lang="EN-US"> add4</span>는 서로 일치
+해야 하고 프로젝트 생성시에<span lang="EN-US"> top entity</span>와도 일치 해야 합니다<span lang="EN-US">.
+<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">library ieee;<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">use ieee.std_logic_1164.all;<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">use ieee.std_logic_arith.all;<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">use
+ieee.std_logic_signed.all;<o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">use ieee.numeric_std.all;<o:p></o:p></span></p>
+
+<p class="a"><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">는 어떠한 라이브러리를 사용할것인지를 미리 알려줍니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">pIn : in std_logic_vector(31
+downto 0);<o:p></o:p></span></p>
+
+<p class="a"><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">에서<span lang="EN-US"> pIn</span>은 입력받는핀으로<span lang="EN-US"> 31-0</span>까지의 버스선을 의미합니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">pOut &lt;= pIn +4; </span><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">은<span lang="EN-US"> pOut</span>에<span lang="EN-US"> pIn+4</span>를 더해서 출력합니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">File -&gt; save </span><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">또는<span lang="EN-US"> ctrl+s </span>를 눌러서<span lang="EN-US"> add4.vhd</span>로 저장합니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">이외의<span lang="EN-US"> vhdl</span>문법은 인터넷이나 책을
+찾아보시기 바랍니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span style="font-size:16.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">컴파일<span lang="EN-US"><o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="_x113235512" o:spid="_x0000_i1040" type="#_x0000_t75" alt="EMB0000115082ba"
+ style='width:395.25pt;height:157.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image013.png" o:title="EMB0000115082ba"
+  croptop="680f" cropbottom="53954f" cropleft="20474f" cropright="24148f"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="527" height="210" src="./document1_files/image014.jpg" alt="EMB0000115082ba" v:shapes="_x113235512"><!--[endif]--></span><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:14.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">Start
+Compilation</span><span style="font-size:12.0pt;mso-bidi-font-size:14.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">을 클릭하여
+컴파일합니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:16.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span style="font-size:16.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">시뮬레이션<span lang="EN-US"><o:p></o:p></span></span></p>
+
+<p class="a"><span style="font-size:12.0pt;mso-bidi-font-size:14.0pt;line-height:
+160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">새로운<span lang="EN-US"> Vector
+wave </span>파일을 만듭니다<span lang="EN-US">. File -&gt; New<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="_x113222024" o:spid="_x0000_i1039" type="#_x0000_t75" alt="EMB0000115082bb"
+ style='width:249pt;height:303pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image015.png" o:title="EMB0000115082bb"
+  croptop="15532f" cropbottom="18256f" cropleft="23197f" cropright="23043f"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="332" height="404" src="./document1_files/image016.jpg" alt="EMB0000115082bb" v:shapes="_x113222024"><!--[endif]--></span><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="_x113255512" o:spid="_x0000_i1038" type="#_x0000_t75" alt="EMB0000115082bc"
+ style='width:443.25pt;height:222pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image017.png" o:title="EMB0000115082bc"
+  croptop="14169f" cropbottom="21526f" cropleft="15029f" cropright="4871f"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="591" height="296" src="./document1_files/image018.jpg" alt="EMB0000115082bc" v:shapes="_x113255512"><!--[endif]--></span><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">Name</span><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">의
+빈칸을 더블클릭하여<span lang="EN-US"> Insert Node or Bus</span>창을 띄웁니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">Node Finder</span><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">를
+선택하여서 핀을 불러옵니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a" align="left" style="text-align:left"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-no-proof:yes"><!--[if gte vml 1]><v:shape id="_x113258072" o:spid="_x0000_i1037"
+ type="#_x0000_t75" alt="EMB0000115082bd" style='width:429.75pt;height:265.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image019.png" o:title="EMB0000115082bd"
+  croptop="15940f" cropbottom="18393f" cropleft="18623f" cropright="8133f"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="573" height="354" src="./document1_files/image020.jpg" alt="EMB0000115082bd" v:shapes="_x113258072"><!--[endif]--></span><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a" align="left" style="text-align:left"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a" align="left" style="text-align:left"><span style="font-size:12.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">핀을 모두 선택후<span lang="EN-US"> OK</span>를 누릅니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a" align="left" style="text-align:left"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-no-proof:yes"><!--[if gte vml 1]><v:shape id="_x113272136" o:spid="_x0000_i1036"
+ type="#_x0000_t75" alt="EMB0000115082be" style='width:443.25pt;height:3in;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image021.png" o:title="EMB0000115082be"
+  croptop="14441f" cropbottom="21935f" cropleft="13286f" cropright="6396f"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="591" height="288" src="./document1_files/image022.jpg" alt="EMB0000115082be" v:shapes="_x113272136"><!--[endif]--></span><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a" align="left" style="text-align:left"><span style="font-size:12.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">값을<span lang="EN-US"> Hex</span>로 설정한후 시뮬레이션 할<span lang="EN-US"> Input wave</span>를 그려줍니다<span lang="EN-US">. </span>왼쪽하단에<span lang="EN-US"> C</span>를 선택하여 클럭 마다<span lang="EN-US"> 1</span>씩 증가하게 설정합니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">Simulator
+Tool</span><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">에서 웨이브 파일을<span lang="EN-US"> input</span>파일으로
+설정합니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a" align="left" style="text-align:left"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-no-proof:yes"><!--[if gte vml 1]><v:shape id="_x113273736" o:spid="_x0000_i1035"
+ type="#_x0000_t75" alt="EMB0000115082bf" style='width:333.75pt;height:322.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image023.png" o:title="EMB0000115082bf"
+  croptop="13760f" cropbottom="19210f" cropleft="20366f" cropright="19670f"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="445" height="430" src="./document1_files/image024.jpg" alt="EMB0000115082bf" v:shapes="_x113273736"><!--[endif]--></span><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a" align="left" style="text-align:left"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-no-proof:yes"><!--[if gte vml 1]><v:shape id="_x113274296" o:spid="_x0000_i1034"
+ type="#_x0000_t75" alt="EMB0000115082c0" style='width:301.5pt;height:92.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image025.png" o:title="EMB0000115082c0"
+  croptop="1634f" cropbottom="57633f" cropleft="36811f" cropright="13366f"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="402" height="123" src="./document1_files/image026.jpg" alt="EMB0000115082c0" v:shapes="_x113274296"><!--[endif]--></span><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">Start
+Simulation</span><span style="font-size:12.0pt;line-height:160%;font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">을 클릭합니다</span><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">.<o:p></o:p></span></p>
+
+<p class="a" align="left" style="text-align:left"><span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a" align="left" style="text-align:left"><span style="font-size:16.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">결과 확인<span lang="EN-US"><o:p></o:p></span></span></p>
+
+<p class="a" align="left" style="text-align:left"><!--[if gte vml 1]><o:wrapblock><v:shape
+  id="_x113292456" o:spid="_x0000_s1141" type="#_x0000_t75" alt="EMB0000115082c3"
+  style='position:absolute;margin-left:0;margin-top:0;width:425.2pt;height:173.2pt;
+  z-index:1;visibility:visible;mso-wrap-style:square;mso-wrap-distance-left:9pt;
+  mso-wrap-distance-top:0;mso-wrap-distance-right:9pt;
+  mso-wrap-distance-bottom:0;mso-position-horizontal:absolute;
+  mso-position-horizontal-relative:text;mso-position-vertical:absolute;
+  mso-position-vertical-relative:line'>
+  <v:imagedata src="caproj.files/image027.png" o:title="EMB0000115082c3"/>
+  <w:wrap type="topAndBottom" anchory="line"/>
+ </v:shape><![endif]--><!--[if !vml]--><img width="567" height="231" src="./document1_files/image028.jpg" alt="EMB0000115082c3" v:shapes="_x113292456"><!--[endif]--><!--[if gte vml 1]></o:wrapblock><![endif]--><br style="mso-ignore:vglayout" clear="ALL">
+<span lang="EN-US" style="font-size:14.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">4</span><span style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">씩
+증가한 값을 확인 할 수 있습니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><b><span lang="EN-US" style="font-size:16.0pt;mso-bidi-font-size:12.0pt;line-height:160%;
+mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+mso-font-kerning:0pt"># IF (Instruction Fetch stage)</span></b><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;line-height:160%;
+mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt;
+mso-no-proof:yes"><!--[if gte vml 1]><v:shape id="_x129816224" o:spid="_x0000_i1033"
+ type="#_x0000_t75" alt="EMB00000d0823e7" style='width:225pt;height:312pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image029.jpg" o:title="EMB00000d0823e7"
+  cropleft="13269f" cropright="15403f"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="300" height="416" src="./document1_files/image030.jpg" alt="EMB00000d0823e7" v:shapes="_x129816224"><!--[endif]--></span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt">1. download the
+'IF(Instruction Fetch stage)' project file<o:p></o:p></span></p>
+
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt">2. IF project file </span><span style="font-size:12.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt">만드는 방법 <span lang="EN-US"><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;line-height:160%;
+mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+mso-font-kerning:0pt">Adder</span><span style="font-size:12.0pt;mso-bidi-font-size:
+10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+굴림;color:black;mso-font-kerning:0pt">설명과 같은 방법으로 프로젝트를 생성합니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt;
+mso-no-proof:yes"><!--[if gte vml 1]><v:shape id="_x129986416" o:spid="_x0000_i1032"
+ type="#_x0000_t75" alt="EMB00000d0823e4" style='width:312pt;height:257.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image031.png" o:title="EMB00000d0823e4"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="416" height="343" src="./document1_files/image032.jpg" alt="EMB00000d0823e4" v:shapes="_x129986416"><!--[endif]--></span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt">프로젝트 명은<span lang="EN-US"> IF</span>로 합니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt">※ 필요한<span lang="EN-US"> vhd files</span>을 추가한다<span lang="EN-US">. <o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;line-height:160%;
+mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+mso-font-kerning:0pt">(IF stage</span><span style="font-size:12.0pt;mso-bidi-font-size:
+10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+굴림;color:black;mso-font-kerning:0pt">에서는<span lang="EN-US"> PC, Instruction
+memory, 32bits 4-adder, 2-to-1 MUX 2</span>개가 필요함<span lang="EN-US">)<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;line-height:160%;
+mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt;
+mso-no-proof:yes"><!--[if gte vml 1]><v:shape id="_x129987536" o:spid="_x0000_i1031"
+ type="#_x0000_t75" alt="EMB00000d0823e3" style='width:338.25pt;height:283.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image033.png" o:title="EMB00000d0823e3"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="451" height="378" src="./document1_files/image034.jpg" alt="EMB00000d0823e3" v:shapes="_x129987536"><!--[endif]--></span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:14.0pt;mso-bidi-font-size:10.0pt;line-height:160%;
+mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+mso-font-kerning:0pt">write source <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt;
+mso-no-proof:yes"><!--[if gte vml 1]><v:shape id="_x129988896" o:spid="_x0000_i1030"
+ type="#_x0000_t75" alt="EMB00000d0823e2" style='width:278.25pt;height:308.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image035.png" o:title="EMB00000d0823e2"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="371" height="411" src="./document1_files/image036.jpg" alt="EMB00000d0823e2" v:shapes="_x129988896"><!--[endif]--></span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid black .25pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes;
+  height:2.8pt">
+  <td width="559" style="width:419.55pt;border:solid black 1.0pt;mso-border-alt:
+  solid black .25pt;padding:0cm 0cm 0cm 0cm;height:2.8pt">
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">-- </span><span style="font-size:8.0pt;line-height:
+  160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+  mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt">각 연산자 또는 선언에 대한 정의가 되어 있는<span lang="EN-US"> library</span>를<span lang="EN-US"> include</span></span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">library ieee;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">use ieee.std_logic_1164.all;</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">use ieee.std_logic_arith.all;</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">use ieee.std_logic_signed.all;</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">-- </span><span style="font-size:8.0pt;line-height:
+  160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+  mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt">설계하고자 하는 블록의 이름을 정의<span lang="EN-US"> (</span>여기에서는<span lang="EN-US"> 'eIF'</span>로 선언<span lang="EN-US">)</span></span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">entity eIF is</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">-- </span><span style="font-size:8.0pt;line-height:
+  160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+  mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt">블록의 입력과 출력에 대한 선언</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">port(</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pNextpc:in std_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pIncpc:out std_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pInstruction:out std_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pJPC:in std_logic_vector(25 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pJSelect:in std_logic;</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pSelect:in std_logic;</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pReset:in std_logic;</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pClock:in std_logic</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">);</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">end eIF;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">-- </span><span style="font-size:8.0pt;line-height:
+  160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+  mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt">구조에 대한 선언을 위한 블록</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">architecture behavior of eIF is</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">-- </span><span style="font-size:8.0pt;line-height:
+  160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+  mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt">필요한<span lang="EN-US"> components </span>정의<span lang="EN-US"> (</span>각 블록의 소스코드 중<span lang="EN-US"> port</span>부분<span lang="EN-US">)</span></span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;
+  line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+  mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">component eMux32</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">port(</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pIn0: in std_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pIn1: in std_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pSelect: in std_logic;</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pOut: out std_logic_vector(31 downto 0)</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">);</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">end component;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">component eAdd4</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">port (</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pIn: instd_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pOut: outstd_logic_vector(31 downto 0)</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">);</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">end component;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">component ePC</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">port(</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pIn:in std_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pOut:out std_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pReset:in std_logic;</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pClock:in std_logic</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">);</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">end component;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">component eImem</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">port (</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pReadaddr: instd_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pDataout: outstd_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pClock: instd_logic</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">);</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">end component;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">component eJmux</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">port(</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pNPC: in std_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pJPC: in std_logic_vector(25 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pSelect: in std_logic;</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pOut: out std_logic_vector(31 downto 0)</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">);</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">end component;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">-- </span><span style="font-size:8.0pt;line-height:
+  160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+  mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt">필요한<span lang="EN-US"> signal </span>정의</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">signal sInstruction:std_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">signal sNpc:std_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">signal sCpc:std_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">signal sIpc:std_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">signal sJpc:std_logic_vector(31 downto 0);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">-- begin behavior</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">begin</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">-- output port</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pIncpc&lt;=sCpc;</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">process(pReset,sInstruction)</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">begin</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">if pReset='1' then</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pInstruction&lt;=X"FFFFFFFF";</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">else</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">pInstruction&lt;=sInstruction;</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">end if;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">end process;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">-- component connect</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">cPC:ePC </span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">port map(sNpc,sCpc,pReset,not pClock);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">cimem:eImem </span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">port map(sCpc,sInstruction,pClock);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">cadd4:eAdd4 </span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">port map(sCpc,sIpc);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+  mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">cmux:eMux32 </span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">port map(sJpc,pNextpc,pSelect,sNpc);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">cjmux:eJmux </span><span lang="EN-US" style="mso-bidi-font-size:
+  10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt">port map(sIpc,pJPC,pJSelect,sJpc);</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+  &quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+  mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+  mso-font-kerning:0pt"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="mso-line-height-alt:2.8pt;mso-pagination:widow-orphan;
+  layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:8.0pt;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt">end behavior;</span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+  minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+  mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+  굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt">.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:12.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt;
+mso-no-proof:yes"><!--[if gte vml 1]><v:shape id="_x129998944" o:spid="_x0000_i1029"
+ type="#_x0000_t75" alt="EMB00000d0823e1" style='width:381.75pt;height:399pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image037.png" o:title="EMB00000d0823e1"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="509" height="532" src="./document1_files/image038.jpg" alt="EMB00000d0823e1" v:shapes="_x129998944"><!--[endif]--></span><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;line-height:160%;
+mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:굴림;color:black;
+mso-font-kerning:0pt">compile (</span><span style="font-size:12.0pt;mso-bidi-font-size:
+10.0pt;line-height:160%;mso-ascii-font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:
+굴림;color:black;mso-font-kerning:0pt">위 ‘<span lang="EN-US">adder'</span>에서 설명하였으므로
+생략<span lang="EN-US">)<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="line-height:160%;mso-pagination:widow-orphan;
+layout-grid-mode:char;text-autospace:ideograph-other;word-break:keep-all"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt;line-height:160%;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:굴림;color:black;mso-font-kerning:0pt">시뮬레이션을 위해서는<span lang="EN-US"> vector wave form file, instruction memory file</span>이 필요하다<span lang="EN-US">. <o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;line-height:
+160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">※<span lang="EN-US">
+Instruction memory initialize <o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">-
+if you want to translate assembly code into hexadecimal machine code,<o:p></o:p></span></p>
+
+
+<p class="a"><span class="apple-style-span"><span lang="EN-US" style="font-size:12.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">SPIM</span></span><span class="apple-style-span"><span style="font-size:12.0pt;line-height:160%;
+font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">시뮬레이터를 설치하고<span lang="EN-US">
+bubblesort_without_j.asm</span>파일을 불러옵니다<span lang="EN-US">.</span></span></span><span lang="EN-US" style="font-size:12.0pt;line-height:160%;font-family:&quot;맑은 고딕&quot;;
+mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+
+<p class="a"><span lang="EN-US" style="font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-no-proof:yes"><!--[if gte vml 1]><v:shape id="_x145466600" o:spid="_x0000_i1028"
+ type="#_x0000_t75" alt="EMB00000d442604" style='width:492.75pt;height:373.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image039.jpg" o:title="EMB00000d442604"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="657" height="498" src="./document1_files/image040.jpg" alt="EMB00000d442604" v:shapes="_x145466600"><!--[endif]--></span><span lang="EN-US" style="font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">Quartus</span><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt;line-height:160%;font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">에서<span lang="EN-US"> File -&gt; new </span>메모리
+파일을 작성합니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-no-proof:yes"><!--[if gte vml 1]><v:shape id="그림_x0020_20" o:spid="_x0000_i1027"
+ type="#_x0000_t75" alt="18.jpg" style='width:485.25pt;height:336pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image041.jpg" o:title="18"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="647" height="448" src="./document1_files/image042.jpg" alt="18.jpg" v:shapes="그림_x0020_20"><!--[endif]--></span><span lang="EN-US" style="font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-no-proof:yes"><!--[if gte vml 1]><v:shape id="그림_x0020_21" o:spid="_x0000_i1026"
+ type="#_x0000_t75" alt="20.jpg" style='width:487.5pt;height:333pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image043.jpg" o:title="20"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="650" height="444" src="./document1_files/image044.jpg" alt="20.jpg" v:shapes="그림_x0020_21"><!--[endif]--></span><span lang="EN-US" style="font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">SPIM</span><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt;line-height:160%;font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">을 다시 불러와서<span lang="EN-US"> mif</span>파일에 채워넣습니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="a"><span lang="EN-US" style="font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-no-proof:yes"><!--[if gte vml 1]><v:shape id="_x145467320" o:spid="_x0000_i1025"
+ type="#_x0000_t75" alt="EMB00000d442603" style='width:490.5pt;height:403.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="caproj.files/image045.jpg" o:title="EMB00000d442603"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="654" height="538" src="./document1_files/image046.jpg" alt="EMB00000d442603" v:shapes="_x145467320"><!--[endif]--></span><span lang="EN-US" style="font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast"><o:p></o:p></span></p>
+
+<p class="a"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;
+line-height:160%;font-family:&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">0</span><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt;line-height:160%;font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">번지에서부터<span lang="EN-US"> SPIM</span>의<span lang="EN-US"> Start </span>라벨을 차례대로 채워나가면 됩니다<span lang="EN-US">.<o:p></o:p></span></span></p>
+
+<p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;mso-ascii-font-family:
+&quot;맑은 고딕&quot;;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:&quot;맑은 고딕&quot;;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;맑은 고딕&quot;;mso-hansi-theme-font:
+minor-fareast"><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+
+
+
+</body></html>
