@@ -1,0 +1,14 @@
+load data
+INFILE 'nasdaq.csv'
+INTO TABLE nasdaq
+APPEND
+FIELDS TERMINATED BY ','
+(id,
+ symbol,
+ type,
+ dates,
+ open,
+ high,
+ low,
+ close ,
+ volume )

@@ -1,0 +1,242 @@
+파일 처리 방식
+데이터의 중복/데이터 불일치
+통합 정보 취득의 어려움
+유연성 부족
+표준화 문제
+낮은 프로그래머 생산성
+과다한 프로그램 유지보수
+
+데이터베이스 방식의 이점
+데이터의 중복 통제/일관성 유지
+데이터 취득 용이/응답 시간 단축
+계획과 표준화
+프로그래머 생산성 향상
+일관성 있는 데이터 관리
+
+데이터베이스 관리 시스템
+데이터베이스의 조직, 접근, 통제를 위한 기능을 제공하는 일반 목적용 소프트웨어
+사용자 접속 장치 
+데이터베이스 정의/ 조작기 
+시스템 목록기
+ 시스템 목록, 데이터 사전, 정보 저장고 
+무결성 관리기
+ 트랜잭션 무결성 데이터 무결성
+성능 관리기
+ 질의 최적화 기능 데이터베이스 사용도 감시 
+병행 제어기 
+예비/복구 관리기
+보안 관리기
+기타 편의 장치 
+
+분석단 -> denormalization  시킨다. 데이터 분석을 위해서 사용되므로 데이터 변경이 일어나지 않는다. 따라서 ,integrity constraint 고려하지 않아도 되기 때문에, join을 시키지 않기 위해서 denormalization 시킨다.
+
+데이터 마트 (Data Mart, DM)는 데이터 웨어하우스(Data Warehouse, DW) 환경에서 정의된 접근계층으로, 데이터 웨어하우스에서 데이터를 꺼내 사용자에게 제공하는 역할을 한다
+데이터 웨어하우스(data warehouse)란 사용자의 의사 결정에 도움을 주기 위하여, 기간시스템의 데이터베이스에 축적된 데이터를 공통의 형식으로 변환해서 관리하는 데이터베이스를 말한다.
+
+Fact table (sale)
+Dimension tables (product,customer,store)
+Measures
+(qty,amt 같이 관심 있는 데이터를 fact table에 따로 저장)
+roll-up fact table - dimension table
+drill-down dimension table - fact table
+drill-across dimesion1 - fact1-fact2-dimension2 fact1에서 dimension2가는 것
+
+user_tables, user_constraints, user_views, user_synonyms, user_sequences
+
+
+예제 11: 생산 부서와 연구개발 부서가 모두 위치해 있는 곳은 어디인가?
+
+
+(부서위치)  /  ? 부서번호 (? 부서명 = ‘생산’ OR 부서명 = ‘연구개발’  (부서))
+desc,asc
+
+system catalog 
+
+
+CONNECT SYSTEM/MIS12345; -> dba
+CREATE USER TEST(id) IDENTIFIED BY TEST1234(비번);
+GRANT DBA TO TEST;
+GRANT CONNECT TO TEST;
+CONNECT TEST/TEST1234;
+ALTER USER SCOTT IDENTIFIED BY TIGER;
+CREATE TABLE EMP AS SELECT * FROM SCOTT.EMP;
+
+CREATE TABLE employee2
+ (employeeid VARCHAR2(9) NOT NULL,
+ fname VARCHAR2(8),
+ minit VARCHAR2(2),
+ lname VARCHAR2(8),
+ bdate DATE,
+ address VARCHAR2(27),
+ sex VARCHAR2(1),
+ salary NUMBER(7) NOT NULL,
+ superempid VARCHAR2(9),
+ dno NUMBER(1) NOT NULL,
+ CONSTRAINT pk_employee PRIMARY KEY (employeeid),
+ CONSTRAINT fk_department FOREIGN KEY (dno)
+ REFERENCES department (dnumber) ON DELETE CASCADE);
+
+insert into employee2  values
+ ('123456789', 'Joe', 'M', 'Smith', '01-JUN-45',
+ '123 Smith St.', 'm', 45000, '123456789', 1) ;
+ALTER TABLE emp_department_1
+ ADD (manager VARCHAR2(8)) ;
+ALTER TABLE emp_department_1
+ MODIFY (fname VARCHAR2(15));
+ALTER TABLE PLAYER
+RENAME COLUMN PLAYER_ID TO TEAM_ID;
+ALTER TABLE PLAYER
+ADD CONSTRAINT PLAYER_FK
+   FOREIGN KEY (TEAM_ID) REFERENCES TEAM(TEAM_ID);
+
+CREATE VIEW vw_emp_dno_1
+     AS SELECT fname, lname, dno
+     FROM employee1
+     WHERE dno = 1;
+UPDATE employee2            
+          SET    salary = salary * 1.04            
+          WHERE  dno = 1;
+SELECT TO_CHAR(SYSDATE, ‘DD-MON-YYYY HH:MM:SS’) FROM DUAL
+
+CREATE TABLE NASDAQ (
+ID VARCHAR2(20),
+TYPE VARCHAR2(20),
+SYMBOL VARCHAR2(20),
+DATES VARCHAR2(8),
+OPEN NUMBER(20),
+HIGH NUMBER(20),
+LOW NUMBER(20),
+CLOSE NUMBER(20), 
+VOLUME NUMBER(20));
+
+INSERT INTO department VALUES
+       (seq_department_number.nextval, 'Finance',
+        '123456789', '1999-01-01');
+
+CREATE SEQUENCE sequence_name
+    [START WITH n]
+    [INCREMENT BY n]
+    [MAXVALUE n | NOMAXVALUE]
+    [MINVALUE n | NOMINVALUE]
+    [CYCLE | NOCYCLE]
+    [CACHE | NOCACHE]
+
+CREATE SEQUENCE seq_department_number
+      START WITH  1
+      MAXVALUE    9999
+      NOCYCLE;
+
+SELECT seq_department_number.nextval FROM dual ;
+
+SELECT sequence_name, min_value, max_value, last_number
+     FROM USER_SEQUENCES ;
+
+DROP SEQUENCE seq_department_number ;
+
+CREATE SYNONYM employees2 FOR scott.employee1;
+
+GRANT ALL ON  emp TO test
+
+between A and B
+not in ('서울','수원','인천')
+is null
+
+SELECT p.부품번호, 부품내역, 공급자번호
+FROM   부품1 p LEFT JOIN 주문1 o
+ON     p.부품번호 = o.부품번호;
+
+결과:        부품번호       부품내역	공급자번호 
+          ----------------------------------------------
+               105            너트             16
+               113            볼트		   null
+               150             못              27
+SELECT   <항목명 목록>          
+FROM     <테이블명>          
+WHERE    <항목명>  <비교연산자>  ALL/ANY/SOME 
+                                 ( <SELECT 절>            
+                                   <FROM   절>            
+                                  [<WHERE  절>] );
+
+
+SELECT p.부품번호, o.부품번호, 부품내역, 공급자번호
+FROM   부품1 p FULL JOIN 주문1 o
+ON     p.부품번호 = o.부품번호;
+
+SELECT 부품번호, 재고량
+         FROM   부품
+         WHERE  NOT  EXISTS  (SELECT *
+                              FROM   주문
+                              WHERE  주문.부품번호 = 부품.부품번호);
+
+SELECT  공급자번호
+FROM    공급자
+WHERE   위치 = ‘서울’
+EXCEPT (Oracle의 경우 MINUS)
+SELECT  공급자번호
+FROM    주문
+WHERE   부품번호 = 150;
+
+부품번호 SMALLINT NOT NULL
+         CHECK (부품번호 BETWEEN 100 AND 999);
+
+FOREIGN KEY (부품번호) REFERENCES 부품 
+    ON DELETE SET NULL 
+    ON UPDATE CASCADE
+선택사항
+NO ACTION: 부모 레코드의 삭제 금지
+CASCADE: 해당 자식 레코드를 자동 삭제
+SET NULL: 자식 레코드의 해당 항목값을 공값화
+
+
+API(Application Programming Interfaces)
+데이터베이스 프로그램 라이브러리
+제품마다 상이한 형식으로 인한 호환성 문제
+
+
+ODBC(Open DataBase Connectivity)
+상이한 SQL DBMS에 접근하는 공통의 인터페이스
+국제적 표준과 호환성 유지
+
+
+install.packages("sqldf")
+library(sqldf)
+stock <- read.csv("nasdaq.csv")
+colnames(stock)
+dim(stock)
+sqldf("select count(*) from stock")
+sqldf("select * from stock limit 10")
+sqldf("select symbol,count(*) from stock group by symbol having count(*) < 10")
+min(stock$dates)
+max(stock$dates)
+sqldf("select dates, count(*) from stock where dates>201603 group by dates")
+str(stock)
+stock$dates <- as.character(stock$dates)
+stock$date <- paste(substr(stock$dates,1,4),substr(stock$dates,5,6),substr(stock$dates,7,8),sep="-")
+str(stock)
+dateList <- sqldf("select distinct date date from stock")
+head(dateList)
+dim(dateList)
+dateList$seq <- 1:dim(dateList)[1]
+head(dateList)
+stock1 <- sqldf("select a.*, b.seq from stock a, dateList b where a.date=b.date")
+head(stock1)
+colnames(stock1)
+stock2 <- stock1[,-c(1,4)]
+colnames(stock2)
+target <- sqldf("select a.*, b.high/a.close margin from stock2 a, stock2 b where a.symbol=b.symbol and a.seq=b.seq-1")
+head(target)
+summary(target$margin)
+target1 <- sqldf("select date, seq, symbol, case when margin>1.03 then 'yes' else 'no' end class from target")
+head(target1)
+table(target1$class)
+prop.table(table(target1$class))
+mart1 <- sqldf("select a.*, b.open, b.high, b.low, b.close, b.volume from target1 a, stock b where a.date=b.date and a.symbol=b.symbol")
+colnames(mart1)
+sqldf("select count(*) from stock")
+sqldf("select * from stock limit 10")
+sqldf("select symbol,count(*) from stock group by symbol having count(*) < 10")
+a_stock <- sqldf("select symbol, avg(close) avg_close from stock where symbol like 'A%' group by symbol")
+head(a_stock,5)
+tail(a_stock,10)
+sqldf("select min(dates), max(dates) from stock")
+sqldf("select * from (select symbol, avg(close) avg_close, max(close) max_close from stock group by symbol) where symbol like 'B%'  order by max_close desc limit 10")
