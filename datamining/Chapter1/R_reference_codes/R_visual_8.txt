@@ -1,0 +1,65 @@
+################################################################
+#UN data source:
+#
+# http://data.un.org/
+# http://ekqvist.goeuropeinfo.com/rbloggerqvist/?p=87
+#Coke oven gas - production
+################################################################
+# setting amazing library
+library(googleVis)
+################################################################
+# download data
+input <- read.table("UNdata_Export_20140512_024611186.csv", header=TRUE, sep=",", na.strings="NA", dec=",", strip.white=TRUE)
+
+#selecting yearly data
+#select13<- input[which(input$Year=="2013"),]
+#select12<- input[which(input$Year=="2012"),]
+#select11<- input[which(input$Year=="2011"),]
+select10<- input[which(input$Year=="2010"),]
+select09<- input[which(input$Year=="2009"),]
+select08<- input[which(input$Year=="2008"),]
+select07<- input[which(input$Year=="2007"),]
+select06<- input[which(input$Year=="2006"),]
+
+#selecting variables
+#Map13<- data.frame(select13$Country.or.Area, select13$Quantity)
+#Map12<- data.frame(select12$Country.or.Area, select12$Quantity)
+#Map11<- data.frame(select11$Country.or.Area, select11$Quantity)
+Map10<- data.frame(select10$Country.or.Area, select10$Quantity)
+Map09<- data.frame(select09$Country.or.Area, select09$Quantity)
+Map08<- data.frame(select08$Country.or.Area, select08$Quantity)
+Map07<- data.frame(select07$Country.or.Area, select07$Quantity)
+Map06<- data.frame(select06$Country.or.Area, select06$Quantity)
+
+#change variable name
+
+#names(Map13)<- c("Country", "Coke-oven gas prod. TJ")
+#names(Map12)<- c("Country", "Coke-oven gas prod. TJ")
+#names(Map11)<- c("Country", "Coke-oven gas prod. TJ")
+names(Map10)<- c("Country", "Coke-oven gas prod. TJ")
+names(Map09)<- c("Country", "Coke-oven gas prod. TJ")
+names(Map08)<- c("Country", "Coke-oven gas prod. TJ")
+names(Map07)<- c("Country", "Coke-oven gas prod. TJ")
+names(Map06)<- c("Country", "Coke-oven gas prod. TJ")
+
+
+
+#year 2010
+unmap10=gvisGeoMap(Map10, locationvar="Country", numvar="Coke-oven gas prod. TJ", options=list(height=350, dataMode='regions', chartid="Coke-oven prod 2009"))
+
+#year 2009
+unmap09=gvisGeoMap(Map09, locationvar="Country", numvar="Coke-oven gas prod. TJ", options=list(height=350, dataMode='regions', chartid="Coke-oven prod 2009"))
+#year 2008
+unmap08=gvisGeoMap(Map08, locationvar="Country", numvar="Coke-oven gas prod. TJ", options=list(height=350, dataMode='regions'))
+#year 2007
+unmap07=gvisGeoMap(Map07, locationvar="Country", numvar="Coke-oven gas prod. TJ", options=list(height=350, dataMode='regions'))
+#year 2006
+unmap06=gvisGeoMap(Map06, locationvar="Country", numvar="Coke-oven gas prod. TJ", options=list(height=350, dataMode='regions'))
+
+#testing that all is ok
+
+plot(unmap10)
+plot(unmap09)
+plot(unmap08)
+plot(unmap07)
+plot(unmap06)

@@ -1,0 +1,129 @@
+# http://www.statmethods.net/stats/regression.html
+
+# Multiple Linear Regression Example 
+
+#텍스트 화일을 읽는다. 헤더가 있으므로 true세팅 
+mydata <- read.table("data_1.txt", header = TRUE)
+
+#첫번째 row에서 3번째 row까지 확인해본다 
+mydata[1:3,]
+
+#컬럼의 개수 확인 
+ncol(mydata)
+#마지막 컬럼의 종류가 무엇인지 확인해본다 
+unique( mydata[, ncol(mydata)])
+
+#lm 을 이용하여 회귀분석 실시한다 
+fit <- lm(Price ~ KM + HP + CC, data=mydata)
+summary(fit) # show results
+
+# Other useful functions 
+#모형의 선형계수만 찾아내기 
+coefficients(fit) # model coefficients
+#각 선형계수의 신뢰구간을 찾아낸다: 0을 벗어난 구간을 가진 것이 유의한 변수 
+confint(fit, level=0.95) # CIs for model parameters 
+#예측치만 찾아내기 
+fitted(fit) # predicted values
+# 에러값 찾내기: y - yhat 
+residuals(fit) # residuals
+# anova 테이블을 구한다 
+anova(fit) # anova table 
+vcov(fit) # covariance matrix for model parameters 
+influence(fit) # regression diagnostics
+
+#Diagnostic Plots
+#layout(matrix(c(1,2,3,4),2,2)) # optional 4 graphs/page 
+#plot(fit)
+
+fit_forward <- lm(Price ~ Age_08_04 + Weight+KM+HP,data=mydata)
+
+fit_backward <- lm(Price ~ Age_08_04+KM+HP+Quarterly_Tax,data=mydata)
+
+fit_both <- lm (Price ~ Age_08_04+Weight+KM+HP+Fuel_Type_CNG+Quarterly_Tax+Fuel_Type_Diesel,data=mydata)
+
+summary(fit_forward)
+summary(fit_backward)
+summary(fit_both)
+
+# compare models
+fit1 <- lm(Price ~ KM + HP + CC + Weight, data=mydata)
+fit2 <- lm(Price ~ KM + HP + Weight, data=mydata )
+# anova 테이블로 f테스트하여 두 모형 비교 
+# pvalue가 작아서 귀무가설을 rejection: 긴 모형이 더 좋음 
+anova(fit1, fit2)
+
+# K-fold cross-validation
+library(DAAG)
+#cv.lm(df=mydata, fit, m=3) # 3 fold cross-validation,  Mean square = 12474212 
+#CV 방법으로 예측력이 좋은 모형을 찾아내기 
+rs1 <- cv.lm(data=mydata, fit1, m=3) # 3 fold cross-validation, Mean square =  5044365
+rs2 <- cv.lm(data=mydata, fit2, m=3) # 3 fold cross-validation, Mean square =  8691015
+#긴 모형이 더 좋다고 판단하게 됨 
+
+summary(fit1)
+summary(fit2)
+#adj R^2 값을 비교해도 fit1이 더 좋은 모형이다
+ 
+
+resi1 <- (rs1[,1] - rs1[,ncol(rs1)])
+resi2 <- (rs2[,1] - rs2[,ncol(rs2)])
+mse1 <-  resi1 %*% resi1 / length(resi1) #t(resi1) %*% resi1
+mse2 <-  resi2 %*% resi2 / length(resi2) #t(resi1) %*% resi1
+
+#row 들의 순서를 램덤하게 하기 
+# to permute? 
+myRandID <- sample(nrow(mydata))
+mydataPerm <- mydata[myRandID,]
+
+#CV 방법으로 예측력이 좋은 모형을 찾아내기 
+rs1 <- cv.lm(df=mydataPerm, fit1, m=3) # 3 fold cross-validation, Mean square =  
+rs2 <- cv.lm(df=mydataPerm, fit2, m=3) # 3 fold cross-validation, Mean square =  
+
+
+
+
+Age_08_04  KM  HP  Met_Color  Automatic  CC  Doors  Quarterly_Tax  Weight  Fuel_Type_CNG Fuel_Type_Diesel                   
+
+
+fullfit <- lm(Price~Age_08_04+KM+HP+Met_Color+Automatic+CC+Doors+Quarterly_Tax+Weight+Fuel_Type_CNG+Fuel_Type_Diesel,data=mydata)
+null = lm(Price~1, data=mydata)
+forward<-step(null, scope=list(lower=null, upper=fullfit), direction="forward")
+backward<-step(fullfit, scope=list(lower=null, upper=fullfit), direction="backward")
+both<-step(null, scope=list(lower=null, upper=fullfit), direction="both")
+
+step <- stepAIC(fullfit, direction="both")
+step$anova # display results
+
+null=lm(Price~1, data=mydata)
+step(null, scope=list(lower=null, upper=fullfit), direction="forward")
+step(fullfit, scope=list(lower=null, upper=fullfit), direction="backward")
+step(null, scope=list(lower=null, upper=fullfit), direction="both")
+################################################
+# variable selection
+
+# Stepwise Regression
+library(MASS)
+fullfit <- lm(Price~Age_08_04+KM+HP+CC+Weight,data=mydata)
+step <- stepAIC(fullfit, direction="both")
+step$anova # display results
+
+null=lm(Price~1, data=mydata)
+step(null, scope=list(lower=null, upper=fullfit), direction="forward")
+step(fullfit, scope=list(lower=null, upper=fullfit), direction="backward")
+step(null, scope=list(lower=null, upper=fullfit), direction="both")
+
+
+# All Subsets Regression
+library(leaps)
+leaps<-regsubsets(Price~Age_08_04+KM+HP+CC+Weight,data=mydata,nbest=10)
+# view results 
+summary(leaps)
+# plot a table of models showing variables in each model.
+# models are ordered by the selection statistic.
+plot(leaps,scale="r2")
+plot(leaps, scale="adjr2")
+plot(leaps, scale="bic")
+
+# plot statistic by subset size 
+library(car)
+subsets(leaps, statistic="rsq")

@@ -1,0 +1,145 @@
+rm( list=ls()) # memory 에 있는 모든 변수를 제거하기
+wine <- read.table("wine.Traindata.txt", sep=",") #header 없이 ,로 구분된 텍스트 화일 읽기
+
+wine[1:3,]
+
+# You can standardise variables in R using the “scale()” function.
+
+mean_val <- sapply(wine[,2:14],mean) #2번째 변수부터 14번째 변수까지 평균을 계산하여 저장하기
+sd_val <- sapply(wine[,2:14],sd) #2번째 변수부터 14번째 변수까지 표준편차를 계산하여 저장하기
+
+
+standardisedconcentrations <- as.data.frame(scale(wine[,2:14]))
+# 각 column의 데이터를 정규화하고 그 데이터들을 spread sheet형태로 사용하겠다
+
+
+#평균이 0인 것 확인
+ mean(standardisedconcentrations$V2)
+ mean(standardisedconcentrations$V3)
+
+#표준편차가 1인 것 확인
+sd(standardisedconcentrations$V2)
+sd(standardisedconcentrations$V3)
+
+
+#정규화 함수를 따로 만들어 놓기
+myNormalize <- function(variables,mean_val, sd_val)
+{
+     # find out how many variables we have
+     variables <- as.data.frame(variables)     
+     numvariables <- ncol(variables)
+     # find the variable names
+     variablenames <- colnames(variables)
+     # calculate the separation for each variable
+     NormVal <- data.frame( matrix(NA, nrow(variables), ncol(variables) ) )
+     colnames(NormVal) <- colnames(variables)
+     for (i in 1:nrow(variables))
+     {
+        xvec <- variables[i,]
+        NormVal[i,] <- ( xvec - mean_val )/ sd_val                
+     }
+     return (NormVal)
+}
+
+
+myNormalize( wine[1:2,2:14], mean_val, sd_val)
+standardisedconcentrations[1:2,]
+
+#만든 myNormalize함수와 scale 함수의 결과 비교 --> 똑같아야 함
+myNormalize( wine[1:2,2:14], mean_val, sd_val)  - standardisedconcentrations[1:2,]
+
+#정규화된 data의 평균과 표준편차를 계산해본다. -> 모두 0(평균)과 1(표준편차)가 나와야 한다.
+sapply(standardisedconcentrations,mean)
+sapply(standardisedconcentrations,sd)
+
+wine.pca <- prcomp(standardisedconcentrations)                 # do a PCA
+
+summary(wine.pca)
+
+#2에서 14까지 정규화시킨 데이터의 분산의 합 즉, 13과 같아야 함
+sum((wine.pca$sdev)^2)
+
+# 주성분(PC)의 loading vector가 주어진 경우 score를 계산하는 함수
+calcpc <- function(variables,loadings)
+  {
+     # find the number of samples in the data set
+     as.data.frame(variables)
+     numsamples <- nrow(variables)
+     # make a vector to store the component
+     pc <- numeric(numsamples)
+     # find the number of variables
+     numvariables <- length(variables)
+     # calculate the value of the component for each sample
+     for (i in 1:numsamples)
+     {
+        valuei <- 0
+        for (j in 1:numvariables)
+        {
+           valueij <- variables[i,j]
+           loadingj <- loadings[j]
+           valuei <- valuei + (valueij * loadingj)
+        }
+        pc[i] <- valuei
+     }
+     return(pc)
+  }
+
+calcpc(standardisedconcentrations, wine.pca$rotation[,1])
+
+#wine.pca$rotation[,1] 는 첫번째 주성분을 만들기 위한 loading vector이고
+#첫번째 row 의 데이터에 대하여 score를 계산해본다.
+calcpc(standardisedconcentrations[1,], wine.pca$rotation[,1])
+wine.pca$x[1,1]
+
+#두번째 row 데이터에 대하여 첫번째 주성분 score를 계산한다
+calcpc(standardisedconcentrations[2,], wine.pca$rotation[,1])
+#계산된 score 와 같은지 비교
+wine.pca$x[2,1]
+
+#주성분으로 설명된 정보량(분산)을 그림으로 표시
+screeplot(wine.pca, type="lines")
+
+#두번째 주성분을 만들기 위한 방향인 loading vector의 제곱합이 1이되는 것 확인
+sum((wine.pca$rotation[,2])^2)
+
+
+# plot(wine.pca$x[,1],wine.pca$x[,2]) # make a scatterplot
+# text(wine.pca$x[,1],wine.pca$x[,2], wine$V1, cex=0.7, pos=4, col="red") # add labels
+plot(wine.pca$x[,1],wine.pca$x[,2], col=wine$V1, pch=as.numeric(wine$V1) ) # make a scatterplot
+
+
+
+
+
+testwine <- read.table("wine.Testdata.txt", sep=",")
+#이전의 정규화 로직과 동일하게 test 데이터를 정규화 시킨다
+Normvalues <- myNormalize( testwine[,2:14], mean_val, sd_val)
+#이전에 score를 만들어내는 로직으로(즉, loading 벡터로) score에 해당하는 값들 계산
+PCScores1 <- calcpc(Normvalues, wine.pca$rotation[,1])
+PCScores2 <- calcpc(Normvalues, wine.pca$rotation[,2])
+
+# plot(wine.pca$x[,1],wine.pca$x[,2], col=wine$V1, pch=as.numeric(wine$V1) ) # make a scatterplot
+# par(new=TRUE)
+# plot(PCScores1,PCScores2,  pch=c('1', '2', '3') ) # make a scatterplot
+
+
+#그림을 한번에 다같이 그리기
+sc1 <- data.frame( wine.pca$x[,1] )
+sc2 <- data.frame( wine.pca$x[,2] )
+y <- data.frame( wine$V1 )
+
+y2 <- y;
+y2[y == 1] <- 'A'
+y2[y == 2] <- 'B'
+y2[y == 3] <- 'C'
+
+
+df <- data.frame(sc1,sc2,y2)
+colnames(df) <- c('sc1', 'sc2', 'y')
+df2 <- data.frame(PCScores1, PCScores2)
+
+library(ggplot2)
+p1 <- ggplot(data = df, aes(x=sc1, y=sc2, color=y))+ geom_point(shape=1, size=3) 
+p1 <- p1  + geom_point(data = df, shape=1, size=3) 
+p1 <- p1 + geom_point(data = df2 , aes(x =PCScores1, y=PCScores2, shape=c('Q1', 'Q2', 'Q3')), color="black", size = 5)
+p1

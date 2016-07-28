@@ -1,0 +1,21 @@
+# http://joshwalters.github.io/2012/11/27/naive-bayes-classification-in-r.html
+
+install.packages("klaR")
+install.packages("caret")
+
+library("klaR")
+library("caret")
+
+x = iris[,-5]
+y = iris$Species
+
+model = train(x,y,'nb',trControl=trainControl(method='cv',number=10))
+
+model
+
+predict(model$finalModel,x)
+
+predict(model$finalModel,x)$class
+
+table(predict(model$finalModel,x)$class,y)
+

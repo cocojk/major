@@ -1,0 +1,6 @@
+#install.packages(pkgs="googleVis_0.5.2.zip", lib = "~/googleVis", repos=NULL, contriburl=NULL) 
+#install.packages("googleVis", pkgs="googleVis_0.5.2.zip",repos=NULL)
+require(googleVis)
+data(Fruits)
+M1 <- gvisMotionChart(Fruits, idvar="Fruit", timevar="Year")
+plot(M1)

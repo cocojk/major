@@ -1,0 +1,67 @@
+#http://www.instantr.com/2012/12/18/performing-a-principal-component-analysis-in-r/
+#http://stat.ethz.ch/R-manual/R-patched/library/stats/html/princomp.html
+
+
+You can perform a principal component analysis with the princomp function as shown below.
+> princomp(dataset)
+The dataset should contain numeric variables only. If there are any non-numeric variables in your dataset, you must exclude them with bracket notation or with the subset function.
+The princomp output displays the standard deviations of the components. However there are more elements of the output that are not automatically displayed, including the loadings and scores. You can save the all of this output to an object, as shown below.
+> modelname<-princomp(dataset)
+Once you have saved the output to an object, you can use further functions to view the various elements of the output. For example, you can use the summary function to view the proportion of the total variance explained by each component:
+> summary(modelname)
+To view the loadings for each component, use the command:
+> modelname$loadings
+Similarly you can view the scores for each of the observations as shown:
+> modelname$scores
+To create a scree plot, please see the article Creating a scree plot with R.
+Example: Principal component analysis using the iris data
+
+Consider the iris dataset (included with R) which gives the petal width, petal length, sepal width, sepal length and species for 150 irises. To view more information about the dataset, enter help(iris).
+You can view the dataset by entering the dataset name:
+> iris
+    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+1            5.1         3.5          1.4         0.2     setosa
+2            4.9         3.0          1.4         0.2     setosa
+3            4.7         3.2          1.3         0.2     setosa
+4            4.6         3.1          1.5         0.2     setosa
+5            5.0         3.6          1.4         0.2     setosa
+...
+150          5.9         3.0          5.1         1.8  virginica
+The dataset contains a factor variable (Species) which must be excluded when performing the PCA. So to perform the analysis and save the results to an object, use the command:
+> irispca<-princomp(iris[-5])
+To view the proportion of the total variance explained by each component, use the command:
+> summary(irispca)
+Importance of components:
+                          Comp.1     Comp.2     Comp.3      Comp.4
+Standard deviation     2.0494032 0.49097143 0.27872586 0.153870700
+Proportion of Variance 0.9246187 0.05306648 0.01710261 0.005212184
+Cumulative Proportion  0.9246187 0.97768521 0.99478782 1.000000000
+From the output we can see that 92.4% of the variation in the dataset is explained by the first component alone, and 97.8% is explained by the first two components.
+To view the loadings for the components, use the command:
+> irispca$loadings
+Loadings:
+             Comp.1 Comp.2 Comp.3 Comp.4
+Sepal.Length  0.361 -0.657  0.582  0.315
+Sepal.Width         -0.730 -0.598 -0.320
+Petal.Length  0.857  0.173        -0.480
+Petal.Width   0.358        -0.546  0.754
+
+               Comp.1 Comp.2 Comp.3 Comp.4
+SS loadings      1.00   1.00   1.00   1.00
+Proportion Var   0.25   0.25   0.25   0.25
+Cumulative Var   0.25   0.50   0.75   1.00
+To view the scores for each observation, use the command:
+> irispca$scores
+             Comp.1       Comp.2       Comp.3        Comp.4
+  [1,] -2.684125626 -0.319397247  0.027914828  0.0022624371
+  [2,] -2.714141687  0.177001225  0.210464272  0.0990265503
+  [3,] -2.888990569  0.144949426 -0.017900256  0.0199683897
+  [4,] -2.745342856  0.318298979 -0.031559374 -0.0755758166
+  [5,] -2.728716537 -0.326754513 -0.090079241 -0.0612585926
+  [6,] -2.280859633 -0.741330449 -0.168677658 -0.0242008576
+  [7,] -2.820537751  0.089461385 -0.257892158 -0.0481431065
+  [8,] -2.626144973 -0.163384960  0.021879318 -0.0452978706
+  [9,] -2.886382732  0.578311754 -0.020759570 -0.0267447358
+ [10,] -2.672755798  0.113774246  0.197632725 -0.0562954013
+...
+[150,]  1.390188862  0.282660938 -0.362909648 -0.1550386282

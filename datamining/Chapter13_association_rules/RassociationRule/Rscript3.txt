@@ -1,0 +1,49 @@
+load("ElectricCarMsg.RData") 
+
+library(arules)
+
+msg <- gsub("[[:space:]]", " ", msg)
+msg.vec <- strsplit(msg, split="\\.")[[1]]
+ 
+useSejongDic()
+mergeUserDic(data.frame(c("´ëÇÑ¹Î±¹"), c("ncn")))
+
+tran <- Map(extractNoun, msg.vec)
+tran <- unique(tran)
+tran <- sapply(tran, unique)
+tran <- sapply(tran, function(x) {Filter(function(y) {
+  nchar(y) <= 4 && nchar(y) > 1 && is.hangul(y)}
+                                         ,x)} )
+tran <- Filter(function(x){length(x) >= 2}, tran)
+names(tran) <- paste("Tr", 1:length(tran), sep="")
+wordtran <- as(tran, "transactions")
+ 
+ares <- apriori(wordtran, parameter=list(minlen=2,supp=0.02, conf=0.9))
+ 
+#remove  subsets 
+ares.sorted <- sort(ares, by="lift")
+subset.matrix <- is.subset(ares.sorted, ares.sorted)
+subset.matrix[lower.tri(subset.matrix, diag=T)] <- NA
+redundant <- colSums(subset.matrix, na.rm=T) >= 1
+which(redundant)
+ares.pruned <- ares.sorted[!redundant]
+ 
+plot(ares.pruned, method="graph", control=list(type="items"))
+
+###################################################### 
+# rules of lift > 25
+
+ares.sorted <- sort(ares, by="lift")
+subset.matrix <- is.subset(ares.sorted, ares.sorted)
+subset.matrix[lower.tri(subset.matrix, diag=T)] <- NA
+redundant <- colSums(subset.matrix, na.rm=T) >= 1
+which(redundant)
+ares.pruned <- ares.sorted[!redundant]
+
+qual <- ares.pruned@quality
+ares.pruned.sub <- ares.pruned[qual$lift > 25]
+
+plot(ares.pruned.sub, method="graph", control=list(type="items"))
+
+plot(ares.pruned.sub, method="paracoord", control=list(reorder=TRUE))
+

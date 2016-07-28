@@ -1,0 +1,93 @@
+# http://www.statmethods.net/stats/regression.html
+
+# Multiple Linear Regression Example 
+
+mydata <- read.table("data_1.txt", header = TRUE)
+
+mydata[1:3,]
+
+ncol(mydata)
+unique( mydata[, ncol(mydata)])
+
+# transforming a numerical variable to a cagegorical variable
+KMvar <- mydata$KM
+
+KMvarOld <- (KMvar > 50000)
+KMvarMed <- ( (KMvar <= 50000) & (KMvar > 20000) )
+KMvarNew <- (KMvar <= 20000)
+
+KMvarCategory <- as.numeric(KMvarOld) * 1 + as.numeric(KMvarMed) * 2 + as.numeric(KMvarNew) * 3
+
+
+# Multiple Linear Regression Example 
+
+fit <- lm(Price ~ KM + HP + CC, data=mydata)
+
+8843.64583448 + (-0.052)*46986 + 30.62*90 + 1.52*2000
+predict(fit, newdata = mydata[1,])
+
+summary(fit) # show results
+
+# Other useful functions 
+coefficients(fit) # model coefficients
+confint(fit, level=0.95) # CIs for model parameters 
+fitted(fit) # predicted values #predict(fit, newdata = mydata[1,])
+residuals(fit) # residuals
+anova(fit) # anova table 
+vcov(fit) # covariance matrix for model parameters 
+influence(fit) # regression diagnostics
+
+#Diagnostic Plots
+#layout(matrix(c(1,2,3,4),2,2)) # optional 4 graphs/page 
+#plot(fit)
+
+
+# compare models
+fit1 <- lm(Price ~ KM + HP + CC + Weight, data=mydata)
+fit2 <- lm(Price ~ KM + HP, data=mydata )
+anova(fit1, fit2)
+
+
+
+# K-fold cross-validation
+library(DAAG)
+#cv.lm(df=mydata, fit, m=3) # 3 fold cross-validation,  Mean square = 12474212 
+rs1 <- cv.lm(df=mydata, fit1, m=3) # 3 fold cross-validation, Mean square =  5044365
+rs2 <- cv.lm(df=mydata, fit2, m=3) # 3 fold cross-validation, Mean square =  8691015
+# I prefer using fit 1 to fit 2
+
+resi1 <- (rs1[,1] - rs1[,ncol(rs1)])
+resi2 <- (rs2[,1] - rs2[,ncol(rs2)])
+mse1 <-  resi1 %*% resi1 / length(resi1) #t(resi1) %*% resi1
+mse2 <-  resi2 %*% resi2 / length(resi2) #t(resi1) %*% resi1
+
+# Any problem or improvement?
+
+Ytrue <- rs1[,1]
+Yhat <- rs1[,ncol(rs1)]
+sum(abs((Ytrue-Yhat)/Ytrue))/length(Ytrue)
+sum(abs(resi1))/length(resi1)
+
+# to permute? 
+myRandID <- sample(nrow(mydata))
+mydataPerm <- mydata[myRandID,]
+
+allMseModel1 <- rep(0,3)
+allMseModel2 <- rep(0,3)
+
+for (i in 1:3) {
+
+	t <- as.numeric(Sys.time()); #setting a random seed
+	set.seed((t - floor(t)) * 1e8 -> seed); #setting a random seed
+
+	myRandID <- sample(nrow(mydata))
+	mydataPerm <- mydata[myRandID,]
+	rs1 <- cv.lm(df=mydataPerm, fit1, m=3) # 3 fold cross-validation, Mean square =  5044365
+	rs2 <- cv.lm(df=mydataPerm, fit2, m=3) # 3 fold cross-validation, Mean square =  8691015
+	resi1 <- (rs1[,1] - rs1[,ncol(rs1)])
+	resi2 <- (rs2[,1] - rs2[,ncol(rs2)])
+	mse1 <-  resi1 %*% resi1 / length(resi1) #t(resi1) %*% resi1
+	mse2 <-  resi2 %*% resi2 / length(resi2) #t(resi1) %*% resi1
+	allMseModel1[i] <- mse1
+	allMseModel2[i] <- mse2
+}

@@ -1,0 +1,25 @@
+## Plot world wide earth quakes of the last 30 days with magnitude >= 4.0
+library(googleVis)
+library(XML)
+## Get earthquake data of the last 30 days
+## That is ok, put for some reason I do not get right magnitude into picture.
+#eq=readHTMLTable(readLines("http://www.iris.edu/seismon/last30.html"))
+#eq=readHTMLTable(readLines("last30.html"))
+#eq <- eq[[2]] ## extract the eq table
+#summary(eq)
+#something wrong with this  last30 file
+#I have to copy and paste web-page data into Notepad and saved this into file earthquake.txt
+#eq <- read.table("j:/todo/R_geodata/earthquake.txt", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+#WEB-server datafile note I change MAG into magni
+#eq <- read.table("http://ekqvist.goeuropeinfo.com/rbloggerqvist/data/earthq/earthquake.txt", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+eq <- read.table("earthquake.txt", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+
+# lat and lon must be the same variable
+eq$loc=paste(eq$LAT, eq$LON, sep=":") ## create a lat:long location variable
+
+# making geomap
+earthq <- gvisGeoMap(eq, locationvar="loc", numvar="magni", hovervar="DATE", options=list(dataMode="markers"))
+
+#plotting results into html file
+plot(earthq)
+#cat(earthq$html$chart, file="j:/todo/R_geodata/earthq.html")

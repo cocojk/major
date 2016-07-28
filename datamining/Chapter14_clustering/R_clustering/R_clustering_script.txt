@@ -1,0 +1,40 @@
+# http://www.statmethods.net/advstats/cluster.html
+mydata <- read.table("data_1.txt", header = TRUE)
+
+# Prepare Data
+mydata <- na.omit(mydata) # listwise deletion of missing
+mydata <- scale(mydata) # standardize variables
+
+
+# K-Means Cluster Analysis
+fit <- kmeans(mydata, 3) # 3 cluster solution
+str(fit)
+fit$cluster
+
+# get cluster means 
+aggregate(mydata,by=list(fit$cluster),FUN=mean)
+# append cluster assignment
+mydata_all <- data.frame(mydata, fit$cluster)
+
+
+
+# Ward Hierarchical Clustering
+d <- dist(mydata, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward") 
+plot(fit) # display dendogram
+groups <- cutree(fit, k=3) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters 
+rect.hclust(fit, k=3, border="red")
+
+
+# Ward Hierarchical Clustering with Bootstrapped p values
+#install.packages("pvclust")
+library(pvclust)
+fit <- pvclust(t(mydata), method.hclust="ward",
+   method.dist="euclidean")
+plot(fit) # dendogram with p values
+# add rectangles around groups highly supported by the data
+pvrect(fit, alpha=.95)
+
+
+
