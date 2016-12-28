@@ -1,0 +1,57 @@
+
+SQL*Loader: Release 11.2.0.1.0 - Production on 수 6월 8 22:38:04 2016
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+제어 파일:    nasdaq_control.txt
+데이터 파일:    C:\Users\ALIENWARE\Desktop\project\nasdaq.csv
+  부적합한 파일:     nasdaq.bad
+  폐기 파일:    지정 사항 없음
+
+ (모든 폐기된 레코드 허용)
+
+로드할 건수: ALL
+생략 건수:  0
+허용 오류수:  50
+바인드 배열:  64 행, 최대 256000 바이트
+계속:    지정 사항 없음
+사용된 경로:      규약
+
+테이블 NASDAQ, 로드되었습니다 개개의 논리 레코드로부터
+이 테이블에 적당한 Insert 옵션: APPEND
+
+   열 이름                        위치    Len   Term Encl 데이터유형
+------------------------------ ---------- ----- ---- ---- ---------------------
+ID                                  FIRST     *   ,       CHARACTER            
+SYMBOL                               NEXT     *   ,       CHARACTER            
+TYPE                                 NEXT     *   ,       CHARACTER            
+DATES                                NEXT     *   ,       CHARACTER            
+OPEN                                 NEXT     *   ,       CHARACTER            
+HIGH                                 NEXT     *   ,       CHARACTER            
+LOW                                  NEXT     *   ,       CHARACTER            
+CLOSE                                NEXT     *   ,       CHARACTER            
+VOLUME                               NEXT     *   ,       CHARACTER            
+
+레코드 1: 기각됨 - 테이블 NASDAQ, 열 OPEN에 오류
+ORA-01722: 수치가 부적합합니다
+
+테이블 NASDAQ:
+  256803 행 로드되었습니다.
+  데이터 오류 때문에 1 행(이)가 로드되지 않았습니다
+  모든 WHEN절이 실패하여 0 행(이)가 로드되지 않았습니다
+  모든 필드가 NULL이어서 0 행(이)가 로드되지 않았습니다
+
+
+바인드 배열에 할당된 영역:            148608바이트(64 행)
+읽기 버퍼 바이트: 1048576
+
+생략된 논리 레코드의 합계:         0
+읽어낸 논리 레코드의 합계:    256804
+거부된 논리 레코드의 합계:         1
+폐기된 논리 레코드의 합계:         0
+
+수 6월  08 22:38:04 2016에 실행 개시
+수 6월  08 22:38:08 2016에 실행 종료
+
+경과 시간:        00:00:04.79
+CPU 시간:         00:00:00.54

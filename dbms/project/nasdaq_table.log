@@ -1,0 +1,9 @@
+
+SQL*Loader: Release 11.2.0.1.0 - Production on 월 6월 6 18:11:05 2016
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+SQL*Loader-350: 줄 1에 구문 오류
+키워드 LOAD 요구됨, "CREATE" 존재함
+CREATE TABLE NASDAQ (
+^

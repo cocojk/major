@@ -1,0 +1,139 @@
+install.packages("DBI")
+install.packages("RODBCext")
+install.packages("RODBC")
+
+library(DBI)
+library(RODBCext)
+library(RODBC)
+
+
+# table initialize
+tableCreate <- function() {
+  
+  sqlExecute(db,"CREATE TABLE firstcluster ( clusterId int not null, constraint pk_firstcluster primary key (clusterId) )")
+  sqlExecute(db,"CREATE TABLE firstcluster_contents (clusterId int not null, dates int not null,diff int, sequence int,constraint pk_firstcluster_contents primary key (clusterId,dates), constraint fk_firstcluster_contents foreign key (clusterId) references firstcluster (clusterId) on delete cascade)")
+  
+  sqlExecute(db,"CREATE TABLE stock ( symbol varchar2(20) not null,firstFk int,constraint pk_stock primary key (symbol),constraint fk_stock foreign key (firstFk) references firstcluster (clusterId))")
+  sqlExecute(db,"CREATE TABLE stock_contents (symbol varchar2(20) not null, dates int not null,diff int, sequence int,constraint pk_stock_contents primary key (symbol,dates), constraint fk_stock_contents foreign key (symbol) references stock (symbol) on delete cascade)")
+  
+  
+  #sqlExecute(db,"create table clusters (clusterId int not null,type int , inc_rate int, constraints pk_cluster primary key (clusterId) )")
+  #sqlExecute(db,"create table stock_cluster_map (symbol varchar2(20) not null,clusterId int not null, constraint pk_stock_cluster_map primary key(symbol,clusterId), constraint fk_stock foreign key (symbol) references stock (symbol) on delete cascade, constraint fk_cluster foreign key (clusterId) references clusters (clusterId) on delete cascade)")
+  
+}
+
+# table drop
+tableDrop <- function() {
+  sqlExecute(db,"drop table firstcluster_contents")
+  sqlExecute(db,"drop table stock_contents")
+  sqlExecute(db,"drop table stock")
+  sqlExecute(db,"drop table firstcluster")
+  sqlExecute(db,"purge recyclebin")
+}
+
+# stock_contents_insert
+stock_contents_insert <- function() {
+  query <- paste0("select distinct dates from nasdaq  order by dates asc")
+  temp <- sqlQuery(db,query)
+  sqlExecute(db,"create sequence seq start with 1")
+  sqlExecute(db,"select seq.nextval from dual")
+  for(i in 1:(nrow(temp)-1))
+  {
+      query <- paste0("insert into stock_contents (symbol,dates,diff,sequence) select a.symbol,a.dates,b.high-a.high,seq.currval from (select symbol,high,dates from nasdaq where dates='",temp[i,1],"') a, (select symbol,high from nasdaq where dates='",temp[i+1,1],"') b where a.symbol=b.symbol")
+      sqlExecute(db,query)
+      sqlExecute(db,"select seq.nextval from dual")
+    
+  }
+  sqlExecute(db,"drop sequence seq")
+  
+}
+
+
+
+
+# firstcluster insert
+firstcluster_insert <- function() {
+    symbols <- sqlQuery(db,"select distinct symbol from stock_contents")
+    query <- paste0("select diff from stock_contents where symbol = '",symbols[1,1],"' order by dates asc")
+    temp = unlist(sqlQuery(db,query))
+    pointMatrix = matrix(temp,ncol=87)
+
+    for(i in 2:nrow(symbols))
+    {
+      query <- paste0("select diff from stock_contents where symbol = '",symbols[i,1],"' order by dates asc")
+      temp = unlist(sqlQuery(db,query))
+      pointMatrix = rbind(pointMatrix,temp)
+      print(i)
+    }
+    
+    
+     kclust <- kmeans(pointMatrix,1)
+     vecwithinss = kclust$withinss[1];
+    
+     for(i in 2:(nrow(symbols)))
+     {
+       kclust <- kmeans(pointMatrix,(i))
+       temp =0;
+       for(j in 1:i)
+       {
+         temp=temp+kclust$withinss[j];
+       }
+       print(i);
+       vecwithinss[i]=temp;
+     }
+    vecwithinss[3]
+    write(vecwithinss,"firstcluster",sep="\n")
+    plot(vecwithinss)
+    
+    #  k = 101 is the best number of clusters  
+    kcluster <- kmeans(pointMatrix,101)
+   
+    query <- paste0("select distinct dates from nasdaq  order by dates asc")
+    temp <- sqlQuery(db,query)
+  
+    for(j in 1:101)
+    {
+      query <- paste0("insert into firstcluster values (",j,")");
+      sqlExecute(db,query)
+      for(i in 1:(nrow(temp)-1))
+      {
+       query <- paste0("insert into firstcluster_contents values (",j,",",temp[i,1],",",kcluster$centers[j,i],",",i,")")
+       sqlExecute(db,query)
+      }
+    }
+   
+
+    for(i in 1:(nrow(symbols)))
+    {
+      query <- paste0("update stock set firstFk=",kcluster$cluster[i]," where symbol='",symbols[i,1],"'")
+      sqlExecute(db,query)
+    }
+    
+}
+
+# insert Data
+insertData <- function() {
+   
+  # stock insert
+  sqlExecute(db,"insert into stock (symbol) select distinct (symbol) from nasdaq")
+  
+  # stock_contents insert 
+  stock_contents_insert()
+  
+  # firstcluster insert 
+  firstcluster_insert()
+  
+  
+  
+}
+  
+# remove imperfect symbol
+removeImperfect <- function(){
+  sqlExecute(db,"delete from nasdaq where symbol in (select symbol from nasdaq group by symbol having count(*) < (select count(distinct dates) from nasdaq))")
+}
+
+db <<- odbcConnect("jk","jk","powerkk",believeNRows=FALSE)
+tableCreate()
+removeImperfect()
+tableDrop()
+odbcCloseAll()
