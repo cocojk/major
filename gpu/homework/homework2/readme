@@ -1,0 +1,22 @@
+[homework2]
+
+1) file : memTransfer.cu pinMemTransfer.cu 
+   compile : nvcc memTransfer.cu 
+             nvcc pinMemTransfer.cu 
+   run     : ./a.out
+
+2) file : memTransferVariable.cu pinMemTransferVariable.cu
+   compile : nvcc memTransferVariable.cu 
+             nvcc pinMemTransferVariable.cu 
+   run     : ./a.out memorysize(Mib) 
+             ex) ./a.out 2 - set memorysize 2Mib 
+
+3) file : globalVariable_2.cu 
+   compile : nvcc globalVariable_2.cu 
+   run     : ./a.out
+
+4) file : readSegment.cu 
+   compile : nvcc readSegment.cu 
+   run     : ./a.out 
+
+
