@@ -1,0 +1,19 @@
+[homework3]
+
+1) file : global.cu
+   compile : nvcc global.cu 
+   run     : ./a.out
+
+2) file : global2.cu
+   compile : nvcc global2.cu
+   run     : ./a.out  
+
+3) file : shared.cu
+   compile : nvcc shared.cu
+   run     : ./a.out
+
+4) file : unified.cu
+   compile : nvcc unified.cu
+   run     : ./a.out 
+
+

@@ -1,0 +1,17 @@
+[homework3]
+
+1) file : depth.cu
+   compile : nvcc depth.cu 
+   run     : ./a.out
+
+2) file : breath.cu
+   compile : nvcc breath.cu
+   run     : ./a.out  
+
+3) file : mult_breath.cu
+   compile : nvcc mult_breath.cu
+   run     : ./a.out
+
+
+
+
