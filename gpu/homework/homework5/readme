@@ -1,0 +1,28 @@
+[homework5]
+
+1) file : cusparse-coo
+   compile : nvcc cusparse-coo.cu -lcusparse 
+   run     : ./a.out
+
+1) file : cusparse-csc
+   compile : nvcc cusparse-csc.cu -lcusparse 
+   run     : ./a.out
+
+1) file : cusparse-hyb
+   compile : nvcc cusparse-hyb.cu -lcusparse 
+   run     : ./a.out
+
+1) file : naiveglobal
+   compile : nvcc naiveglobal.cu 
+   run     : ./a.out
+
+1) file : naiveshared
+   compile : nvcc naiveshared.cu 
+   run     : ./a.out
+
+1) file : naiveunified
+   compile : nvcc naiveunified.cu 
+   run     : ./a.out
+
+
+
